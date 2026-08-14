@@ -1,5 +1,5 @@
 {
-  "version": "2.0",
+  "version": "2.1",
   "input_unique_soundings": 5158,
   "used_soundings": 5142,
   "rejected_gt_8m_after_coordinate_median": [
@@ -84,8 +84,21 @@
       21.9
     ]
   ],
-  "shoreline_vertices": 204,
-  "shoreline_constraints": 887,
+  "parsed_depth_layers": [
+    "depth-0",
+    "depth-1",
+    "depth-2",
+    "depth-3",
+    "depth-4",
+    "depth-5",
+    "depth-6"
+  ],
+  "water_mask": {
+    "exterior_vertices": 286,
+    "island_holes": 0,
+    "island_vertices": [],
+    "shoreline_constraints": 1085
+  },
   "depth_m": {
     "min": 0.3,
     "max": 6.0,
@@ -102,14 +115,14 @@
     "ny": 411,
     "spacing_x_m": 19.988120898686805,
     "spacing_y_m": 20.00386724812454,
-    "valid_cells": 44293,
-    "inside_lake_cells": 50229
+    "valid_cells": 50229,
+    "inside_water_cells": 50229
   },
   "confidence_cells": {
-    "high": 16153,
-    "medium": 12434,
-    "low": 10192,
-    "very_low_or_unresolved": 5514
+    "high": 16165,
+    "medium": 12442,
+    "low": 10188,
+    "very_low": 11434
   },
-  "warning": "Indicative bathymetry only. Shoreline mask is approximate and contours are interpolated, not surveyed contour lines."
+  "warning": "Indicative bathymetry only. Islands/shoreline come from a vectorized public map; contours are interpolated."
 }
