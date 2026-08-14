@@ -1,0 +1,113 @@
+{
+  "version": "3.0",
+  "source_image": {
+    "width": 2048,
+    "height": 1536,
+    "palette_rgb": [
+      [
+        91,
+        82,
+        60
+      ],
+      [
+        68,
+        59,
+        43
+      ],
+      [
+        94,
+        89,
+        57
+      ],
+      [
+        137,
+        112,
+        95
+      ],
+      [
+        124,
+        105,
+        88
+      ],
+      [
+        133,
+        112,
+        93
+      ],
+      [
+        129,
+        108,
+        89
+      ],
+      [
+        133,
+        108,
+        90
+      ]
+    ]
+  },
+  "segmentation": {
+    "source_water_pixels": 2436732,
+    "source_image_pixels": 3145728,
+    "class_pixels": {
+      "0": 310571,
+      "1": 806544,
+      "2": 112686,
+      "3": 670749,
+      "4": 349030,
+      "5": 84324,
+      "6": 60570,
+      "7": 42258
+    }
+  },
+  "calibration": {
+    "soundings_all": 5142,
+    "soundings_spatially_thinned": 1913,
+    "initial_metrics": {
+      "valid_fraction": 0.9330893883951908,
+      "in_band_fraction_of_valid": 0.22296918767507004,
+      "mean_interval_error_m": 1.319075630252101,
+      "median_abs_midpoint_error_m": 1.4,
+      "objective": 0.6982957614566997
+    },
+    "optimized_metrics": {
+      "valid_fraction": 0.9717720857292211,
+      "in_band_fraction_of_valid": 0.26412049488972567,
+      "mean_interval_error_m": 1.0706163695335347,
+      "median_abs_midpoint_error_m": 1.2578983017438157,
+      "objective": 0.5607396911943625
+    },
+    "optimized_parameters": {
+      "dx_px": -36.585928947410395,
+      "dy_px": 12.75198207924965,
+      "scale_x": 0.9994200098548118,
+      "scale_y": 0.9958132224303542,
+      "rotation_deg": -0.8770078174315493,
+      "2008_to_2012_depth_offset_m": 0.5578983017438157
+    }
+  },
+  "output": {
+    "numeric_grid_step_m": 10.0,
+    "visual_grid_step_m": 5.0,
+    "bands10_shape": [
+      821,
+      491
+    ],
+    "water_cells_10m": 368163,
+    "class_cells": {
+      "0": 45036,
+      "1": 129053,
+      "2": 19160,
+      "3": 96482,
+      "4": 52765,
+      "5": 10744,
+      "6": 8457,
+      "7": 6466
+    },
+    "area_weighted_class_midpoint_mean_m": 2.7207636291533914,
+    "published_mean_depth_m": 2.4,
+    "published_max_depth_m": 7.3
+  },
+  "interpretation": "Display the official 1 m class at GPS position. The 2008 sounding model is validation/calibration evidence, not the source of fine contour geometry.",
+  "warning": "Not a certified navigation chart. Published classes were mapped at a stated plan-water elevation of 13.21 m NGF."
+}
