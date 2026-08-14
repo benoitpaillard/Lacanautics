@@ -5,85 +5,85 @@
     "height": 1448,
     "palette_rgb": [
       [
-        189,
+        184,
         238,
-        239
+        241
       ],
       [
-        246,
-        242,
-        243
+        145,
+        205,
+        235
       ],
       [
-        248,
-        249,
-        251
+        110,
+        173,
+        231
       ],
       [
-        249,
-        255,
-        250
+        62,
+        144,
+        228
       ],
       [
-        250,
-        253,
-        247
+        32,
+        115,
+        213
       ],
       [
-        251,
-        251,
-        244
+        34,
+        77,
+        188
       ],
       [
-        246,
-        251,
-        246
+        25,
+        44,
+        164
       ],
       [
-        250,
-        249,
-        244
+        10,
+        10,
+        147
       ]
     ]
   },
   "segmentation": {
-    "source_water_pixels": 2951536,
+    "source_water_pixels": 405108,
     "source_image_pixels": 2965504,
     "class_pixels": {
-      "0": 1835751,
-      "1": 47706,
-      "2": 43126,
-      "3": 894146,
-      "4": 7177,
-      "5": 7629,
-      "6": 114901,
-      "7": 1100
+      "0": 75658,
+      "1": 119336,
+      "2": 98198,
+      "3": 46635,
+      "4": 37178,
+      "5": 21620,
+      "6": 6420,
+      "7": 63
     }
   },
   "calibration": {
     "soundings_all": 5142,
     "soundings_spatially_thinned": 1913,
     "initial_metrics": {
-      "valid_fraction": 1.0,
-      "in_band_fraction_of_valid": 0.4014636696288552,
-      "mean_interval_error_m": 0.9194197595399897,
-      "median_abs_midpoint_error_m": 0.8,
-      "objective": 0.45238565081024573
+      "valid_fraction": 0.9639309984317825,
+      "in_band_fraction_of_valid": 0.527114967462039,
+      "mean_interval_error_m": 0.38507321041214754,
+      "median_abs_midpoint_error_m": 0.5,
+      "objective": 0.20773508255111445
     },
     "optimized_metrics": {
-      "valid_fraction": 1.0,
-      "in_band_fraction_of_valid": 0.2990067956089911,
-      "mean_interval_error_m": 0.5850070177158119,
-      "median_abs_midpoint_error_m": 0.7169797671262937,
-      "objective": 0.281322100758335
+      "valid_fraction": 0.9790904338734971,
+      "in_band_fraction_of_valid": 0.5734116390816871,
+      "mean_interval_error_m": 0.3027783063031428,
+      "median_abs_midpoint_error_m": 0.3601598024157333,
+      "objective": 0.15841094976616482
     },
     "optimized_parameters": {
-      "dx_px": 0.21379434293703842,
-      "dy_px": -0.7569461734320253,
-      "scale_x": 0.9999990443269569,
-      "scale_y": 1.0000005906356055,
-      "rotation_deg": 0.004358174299837275,
-      "2008_to_2012_depth_offset_m": -0.9169797671262937
+      "dx_px": 8.14417123288166,
+      "dy_px": -0.04137954112084502,
+      "scale_x": 0.9970076085948185,
+      "scale_y": 1.0023342747343158,
+      "rotation_deg": 0.05772171106018511,
+      "2008_to_2012_depth_offset_m": -0.2601598024157332
     }
   },
   "output": {
@@ -93,18 +93,18 @@
       821,
       491
     ],
-    "water_cells_10m": 402936,
+    "water_cells_10m": 202436,
     "class_cells": {
-      "0": 389930,
-      "1": 4220,
-      "2": 15,
-      "3": 70,
-      "4": 35,
-      "5": 1341,
-      "6": 7271,
-      "7": 54
+      "0": 37809,
+      "1": 59352,
+      "2": 49023,
+      "3": 23447,
+      "4": 18688,
+      "5": 10865,
+      "6": 3218,
+      "7": 34
     },
-    "area_weighted_class_midpoint_mean_m": 0.6372649750828916,
+    "area_weighted_class_midpoint_mean_m": 2.35916536584402,
     "published_mean_depth_m": 2.4,
     "published_max_depth_m": 7.3
   },
