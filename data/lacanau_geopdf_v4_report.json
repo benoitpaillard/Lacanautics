@@ -58,9 +58,9 @@
     "zoom": 2.0822510822510822
   },
   "crop_px": [
-    306,
+    539,
     0,
-    1510,
+    1509,
     1427
   ],
   "output": {
@@ -71,12 +71,12 @@
     "water_level_reference_ngf_m": 13.21,
     "vertical_definition": "official 1 m classes: 0=0–1 m ... 7=7–8 m",
     "bbox": {
-      "west": -1.1629518441558442,
+      "west": -1.146194,
       "south": 44.93178,
-      "east": -1.0763576623376623,
+      "east": -1.0764295844155845,
       "north": 45.00437
     },
-    "width": 1204,
+    "width": 970,
     "height": 1427,
     "palette_rgb": [
       [
@@ -122,25 +122,28 @@
     ],
     "georef_method": "embedded GeoPDF GPTS/LPTS; no manual calibration",
     "native_resolution_m_per_px": [
-      5.664509096925657,
+      5.664509096925642,
       5.662732165381777
     ]
   },
   "class_pixels": {
-    "0": 108793,
-    "1": 154454,
-    "2": 149601,
-    "3": 67741,
+    "0": 109572,
+    "1": 148600,
+    "2": 145817,
+    "3": 67738,
     "4": 54399,
-    "5": 31970,
-    "6": 9472,
-    "7": 95687
+    "5": 31831,
+    "6": 9319,
+    "7": 110
   },
-  "water_pixels": 672117,
-  "osm_island_pixels_removed": 539,
+  "water_pixels": 567386,
+  "area_weighted_class_midpoint_mean_m": 2.397972345352173,
+  "published_mean_depth_m": 2.4,
+  "deepest_class_fraction": 0.00019387154423972393,
+  "osm_island_pixels_removed": 502,
   "segmentation_distance": {
-    "median_rgb_distance": NaN,
-    "p95_rgb_distance": NaN
+    "median_rgb_distance": 3.0,
+    "p95_rgb_distance": 24.73863410949707
   },
   "warning": "Official cartographic depth classes, not raw soundings. Not a certified navigation chart."
 }

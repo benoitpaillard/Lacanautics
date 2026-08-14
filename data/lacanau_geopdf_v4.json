@@ -6,12 +6,12 @@
   "water_level_reference_ngf_m": 13.21,
   "vertical_definition": "official 1 m classes: 0=0–1 m ... 7=7–8 m",
   "bbox": {
-    "west": -1.1629518441558442,
+    "west": -1.146194,
     "south": 44.93178,
-    "east": -1.0763576623376623,
+    "east": -1.0764295844155845,
     "north": 45.00437
   },
-  "width": 1204,
+  "width": 970,
   "height": 1427,
   "palette_rgb": [
     [
@@ -57,7 +57,7 @@
   ],
   "georef_method": "embedded GeoPDF GPTS/LPTS; no manual calibration",
   "native_resolution_m_per_px": [
-    5.664509096925657,
+    5.664509096925642,
     5.662732165381777
   ]
 }
