@@ -1,15 +1,5 @@
 #!/usr/bin/env python3
-"""Build Lacanautics v4 directly from the official Adour-Garonne GeoPDF.
-
-Source of truth:
-  FRFL49_Bathym.pdf (Esri ArcMap GeoPDF)
-
-This pipeline intentionally avoids all manual georeferencing. It reads the embedded map viewport
-and GPTS geospatial control points from the PDF, renders the native map frame at approximately its
-embedded raster resolution, extracts the eight official 1 m depth classes, applies mapped island
-holes, crops to the lake, and writes a lossless RGBA WebP whose pixels themselves encode the
-survey class used by the web app.
-"""
+"""Build Lacanautics v4 directly from the official Adour-Garonne GeoPDF."""
 from __future__ import annotations
 
 import json, math, re, ssl, urllib.request
@@ -33,15 +23,17 @@ OUT_REPORT=ROOT/'data/lacanau_geopdf_v4_report.json'
 PALETTE=np.asarray([
     [182,237,240], [145,205,237], [107,174,232], [61,144,227],
     [32,114,214], [32,76,189], [25,44,168], [9,9,145]
-],dtype=np.uint8)
+],dtype=np.float32)
 DISPLAY=np.asarray([
     [217,246,242], [198,239,238], [175,229,236], [150,217,235],
     [97,185,230], [50,127,205], [49,88,180], [37,28,88]
 ],dtype=np.uint8)
 
+PUBLISHED_MEAN_DEPTH_M=2.4
+
 
 def download_pdf():
-    ctx=ssl._create_unverified_context()  # legacy official server has an incomplete cert chain
+    ctx=ssl._create_unverified_context()
     req=urllib.request.Request(URL,headers={'User-Agent':'Lacanautics/4.0'})
     with urllib.request.urlopen(req,timeout=90,context=ctx) as r:
         return r.read()
@@ -51,10 +43,10 @@ def parse_geopdf(doc):
     page=doc[0]
     page_obj=doc.xref_object(page.xref,compressed=False)
     pairs=[]
-    for m in re.finditer(r'/BBox\s*\[\s*([\d.\-]+)\s+([\d.\-]+)\s+([\d.\-]+)\s+([\d.\-]+)\s*\]\s*/Measure\s+(\d+)\s+0\s+R',page_obj,re.S):
+    pat=r'/BBox\s*\[\s*([\d.\-]+)\s+([\d.\-]+)\s+([\d.\-]+)\s+([\d.\-]+)\s*\]\s*/Measure\s+(\d+)\s+0\s+R'
+    for m in re.finditer(pat,page_obj,re.S):
         a,b,c,d=[float(x) for x in m.groups()[:4]]
-        measure=int(m.group(5))
-        pairs.append({'pdf_bbox':[a,b,c,d],'measure_xref':measure,'area':abs(c-a)*abs(b-d)})
+        pairs.append({'pdf_bbox':[a,b,c,d],'measure_xref':int(m.group(5)),'area':abs(c-a)*abs(b-d)})
     if not pairs:
         raise RuntimeError('No GeoPDF viewport found')
     vp=max(pairs,key=lambda x:x['area'])
@@ -65,16 +57,15 @@ def parse_geopdf(doc):
     vals=[float(v) for v in re.findall(r'[-+]?\d+(?:\.\d+)?',mg.group(1))]
     if len(vals)!=8:
         raise RuntimeError(f'Unexpected GPTS {vals}')
-    pts=[(vals[i],vals[i+1]) for i in range(0,8,2)]  # lat, lon
+    pts=[(vals[i],vals[i+1]) for i in range(0,8,2)]
     lats=[p[0] for p in pts]; lons=[p[1] for p in pts]
-    west,east=min(lons),max(lons); south,north=min(lats),max(lats)
     a,b,c,d=vp['pdf_bbox']
     clip=fitz.Rect(min(a,c),page.rect.height-max(b,d),max(a,c),page.rect.height-min(b,d))
     return {
         'viewport_pdf_bbox':vp['pdf_bbox'],
         'viewport_clip':[clip.x0,clip.y0,clip.x1,clip.y1],
         'gpts_latlon':pts,
-        'bbox':{'west':west,'south':south,'east':east,'north':north},
+        'bbox':{'west':min(lons),'south':min(lats),'east':max(lons),'north':max(lats)},
         'clip':clip,
     }
 
@@ -83,32 +74,46 @@ def native_render(page,clip):
     target_w=1924
     zoom=target_w/clip.width
     pix=page.get_pixmap(matrix=fitz.Matrix(zoom,zoom),clip=clip,alpha=False)
-    img=Image.frombytes('RGB',[pix.width,pix.height],pix.samples)
-    return np.asarray(img), {'width':pix.width,'height':pix.height,'zoom':zoom}
+    return np.asarray(Image.frombytes('RGB',[pix.width,pix.height],pix.samples)), {
+        'width':pix.width,'height':pix.height,'zoom':zoom
+    }
 
 
 def segment(rgb):
-    f=rgb.astype(np.int16)
+    f=rgb.astype(np.float32)
     dist=np.empty((rgb.shape[0],rgb.shape[1],8),dtype=np.float32)
-    for k,p in enumerate(PALETTE.astype(np.int16)):
+    for k,p in enumerate(PALETTE):
         d=f-p[None,None,:]
-        dist[:,:,k]=np.sqrt(np.sum(d*d,axis=2))
+        dist[:,:,k]=np.sqrt(np.sum(d*d,axis=2,dtype=np.float32))
     cls=np.argmin(dist,axis=2).astype(np.int8)
     md=np.min(dist,axis=2)
-    assigned=ndimage.binary_closing(md<52.0,structure=np.ones((3,3),bool),iterations=1)
-    lab,n=ndimage.label(assigned)
+
+    assigned=ndimage.binary_closing(md<48.0,structure=np.ones((3,3),bool),iterations=1)
+    lab,_=ndimage.label(assigned)
     counts=np.bincount(lab.ravel())
     if len(counts)<=1:
         raise RuntimeError('Could not identify bathymetry components')
     counts[0]=0
     if counts.max()<10000:
         raise RuntimeError('Could not identify lake bathymetry')
+
     lake=lab==int(np.argmax(counts))
-    lake=ndimage.binary_fill_holes(lake)
-    valid=(md<60.0)&lake
+    # Fill small cartographic gaps, but not arbitrarily every enclosed land hole.
+    closed=ndimage.binary_closing(lake,structure=np.ones((5,5),bool),iterations=2)
+    holes=closed & ~lake
+    hl,n=ndimage.label(holes)
+    hc=np.bincount(hl.ravel()) if n else np.array([0])
+    small=np.zeros_like(lake)
+    for i in range(1,len(hc)):
+        if hc[i] <= 900:
+            small |= hl==i
+    lake |= small
+
+    valid=(md<58.0)&lake
     _,inds=ndimage.distance_transform_edt(~valid,return_indices=True)
     filled=cls[inds[0],inds[1]]
-    return np.where(lake,filled,-1).astype(np.int8),md
+    classes=np.where(lake,filled,-1).astype(np.int8)
+    return classes,md
 
 
 def island_union():
@@ -173,15 +178,26 @@ def main():
     geo=parse_geopdf(doc)
     rgb,render=native_render(doc[0],geo['clip'])
     classes,md=segment(rgb)
-    full_water=classes>=0
+    pre_island_water=classes>=0
     classes,masked=apply_islands(classes,geo['bbox'])
     cropped,cb,crop_px=crop_and_georef(classes,geo['bbox'])
+
+    vals=cropped[cropped>=0]
+    class_mid_mean=float(np.mean(vals.astype(np.float32)+0.5))
+    # Fail closed if extraction is visibly inconsistent with the published Lacanau mean depth.
+    if abs(class_mid_mean-PUBLISHED_MEAN_DEPTH_M)>0.35:
+        raise RuntimeError(f'QC failed: reconstructed mean {class_mid_mean:.3f} m vs published {PUBLISHED_MEAN_DEPTH_M:.2f} m')
+    deep_frac=float(np.mean(vals==7))
+    if deep_frac>0.02:
+        raise RuntimeError(f'QC failed: 7–8 m class occupies implausible {100*deep_frac:.2f}% of water area')
+
     save_rgba(cropped)
     h,w=cropped.shape
     lat0=(cb['south']+cb['north'])/2
     mppx=(cb['east']-cb['west'])*111320*math.cos(math.radians(lat0))/w
     mppy=(cb['north']-cb['south'])*111320/h
     counts={str(k):int((cropped==k).sum()) for k in range(8)}
+
     meta={
         'version':'4.0',
         'source_url':URL,
@@ -197,6 +213,8 @@ def main():
         'native_resolution_m_per_px':[mppx,mppy],
     }
     OUT_META.write_text(json.dumps(meta,ensure_ascii=False,indent=2),encoding='utf-8')
+
+    good_md=md[pre_island_water]
     report={
         'version':'4.0',
         'pdf_bytes':len(raw),
@@ -206,16 +224,19 @@ def main():
         'crop_px':crop_px,
         'output':meta,
         'class_pixels':counts,
-        'water_pixels':int((cropped>=0).sum()),
+        'water_pixels':int(len(vals)),
+        'area_weighted_class_midpoint_mean_m':class_mid_mean,
+        'published_mean_depth_m':PUBLISHED_MEAN_DEPTH_M,
+        'deepest_class_fraction':deep_frac,
         'osm_island_pixels_removed':masked,
         'segmentation_distance':{
-            'median_rgb_distance':float(np.median(md[full_water])) if np.any(full_water) else None,
-            'p95_rgb_distance':float(np.percentile(md[full_water],95)) if np.any(full_water) else None,
+            'median_rgb_distance':float(np.median(good_md)),
+            'p95_rgb_distance':float(np.percentile(good_md,95)),
         },
         'warning':'Official cartographic depth classes, not raw soundings. Not a certified navigation chart.',
     }
-    OUT_REPORT.write_text(json.dumps(report,ensure_ascii=False,indent=2,default=str),encoding='utf-8')
-    print(json.dumps(report,ensure_ascii=False,indent=2,default=str))
+    OUT_REPORT.write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
+    print(json.dumps(report,ensure_ascii=False,indent=2))
 
 if __name__=='__main__':
     main()
