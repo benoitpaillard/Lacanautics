@@ -1,0 +1,49 @@
+{
+  "generated_utc": "2026-08-14T21:26:34.023065+00:00",
+  "official_source": "https://data.ofb.fr/catalogue/data-eaufrance/api/records/c31746f7-311a-41c7-b995-6cb78a2ddc25/attachments/points_bruts_bathy_20161020.zip",
+  "archive_member": "points_bathy_bruts_plans_d_eau_20161020.tab",
+  "header": [
+    "code_gene",
+    "nom_bdcarthage",
+    "dtg_bathy",
+    "lon",
+    "lat",
+    "prof"
+  ],
+  "columns": {
+    "code": 0,
+    "name": 1,
+    "date": 2,
+    "lon": 3,
+    "lat": 4,
+    "depth": 5
+  },
+  "archive_rows_excluding_header": 1513411,
+  "matched_lacanau_rows": 5919,
+  "valid_lacanau_soundings": 5919,
+  "unique_lonlat_soundings": 5158,
+  "depth_m": {
+    "min": 0.3,
+    "max": 33.8,
+    "median": 1.0
+  },
+  "wgs84_bbox": {
+    "west": -1.14439,
+    "south": 44.93556,
+    "east": -1.09395,
+    "north": 45.00454
+  },
+  "dates": [
+    "28/07/2008",
+    "29/07/2008"
+  ],
+  "codes": {
+    "S1215013": 5919
+  },
+  "names": {
+    "ETANG DE LACANAU": 5919
+  },
+  "rejected": {},
+  "archive_info": "Le fichier \"points_bathy_bruts_plans_d_eau_20161020.tab\" contient les coordonnées et la profondeur brutes de points bathymétriques réalisées lors de campagnes d'échantillonnage sur plans d'eau.\r\n\r\nCe fichier est au format texte, encodé en UTF8, avec indicateur d'ordre des octets (\"BOM\").\r\nLa première ligne est utilisée pour contenir les noms des colonnes.\r\nLe séparateur des colonnes est le caractère tabulation.\r\nLa fin de ligne est signifiée par les caractères \"retour chariot\" et \"nouvelle ligne\".\r\nLe séparateur décimal est la virgule (\",\").\r\nLe délimiteur de date est une barre oblique (\"/\").\r\nLes dates sont sous la forme numéro du jour, numéro du mois, numéro de l'année et ces numéros contiennent des zéros non significatifs.\r\n\r\nDescription des champs :\r\ncode_gene : Code générique de l'entité hydrographique (encore appelé CdEntiteHydrographique).\r\nnom_bd_carthage : Toponymie du plan d’eau tel qu’apparaissant dans la BD Carthage (base de Données sur la CARtographie THématique des AGences de l'Eau et du ministère chargé de l'environnement).\r\ndtg_bathy : Date du calendrier grégorien de la mesure de la profondeur du point (si disponible).\r\nlon : longitude en degrés décimaux (WGS84G).\r\nlat : latitude en degrés décimaux (WGS84G).\r\nprof : profondeur du point, en mètres.\r\n\r\n\r\nNombre de lignes du fichier : 1513412",
+  "note": "Coordinates in the official archive are already longitude/latitude; depths are preserved as published."
+}
