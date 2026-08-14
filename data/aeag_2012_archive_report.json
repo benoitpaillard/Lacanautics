@@ -1,0 +1,956 @@
+{
+  "url": "https://adour-garonne.eaufrance.fr/upload/DATA/THEMATIQUES/QUALITE/LACS/donnees_qualite_lac_2012.zip",
+  "zip_bytes": 1843178,
+  "members": [
+    {
+      "name": "analyse.csv",
+      "bytes": 12592677
+    },
+    {
+      "name": "avertissements.pdf",
+      "bytes": 111385
+    },
+    {
+      "name": "DescriptionDonneesQualiteLac.pdf",
+      "bytes": 93238
+    },
+    {
+      "name": "etats.csv",
+      "bytes": 303928
+    },
+    {
+      "name": "hydrobio.csv",
+      "bytes": 50038
+    },
+    {
+      "name": "Licence_Ouverte.pdf",
+      "bytes": 540249
+    },
+    {
+      "name": "listes.csv",
+      "bytes": 799206
+    },
+    {
+      "name": "mesure_environnementale.csv",
+      "bytes": 178388
+    },
+    {
+      "name": "Open_Licence.pdf",
+      "bytes": 541345
+    },
+    {
+      "name": "stations.csv",
+      "bytes": 15743
+    }
+  ],
+  "lacanau_hits": [
+    {
+      "file": "analyse.csv",
+      "hits": [
+        {
+          "line": 32330,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1364322;29-08-2012;6.2;1;Zone euphotique;1335;Ammonium;3;Eau;003;Phase aqueuse de l'eau (filtrée, centrifugée...);0.01;162;milligramme par litre;10;0500000076;Réseau contrôle de surveillance plans d'eau;41749411900023;AQUABIO ;38469231500037;IPL ATLANTIQUE "
+        },
+        {
+          "line": 32331,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1364323;29-08-2012;7.0;5;Prélèvement de fond;1335;Ammonium;3;Eau;003;Phase aqueuse de l'eau (filtrée, centrifugée...);0.01;162;milligramme par litre;10;0500000076;Réseau contrôle de surveillance plans d'eau;41749411900023;AQUABIO ;38469231500037;IPL ATLANTIQUE "
+        },
+        {
+          "line": 32332,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1364322;29-08-2012;6.2;1;Zone euphotique;1339;Nitrites;3;Eau;003;Phase aqueuse de l'eau (filtrée, centrifugée...);0.01;162;milligramme par litre;10;0500000076;Réseau contrôle de surveillance plans d'eau;41749411900023;AQUABIO ;38469231500037;IPL ATLANTIQUE "
+        },
+        {
+          "line": 32333,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1364323;29-08-2012;7.0;5;Prélèvement de fond;1339;Nitrites;3;Eau;003;Phase aqueuse de l'eau (filtrée, centrifugée...);0.01;162;milligramme par litre;10;0500000076;Réseau contrôle de surveillance plans d'eau;41749411900023;AQUABIO ;38469231500037;IPL ATLANTIQUE "
+        },
+        {
+          "line": 32334,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1364322;29-08-2012;6.2;1;Zone euphotique;1340;Nitrates;3;Eau;003;Phase aqueuse de l'eau (filtrée, centrifugée...);0.25;162;milligramme par litre;10;0500000076;Réseau contrôle de surveillance plans d'eau;41749411900023;AQUABIO ;38469231500037;IPL ATLANTIQUE "
+        },
+        {
+          "line": 32335,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1364323;29-08-2012;7.0;5;Prélèvement de fond;1340;Nitrates;3;Eau;003;Phase aqueuse de l'eau (filtrée, centrifugée...);0.25;162;milligramme par litre;10;0500000076;Réseau contrôle de surveillance plans d'eau;41749411900023;AQUABIO ;38469231500037;IPL ATLANTIQUE "
+        },
+        {
+          "line": 32336,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1364322;29-08-2012;6.2;1;Zone euphotique;1433;Orthophosphates (PO4);3;Eau;003;Phase aqueuse de l'eau (filtrée, centrifugée...);0.01;162;milligramme par litre;10;0500000076;Réseau contrôle de surveillance plans d'eau;41749411900023;AQUABIO ;38469231500037;IPL ATLANTIQUE "
+        },
+        {
+          "line": 32337,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1364323;29-08-2012;7.0;5;Prélèvement de fond;1433;Orthophosphates (PO4);3;Eau;003;Phase aqueuse de l'eau (filtrée, centrifugée...);0.01;162;milligramme par litre;10;0500000076;Réseau contrôle de surveillance plans d'eau;41749411900023;AQUABIO ;38469231500037;IPL ATLANTIQUE "
+        },
+        {
+          "line": 32338,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1364322;29-08-2012;6.2;1;Zone euphotique;1841;Carbone Organique;3;Eau;003;Phase aqueuse de l'eau (filtrée, centrifugée...);11.3;162;milligramme par litre;1;0500000076;Réseau contrôle de surveillance plans d'eau;41749411900023;AQUABIO ;38469231500037;IPL ATLANTIQUE "
+        },
+        {
+          "line": 32339,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1364323;29-08-2012;7.0;5;Prélèvement de fond;1841;Carbone Organique;3;Eau;003;Phase aqueuse de l'eau (filtrée, centrifugée...);11.9;162;milligramme par litre;1;0500000076;Réseau contrôle de surveillance plans d'eau;41749411900023;AQUABIO ;38469231500037;IPL ATLANTIQUE "
+        },
+        {
+          "line": 32340,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363671;29-08-2012;0.0;6;Prélèvement ponctuel;1301;Température de l'Eau;3;Eau;023;Eau brute;22.9;27;degré Celsius;1;;;41749411900023;AQUABIO ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 32341,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363672;29-08-2012;0.5;6;Prélèvement ponctuel;1301;Température de l'Eau;3;Eau;023;Eau brute;23.1;27;degré Celsius;1;;;41749411900023;AQUABIO ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 32342,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363673;29-08-2012;1.0;6;Prélèvement ponctuel;1301;Température de l'Eau;3;Eau;023;Eau brute;23.1;27;degré Celsius;1;;;41749411900023;AQUABIO ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 32343,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363674;29-08-2012;1.5;6;Prélèvement ponctuel;1301;Température de l'Eau;3;Eau;023;Eau brute;23.1;27;degré Celsius;1;;;41749411900023;AQUABIO ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 32344,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363675;29-08-2012;2.0;6;Prélèvement ponctuel;1301;Température de l'Eau;3;Eau;023;Eau brute;23.1;27;degré Celsius;1;;;41749411900023;AQUABIO ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 32345,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363676;29-08-2012;2.5;6;Prélèvement ponctuel;1301;Température de l'Eau;3;Eau;023;Eau brute;23.1;27;degré Celsius;1;;;41749411900023;AQUABIO ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 32346,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363677;29-08-2012;3.0;6;Prélèvement ponctuel;1301;Température de l'Eau;3;Eau;023;Eau brute;23.1;27;degré Celsius;1;;;41749411900023;AQUABIO ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 32347,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363678;29-08-2012;3.5;6;Prélèvement ponctuel;1301;Température de l'Eau;3;Eau;023;Eau brute;23.1;27;degré Celsius;1;;;41749411900023;AQUABIO ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 32348,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363679;29-08-2012;4.0;6;Prélèvement ponctuel;1301;Température de l'Eau;3;Eau;023;Eau brute;23.1;27;degré Celsius;1;;;41749411900023;AQUABIO ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 32349,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363680;29-08-2012;4.5;6;Prélèvement ponctuel;1301;Température de l'Eau;3;Eau;023;Eau brute;23.1;27;degré Celsius;1;;;41749411900023;AQUABIO ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 32350,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363681;29-08-2012;5.0;6;Prélèvement ponctuel;1301;Température de l'Eau;3;Eau;023;Eau brute;23.1;27;degré Celsius;1;;;41749411900023;AQUABIO ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 32351,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363682;29-08-2012;5.5;6;Prélèvement ponctuel;1301;Température de l'Eau;3;Eau;023;Eau brute;23.1;27;degré Celsius;1;;;41749411900023;AQUABIO ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 32352,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363683;29-08-2012;6.0;6;Prélèvement ponctuel;1301;Température de l'Eau;3;Eau;023;Eau brute;23.1;27;degré Celsius;1;;;41749411900023;AQUABIO ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 32353,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363684;29-08-2012;6.5;6;Prélèvement ponctuel;1301;Température de l'Eau;3;Eau;023;Eau brute;23.1;27;degré Celsius;1;;;41749411900023;AQUABIO ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 32354,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363685;29-08-2012;7.0;6;Prélèvement ponctuel;1301;Température de l'Eau;3;Eau;023;Eau brute;23.1;27;degré Celsius;1;;;41749411900023;AQUABIO ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 32355,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363671;29-08-2012;0.0;6;Prélèvement ponctuel;1302;Potentiel en Hydrogène (pH);3;Eau;023;Eau brute;7.5;264;unité pH;1;;;41749411900023;AQUABIO ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 32356,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363672;29-08-2012;0.5;6;Prélèvement ponctuel;1302;Potentiel en Hydrogène (pH);3;Eau;023;Eau brute;7.52;264;unité pH;1;;;41749411900023;AQUABIO ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 32357,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363673;29-08-2012;1.0;6;Prélèvement ponctuel;1302;Potentiel en Hydrogène (pH);3;Eau;023;Eau brute;7.5;264;unité pH;1;;;41749411900023;AQUABIO ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 32358,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363674;29-08-2012;1.5;6;Prélèvement ponctuel;1302;Potentiel en Hydrogène (pH);3;Eau;023;Eau brute;7.54;264;unité pH;1;;;41749411900023;AQUABIO ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 32359,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363675;29-08-2012;2.0;6;Prélèvement ponctuel;1302;Potentiel en Hydrogène (pH);3;Eau;023;Eau brute;7.56;264;unité pH;1;;;41749411900023;AQUABIO ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 32360,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363676;29-08-2012;2.5;6;Prélèvement ponctuel;1302;Potentiel en Hydrogène (pH);3;Eau;023;Eau brute;7.54;264;unité pH;1;;;41749411900023;AQUABIO ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 32361,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363677;29-08-2012;3.0;6;Prélèvement ponctuel;1302;Potentiel en Hydrogène (pH);3;Eau;023;Eau brute;7.54;264;unité pH;1;;;41749411900023;AQUABIO ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 32362,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363678;29-08-2012;3.5;6;Prélèvement ponctuel;1302;Potentiel en Hydrogène (pH);3;Eau;023;Eau brute;7.57;264;unité pH;1;;;41749411900023;AQUABIO ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 32363,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363679;29-08-2012;4.0;6;Prélèvement ponctuel;1302;Potentiel en Hydrogène (pH);3;Eau;023;Eau brute;7.58;264;unité pH;1;;;41749411900023;AQUABIO ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 32364,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363680;29-08-2012;4.5;6;Prélèvement ponctuel;1302;Potentiel en Hydrogène (pH);3;Eau;023;Eau brute;7.6;264;unité pH;1;;;41749411900023;AQUABIO ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 32365,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363681;29-08-2012;5.0;6;Prélèvement ponctuel;1302;Potentiel en Hydrogène (pH);3;Eau;023;Eau brute;7.6;264;unité pH;1;;;41749411900023;AQUABIO ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 32366,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363682;29-08-2012;5.5;6;Prélèvement ponctuel;1302;Potentiel en Hydrogène (pH);3;Eau;023;Eau brute;7.57;264;unité pH;1;;;41749411900023;AQUABIO ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 32367,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363683;29-08-2012;6.0;6;Prélèvement ponctuel;1302;Potentiel en Hydrogène (pH);3;Eau;023;Eau brute;7.6;264;unité pH;1;;;41749411900023;AQUABIO ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 32368,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363684;29-08-2012;6.5;6;Prélèvement ponctuel;1302;Potentiel en Hydrogène (pH);3;Eau;023;Eau brute;7.61;264;unité pH;1;;;41749411900023;AQUABIO ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 32369,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363685;29-08-2012;7.0;6;Prélèvement ponctuel;1302;Potentiel en Hydrogène (pH);3;Eau;023;Eau brute;7.62;264;unité pH;1;;;41749411900023;AQUABIO ;41749411900023;AQUABIO "
+        }
+      ],
+      "header": "station;lib;eu_cd;num_prel;dateprel;profondeur;zone;libzone;codeparam;libparam;codesupport;libsupport;codefraction;libfraction;resultat;unite;libunite;remarque;code_reseau;nom_reseau;code_preleveur;nom_preleveur;code_laboratoire;nom_laboratoire"
+    },
+    {
+      "file": "etats.csv",
+      "hits": [
+        {
+          "line": 2480,
+          "text": "S1215013;Etang de Lacanau;1335;Ammonium;2007;2012;148.0;2;Bon;5 campagne(s), Seuil bon état : 217 µg/l"
+        },
+        {
+          "line": 2481,
+          "text": "S1215013;Etang de Lacanau;B_BIO;Biologie;2007;2012;;1;Très bon;"
+        },
+        {
+          "line": 2482,
+          "text": "S1215013;Etang de Lacanau;A_C;Chimie;2007;2012;;2;Bon;"
+        },
+        {
+          "line": 2483,
+          "text": "S1215013;Etang de Lacanau;CHI_AP;Chimie - Autres polluants;2007;2012;;2;Bon;"
+        },
+        {
+          "line": 2484,
+          "text": "S1215013;Etang de Lacanau;CHI_AP_B;Chimie - Autres polluants - Nombre de paramètres en bon état;2007;2012;12.0;U;;"
+        },
+        {
+          "line": 2485,
+          "text": "S1215013;Etang de Lacanau;CHI_AP_U;Chimie - Autres polluants - Nombre de paramètres en état inconnu;2007;2012;2.0;U;;"
+        },
+        {
+          "line": 2486,
+          "text": "S1215013;Etang de Lacanau;CHI_AP_M;Chimie - Autres polluants - Nombre de paramètres en mauvais état;2007;2012;0.0;U;;"
+        },
+        {
+          "line": 2487,
+          "text": "S1215013;Etang de Lacanau;CHI_IC;Chimie - Indice de confiance;2007;2012;2.0;U;;On peut se prononcer sur le bon état de 50 à 80% des 53 paramètres -> moyen"
+        },
+        {
+          "line": 2488,
+          "text": "S1215013;Etang de Lacanau;CHI_ML;Chimie - Métaux lourds;2007;2012;;2;Bon;"
+        },
+        {
+          "line": 2489,
+          "text": "S1215013;Etang de Lacanau;CHI_ML_B;Chimie - Métaux lourds - Nombre de paramètres en bon état;2007;2012;4.0;U;;"
+        },
+        {
+          "line": 2490,
+          "text": "S1215013;Etang de Lacanau;CHI_ML_U;Chimie - Métaux lourds - Nombre de paramètres en état inconnu;2007;2012;0.0;U;;"
+        },
+        {
+          "line": 2491,
+          "text": "S1215013;Etang de Lacanau;CHI_ML_M;Chimie - Métaux lourds - Nombre de paramètres en mauvais état;2007;2012;0.0;U;;"
+        },
+        {
+          "line": 2492,
+          "text": "S1215013;Etang de Lacanau;CHI_NBOP;Chimie - Nombre d'opérations de contrôle;2007;2012;8.0;U;;"
+        },
+        {
+          "line": 2493,
+          "text": "S1215013;Etang de Lacanau;CHI_P;Chimie - Pesticides;2007;2012;;2;Bon;"
+        },
+        {
+          "line": 2494,
+          "text": "S1215013;Etang de Lacanau;CHI_P_B;Chimie - Pesticides - Nombre de paramètres en bon état;2007;2012;13.0;U;;"
+        },
+        {
+          "line": 2495,
+          "text": "S1215013;Etang de Lacanau;CHI_P_U;Chimie - Pesticides - Nombre de paramètres en état inconnu;2007;2012;7.0;U;;"
+        },
+        {
+          "line": 2496,
+          "text": "S1215013;Etang de Lacanau;CHI_P_M;Chimie - Pesticides - Nombre de paramètres en mauvais état;2007;2012;0.0;U;;"
+        },
+        {
+          "line": 2497,
+          "text": "S1215013;Etang de Lacanau;CHI_PI;Chimie - Polluants industriels;2007;2012;;2;Bon;"
+        },
+        {
+          "line": 2498,
+          "text": "S1215013;Etang de Lacanau;CHI_PI_B;Chimie - Polluants industriels - Nombre de paramètres en bon état;2007;2012;13.0;U;;"
+        },
+        {
+          "line": 2499,
+          "text": "S1215013;Etang de Lacanau;CHI_PI_U;Chimie - Polluants industriels - Nombre de paramètres en état inconnu;2007;2012;3.0;U;;"
+        },
+        {
+          "line": 2500,
+          "text": "S1215013;Etang de Lacanau;CHI_PI_M;Chimie - Polluants industriels - Nombre de paramètres en mauvais état;2007;2012;0.0;U;;"
+        },
+        {
+          "line": 2501,
+          "text": "S1215013;Etang de Lacanau;A_CSU;Chimie (sans molécules ubiquistes);2007;2012;;2;Bon;"
+        },
+        {
+          "line": 2502,
+          "text": "S1215013;Etang de Lacanau;A_ECO;Ecologie;2007;2012;;1;Très bon;Bio et PC  en t.b.e."
+        },
+        {
+          "line": 2503,
+          "text": "S1215013;Etang de Lacanau;IIL;Indice poissons lacs (IIL);2007;2012;1.0;1;Très bon;Seuil bon état : 0.494"
+        },
+        {
+          "line": 2504,
+          "text": "S1215013;Etang de Lacanau;TRO_CH_MAX;Maximum annuel chlorophylle-a;2012;2012;16.1;3;Mésotrophe;4 mesures"
+        },
+        {
+          "line": 2505,
+          "text": "S1215013;Etang de Lacanau;TRO_TR_MIN;Minimum annuel de profondeur au disque de Sechi;2012;2012;2.2;3;Mésotrophe;4 mesures"
+        },
+        {
+          "line": 2506,
+          "text": "S1215013;Etang de Lacanau;TRO_CH_MOY;Moyenne annuelle chlorophylle-a;2012;2012;7.45;3;Mésotrophe;4 mesures"
+        },
+        {
+          "line": 2507,
+          "text": "S1215013;Etang de Lacanau;TRO_PT_MOY;Moyenne annuelle de phosphore total;2012;2012;0.02;3;Mésotrophe;4 mesures"
+        },
+        {
+          "line": 2508,
+          "text": "S1215013;Etang de Lacanau;TRO_TR_MOY;Moyenne annuelle de profondeur au disque de Sechi;2012;2012;2.7;4;Eutrophe;4 mesures"
+        },
+        {
+          "line": 2509,
+          "text": "S1215013;Etang de Lacanau;1340;Nitrates;2007;2012;1220.0;1;Très bon;5 campagne(s), Seuil bon état : 5300 µg/l (tps séjour > 30j, prof. 3,3 <= 15m)"
+        },
+        {
+          "line": 2510,
+          "text": "S1215013;Etang de Lacanau;C_NUTRI;Nutriments;2007;2012;;1;Très bon;, Assoupli"
+        },
+        {
+          "line": 2511,
+          "text": "S1215013;Etang de Lacanau;1350;Phosphore total;2007;2012;7.5;1;Très bon;5 campagne(s), Seuil bon état : 43 µg/l"
+        },
+        {
+          "line": 2512,
+          "text": "S1215013;Etang de Lacanau;B_PC;Physico chimie;2007;2012;;1;Très bon;"
+        },
+        {
+          "line": 2513,
+          "text": "S1215013;Etang de Lacanau;IPLAC;Phytoplancton (IPLAC);2007;2012;1.0;1;Très bon;Seuil bon état : 0.6"
+        },
+        {
+          "line": 2514,
+          "text": "S1215013;Etang de Lacanau;B_PS;Polluants spécifiques;2007;2012;;2;Bon;"
+        },
+        {
+          "line": 2515,
+          "text": "S1215013;Etang de Lacanau;PS_NON_SYN;Polluants spécifiques non synthétiques;2007;2012;;2;Bon;"
+        },
+        {
+          "line": 2516,
+          "text": "S1215013;Etang de Lacanau;PS_SYNTH;Polluants spécifiques synthétiques;2007;2012;;2;Bon;"
+        },
+        {
+          "line": 2517,
+          "text": "S1215013;Etang de Lacanau;1332;Secchi;2007;2012;2.2;1;Très bon;5 campagne(s), Seuil bon état : 1,21 m"
+        },
+        {
+          "line": 2518,
+          "text": "S1215013;Etang de Lacanau;C_TRANSP;Transparence;2007;2012;;1;Très bon;"
+        }
+      ],
+      "header": "station;nom_station;code_alteration;nom_alteration;annee_debut;annee_fin;indice;classe;libclasse;complement"
+    },
+    {
+      "file": "hydrobio.csv",
+      "hits": [
+        {
+          "line": 124,
+          "text": "S1215013;Etang de Lacanau;7937;MCS 2013;Métrique de Composition Spécifique (MCS) de l'IPLAC 2013;29-08-2012 12:00;1.16;IPLAC_BE;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 125,
+          "text": "S1215013;Etang de Lacanau;7937;MCS 2013;Métrique de Composition Spécifique (MCS) de l'IPLAC 2013;13-11-2012 12:00;1.16;IPLAC_BE;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 126,
+          "text": "S1215013;Etang de Lacanau;7937;MCS 2013;Métrique de Composition Spécifique (MCS) de l'IPLAC 2013;14-12-2012 12:00;1.16;IPLAC_BE;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 127,
+          "text": "S1215013;Etang de Lacanau;7938;MBA 2013;Métrique de Biomasse Algale totale (MBA) de l'IPLAC 2013;29-08-2012 12:00;0.74;IPLAC_BE;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 128,
+          "text": "S1215013;Etang de Lacanau;7938;MBA 2013;Métrique de Biomasse Algale totale (MBA) de l'IPLAC 2013;13-11-2012 12:00;0.74;IPLAC_BE;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 129,
+          "text": "S1215013;Etang de Lacanau;7938;MBA 2013;Métrique de Biomasse Algale totale (MBA) de l'IPLAC 2013;14-12-2012 12:00;0.74;IPLAC_BE;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 130,
+          "text": "S1215013;Etang de Lacanau;7939;IPLAC 2013;Indice Phytoplancton Lacustre (IPLAC) 2013;29-08-2012 12:00;1.0;IPLAC_BE;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 131,
+          "text": "S1215013;Etang de Lacanau;7939;IPLAC 2013;Indice Phytoplancton Lacustre (IPLAC) 2013;13-11-2012 12:00;1.0;IPLAC_BE;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 132,
+          "text": "S1215013;Etang de Lacanau;7939;IPLAC 2013;Indice Phytoplancton Lacustre (IPLAC) 2013;14-12-2012 12:00;1.0;IPLAC_BE;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 133,
+          "text": "S1215013;Etang de Lacanau;8049;IIL;Indice Ichtyologique Lacustre (IIL);10-09-2012 12:00;1.0;SEEE_IIL_v1.0.3;;;18006801702264;ONEMA DELEG. MIDI-PYRENEES AQUITAINE;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;18006801702264;ONEMA DELEG. MIDI-PYRENEES AQUITAINE"
+        },
+        {
+          "line": 134,
+          "text": "S1215013;Etang de Lacanau;8067;CPUEEQRIIL;Métrique Capture Par Unité d'Effort en EQR de l'IIL;10-09-2012 12:00;1.0;SEEE_IIL_v1.0.3;;;18006801702264;ONEMA DELEG. MIDI-PYRENEES AQUITAINE;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;18006801702264;ONEMA DELEG. MIDI-PYRENEES AQUITAINE"
+        },
+        {
+          "line": 135,
+          "text": "S1215013;Etang de Lacanau;8068;CPUEOEQRII;Métrique Capture par Unité d'Effort Omnivores en EQR de l'IIL;10-09-2012 12:00;0.8135112;SEEE_IIL_v1.0.3;;;18006801702264;ONEMA DELEG. MIDI-PYRENEES AQUITAINE;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;18006801702264;ONEMA DELEG. MIDI-PYRENEES AQUITAINE"
+        },
+        {
+          "line": 136,
+          "text": "S1215013;Etang de Lacanau;8069;BPUEEQRIIL;Métrique Biomasse par Unité d'Effort en EQR de l'IIL;10-09-2012 12:00;1.0;SEEE_IIL_v1.0.3;;;18006801702264;ONEMA DELEG. MIDI-PYRENEES AQUITAINE;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;18006801702264;ONEMA DELEG. MIDI-PYRENEES AQUITAINE"
+        },
+        {
+          "line": 137,
+          "text": "S1215013;Etang de Lacanau;8245;NbTxIILct;Nombre de taxons contributifs de l'IIL;10-09-2012 12:00;11.0;SEEE_IIL_v1.0.3;;;18006801702264;ONEMA DELEG. MIDI-PYRENEES AQUITAINE;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;18006801702264;ONEMA DELEG. MIDI-PYRENEES AQUITAINE"
+        }
+      ],
+      "header": "station;nom_station;code_indice;abr_indice;lib_indice;date;resultat;origine;code_reseau;nom_reseau;code_preleveur;nom_preleveur;code_producteur;nom_producteur;code_determinateur;nom_determinateur"
+    },
+    {
+      "file": "listes.csv",
+      "hits": [
+        {
+          "line": 1963,
+          "text": "S1215013;Etang de Lacanau;11;Phytoplancton;29-08-2012 12:00;BIOVOL;20157;;Groupe Chrysophycées indéterminées;0.092;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 1964,
+          "text": "S1215013;Etang de Lacanau;11;Phytoplancton;29-08-2012 12:00;BIOVOL;31228;;Groupe Diatomées centriques indéterminées <10 µm;0.001;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 1965,
+          "text": "S1215013;Etang de Lacanau;11;Phytoplancton;29-08-2012 12:00;BIOVOL;33639;;Acutodesmus acuminatus;0.0;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 1966,
+          "text": "S1215013;Etang de Lacanau;11;Phytoplancton;29-08-2012 12:00;BIOVOL;5402;;Euastrum ansatum;0.0;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 1967,
+          "text": "S1215013;Etang de Lacanau;11;Phytoplancton;29-08-2012 12:00;BIOVOL;5495;;Staurastrum tetracerum;5.295;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 1968,
+          "text": "S1215013;Etang de Lacanau;11;Phytoplancton;29-08-2012 12:00;BIOVOL;5501;;Staurodesmus cuspidatus;0.045;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 1969,
+          "text": "S1215013;Etang de Lacanau;11;Phytoplancton;29-08-2012 12:00;BIOVOL;5730;;Monoraphidium circinale;0.001;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 1970,
+          "text": "S1215013;Etang de Lacanau;11;Phytoplancton;29-08-2012 12:00;BIOVOL;5885;;Tetraedron caudatum;0.005;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 1971,
+          "text": "S1215013;Etang de Lacanau;11;Phytoplancton;29-08-2012 12:00;BIOVOL;6127;;Dinobryon bavaricum;0.024;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 1972,
+          "text": "S1215013;Etang de Lacanau;11;Phytoplancton;29-08-2012 12:00;BIOVOL;6271;;Cryptomonas erosa;0.139;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 1973,
+          "text": "S1215013;Etang de Lacanau;11;Phytoplancton;29-08-2012 12:00;BIOVOL;6273;;Cryptomonas marssonii;0.08;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 1974,
+          "text": "S1215013;Etang de Lacanau;11;Phytoplancton;29-08-2012 12:00;BIOVOL;6363;;Cyanothece aeruginosa;0.0;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 1975,
+          "text": "S1215013;Etang de Lacanau;11;Phytoplancton;29-08-2012 12:00;BIOVOL;6459;;Pseudanabaena limnetica;0.018;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 1976,
+          "text": "S1215013;Etang de Lacanau;11;Phytoplancton;29-08-2012 12:00;BIOVOL;6511;;Phacus longicauda;0.0;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 1977,
+          "text": "S1215013;Etang de Lacanau;11;Phytoplancton;29-08-2012 12:00;BIOVOL;6587;;Peridinium umbonatum;0.295;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 1978,
+          "text": "S1215013;Etang de Lacanau;11;Phytoplancton;29-08-2012 12:00;BIOVOL;6690;;Fragilaria nanana;0.332;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 1979,
+          "text": "S1215013;Etang de Lacanau;11;Phytoplancton;29-08-2012 12:00;BIOVOL;6832;;Tabellaria flocculosa;0.0;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 1980,
+          "text": "S1215013;Etang de Lacanau;11;Phytoplancton;29-08-2012 12:00;BIOVOL;8106;;Navicula radiosa;0.067;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 1981,
+          "text": "S1215013;Etang de Lacanau;11;Phytoplancton;29-08-2012 12:00;BIOVOL;9634;;Plagioselmis nannoplanctica;0.005;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 1982,
+          "text": "S1215013;Etang de Lacanau;11;Phytoplancton;29-08-2012 12:00;PHYTO;20157;;Groupe Chrysophycées indéterminées;878.6;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 1983,
+          "text": "S1215013;Etang de Lacanau;11;Phytoplancton;29-08-2012 12:00;PHYTO;31228;;Groupe Diatomées centriques indéterminées <10 µm;11.1;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 1984,
+          "text": "S1215013;Etang de Lacanau;11;Phytoplancton;29-08-2012 12:00;PHYTO;33639;;Acutodesmus acuminatus;0.2;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 1985,
+          "text": "S1215013;Etang de Lacanau;11;Phytoplancton;29-08-2012 12:00;PHYTO;5495;;Staurastrum tetracerum;789.7;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 1986,
+          "text": "S1215013;Etang de Lacanau;11;Phytoplancton;29-08-2012 12:00;PHYTO;5501;;Staurodesmus cuspidatus;44.5;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 1987,
+          "text": "S1215013;Etang de Lacanau;11;Phytoplancton;29-08-2012 12:00;PHYTO;5730;;Monoraphidium circinale;22.2;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 1988,
+          "text": "S1215013;Etang de Lacanau;11;Phytoplancton;29-08-2012 12:00;PHYTO;5885;;Tetraedron caudatum;11.1;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 1989,
+          "text": "S1215013;Etang de Lacanau;11;Phytoplancton;29-08-2012 12:00;PHYTO;6127;;Dinobryon bavaricum;111.2;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 1990,
+          "text": "S1215013;Etang de Lacanau;11;Phytoplancton;29-08-2012 12:00;PHYTO;6271;;Cryptomonas erosa;122.3;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 1991,
+          "text": "S1215013;Etang de Lacanau;11;Phytoplancton;29-08-2012 12:00;PHYTO;6273;;Cryptomonas marssonii;66.7;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 1992,
+          "text": "S1215013;Etang de Lacanau;11;Phytoplancton;29-08-2012 12:00;PHYTO;6459;;Pseudanabaena limnetica;1790.6;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 1993,
+          "text": "S1215013;Etang de Lacanau;11;Phytoplancton;29-08-2012 12:00;PHYTO;6587;;Peridinium umbonatum;33.4;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 1994,
+          "text": "S1215013;Etang de Lacanau;11;Phytoplancton;29-08-2012 12:00;PHYTO;6690;;Fragilaria nanana;2457.9;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 1995,
+          "text": "S1215013;Etang de Lacanau;11;Phytoplancton;29-08-2012 12:00;PHYTO;6832;;Tabellaria flocculosa;0.2;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 1996,
+          "text": "S1215013;Etang de Lacanau;11;Phytoplancton;29-08-2012 12:00;PHYTO;8106;;Navicula radiosa;11.1;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 1997,
+          "text": "S1215013;Etang de Lacanau;11;Phytoplancton;29-08-2012 12:00;PHYTO;9634;;Plagioselmis nannoplanctica;77.9;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 1998,
+          "text": "S1215013;Etang de Lacanau;11;Phytoplancton;13-11-2012 12:00;BIOVOL;20157;;Groupe Chrysophycées indéterminées;0.141;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 1999,
+          "text": "S1215013;Etang de Lacanau;11;Phytoplancton;13-11-2012 12:00;BIOVOL;24395;;Groupe Chlorococcales indéterminées;0.005;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 2000,
+          "text": "S1215013;Etang de Lacanau;11;Phytoplancton;13-11-2012 12:00;BIOVOL;24460;;Romeria elegans;0.001;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 2001,
+          "text": "S1215013;Etang de Lacanau;11;Phytoplancton;13-11-2012 12:00;BIOVOL;31948;;Desmodesmus serratus;0.001;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        },
+        {
+          "line": 2002,
+          "text": "S1215013;Etang de Lacanau;11;Phytoplancton;13-11-2012 12:00;BIOVOL;5495;;Staurastrum tetracerum;2.267;;;41749411900023;AQUABIO ;18310006400033;AGENCE DE L'EAU ADOUR-GARONNE ;41749411900023;AQUABIO "
+        }
+      ],
+      "header": "station;nom_station;code_support;nom_support;date;type_liste;code_taxon;code_alternatif;lib_taxon;denombrement;code_reseau;nom_reseau;code_preleveur;nom_preleveur;code_producteur;nom_producteur;code_determinateur;nom_determinateur"
+    },
+    {
+      "file": "mesure_environnementale.csv",
+      "hits": [
+        {
+          "line": 966,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363671;1409;Temp.air;Température de l'air;29-08-2012;22,4;22,4;"
+        },
+        {
+          "line": 967,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363671;1410;Asp Abord;Aspect des abords;29-08-2012;1;Propre;"
+        },
+        {
+          "line": 968,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363671;1411;Irisations;Irisations sur l'eau;29-08-2012;2;Non;"
+        },
+        {
+          "line": 969,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363671;1412;Mousse det;Présence de mousse de détergents à la surface;29-08-2012;2;Non;"
+        },
+        {
+          "line": 970,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363671;1413;Feuilles;Présence de produits ligneux ou herbacés frais;29-08-2012;2;Non;"
+        },
+        {
+          "line": 971,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363671;1415;Ombrage;Importance de l'ombrage aux alentours de la station de mesure;29-08-2012;1;Absent;"
+        },
+        {
+          "line": 972,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363671;1416;Odeur;Odeur;29-08-2012;1;Sans;"
+        },
+        {
+          "line": 973,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363671;1422;Limpidité;Limpidité de l'eau;29-08-2012;2;Légèrement trouble;"
+        },
+        {
+          "line": 974,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363671;1423;Boues surn;Présence de boues organiques flottantes;29-08-2012;2;Non;"
+        },
+        {
+          "line": 975,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363671;1424;Autr.corps;Présence de tout corps ou produit ne faisant pas l'objet d'une observation spécifique;29-08-2012;2;Non;"
+        },
+        {
+          "line": 976,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363671;1425;Météo;Conditions météorologiques pendant le prélèvement;29-08-2012;2;Faiblement nuageux;"
+        },
+        {
+          "line": 977,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363671;1428;Coloration;Coloration apparente de l'eau;29-08-2012;3;Très coloré;"
+        },
+        {
+          "line": 978,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363671;5915;Surfac.eau;Surface de l'eau;29-08-2012;2;Faiblement agitée;"
+        },
+        {
+          "line": 979,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363671;6565;Intensvent;Intensité du vent;29-08-2012;1;vent faible;"
+        },
+        {
+          "line": 980,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363671;6566;Marnage;Présence de marnage;29-08-2012;1;oui;"
+        },
+        {
+          "line": 981,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363671;6567;Amplimarna;Amplitude du marnage;29-08-2012;0;0;"
+        },
+        {
+          "line": 982,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363851;1409;Temp.air;Température de l'air;13-11-2012;11,5;11,5;"
+        },
+        {
+          "line": 983,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363851;1410;Asp Abord;Aspect des abords;13-11-2012;1;Propre;"
+        },
+        {
+          "line": 984,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363851;1411;Irisations;Irisations sur l'eau;13-11-2012;2;Non;"
+        },
+        {
+          "line": 985,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363851;1412;Mousse det;Présence de mousse de détergents à la surface;13-11-2012;2;Non;"
+        },
+        {
+          "line": 986,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363851;1413;Feuilles;Présence de produits ligneux ou herbacés frais;13-11-2012;2;Non;"
+        },
+        {
+          "line": 987,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363851;1415;Ombrage;Importance de l'ombrage aux alentours de la station de mesure;13-11-2012;1;Absent;"
+        },
+        {
+          "line": 988,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363851;1416;Odeur;Odeur;13-11-2012;1;Sans;"
+        },
+        {
+          "line": 989,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363851;1422;Limpidité;Limpidité de l'eau;13-11-2012;2;Légèrement trouble;"
+        },
+        {
+          "line": 990,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363851;1423;Boues surn;Présence de boues organiques flottantes;13-11-2012;2;Non;"
+        },
+        {
+          "line": 991,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363851;1424;Autr.corps;Présence de tout corps ou produit ne faisant pas l'objet d'une observation spécifique;13-11-2012;2;Non;"
+        },
+        {
+          "line": 992,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363851;1425;Météo;Conditions météorologiques pendant le prélèvement;13-11-2012;1;Ensoleillé;"
+        },
+        {
+          "line": 993,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363851;1428;Coloration;Coloration apparente de l'eau;13-11-2012;1;Incolore;"
+        },
+        {
+          "line": 994,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363851;5915;Surfac.eau;Surface de l'eau;13-11-2012;2;Faiblement agitée;"
+        },
+        {
+          "line": 995,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363851;6565;Intensvent;Intensité du vent;13-11-2012;1;vent faible;"
+        },
+        {
+          "line": 996,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363851;6566;Marnage;Présence de marnage;13-11-2012;1;oui;"
+        },
+        {
+          "line": 997,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1363851;6567;Amplimarna;Amplitude du marnage;13-11-2012;,6;,6;"
+        },
+        {
+          "line": 998,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1364038;1409;Temp.air;Température de l'air;14-12-2012;0;0;"
+        },
+        {
+          "line": 999,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1364038;1410;Asp Abord;Aspect des abords;14-12-2012;1;Propre;"
+        },
+        {
+          "line": 1000,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1364038;1411;Irisations;Irisations sur l'eau;14-12-2012;2;Non;"
+        },
+        {
+          "line": 1001,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1364038;1412;Mousse det;Présence de mousse de détergents à la surface;14-12-2012;2;Non;"
+        },
+        {
+          "line": 1002,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1364038;1413;Feuilles;Présence de produits ligneux ou herbacés frais;14-12-2012;2;Non;"
+        },
+        {
+          "line": 1003,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1364038;1415;Ombrage;Importance de l'ombrage aux alentours de la station de mesure;14-12-2012;1;Absent;"
+        },
+        {
+          "line": 1004,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1364038;1416;Odeur;Odeur;14-12-2012;1;Sans;"
+        },
+        {
+          "line": 1005,
+          "text": "S1215013;Etang de Lacanau;FRFL49;1364038;1422;Limpidité;Limpidité de l'eau;14-12-2012;1;Limpide;"
+        }
+      ],
+      "header": "station;nom_station;eu_cd;numprel;code_param;libcourt;libparam;date;resultat;resultat_textuel;commentaire"
+    },
+    {
+      "file": "stations.csv",
+      "hits": [
+        {
+          "line": 15,
+          "text": "S1215013;FRFL49;33214;Etang de Lacanau;374392.0;6439391.0;26;13.0;01-01-2007;;M"
+        }
+      ],
+      "header": "station;eu_cd;insee;libelle;x;y;proj;altitude;debut;fin;nature"
+    }
+  ],
+  "bathymetry_hits": [
+    {
+      "file": "analyse.csv",
+      "matches": [
+        {
+          "line": 1,
+          "text": "station;lib;eu_cd;num_prel;dateprel;profondeur;zone;libzone;codeparam;libparam;codesupport;libsupport;codefraction;libfraction;resultat;unite;libunite;remarque;code_reseau;nom_reseau;code_preleveur;nom_preleveur;code_laboratoire;nom_laboratoire"
+        }
+      ]
+    },
+    {
+      "file": "etats.csv",
+      "matches": [
+        {
+          "line": 57,
+          "text": "O0155023;Lac de Caillauas;TRO_TR_MIN;Minimum annuel de profondeur au disque de Sechi;2012;2012;0.25;5;Hyper-trophe;4 mesures"
+        },
+        {
+          "line": 60,
+          "text": "O0155023;Lac de Caillauas;TRO_TR_MOY;Moyenne annuelle de profondeur au disque de Sechi;2012;2012;3.53;3;Mésotrophe;4 mesures"
+        },
+        {
+          "line": 415,
+          "text": "O34-5003;Barrage de Pinet;TRO_TR_MIN;Minimum annuel de profondeur au disque de Sechi;2012;2012;2.07;3;Mésotrophe;4 mesures"
+        },
+        {
+          "line": 418,
+          "text": "O34-5003;Barrage de Pinet;TRO_TR_MOY;Moyenne annuelle de profondeur au disque de Sechi;2012;2012;3.61;3;Mésotrophe;4 mesures"
+        },
+        {
+          "line": 616,
+          "text": "O53-4003;Lac de Pareloup;TRO_TR_MIN;Minimum annuel de profondeur au disque de Sechi;2012;2012;3.2;2;Oligotrophe;4 mesures"
+        },
+        {
+          "line": 619,
+          "text": "O53-4003;Lac de Pareloup;TRO_TR_MOY;Moyenne annuelle de profondeur au disque de Sechi;2012;2012;4.06;3;Mésotrophe;4 mesures"
+        },
+        {
+          "line": 654,
+          "text": "O53-4013;Réservoir de Pont-de-Salars;TRO_TR_MIN;Minimum annuel de profondeur au disque de Sechi;2012;2012;1.75;3;Mésotrophe;4 mesures"
+        },
+        {
+          "line": 657,
+          "text": "O53-4013;Réservoir de Pont-de-Salars;TRO_TR_MOY;Moyenne annuelle de profondeur au disque de Sechi;2012;2012;2.3;4;Eutrophe;4 mesures"
+        },
+        {
+          "line": 822,
+          "text": "O6215553;Réservoir de Castelnau Magnoac;TRO_TR_MIN;Minimum annuel de profondeur au disque de Sechi;2012;2012;0.8;4;Eutrophe;4 mesures"
+        },
+        {
+          "line": 825,
+          "text": "O6215553;Réservoir de Castelnau Magnoac;TRO_TR_MOY;Moyenne annuelle de profondeur au disque de Sechi;2012;2012;1.85;4;Eutrophe;4 mesures"
+        },
+        {
+          "line": 860,
+          "text": "O6525013;Barrage de Puydarrieux;TRO_TR_MIN;Minimum annuel de profondeur au disque de Sechi;2012;2012;0.37;5;Hyper-trophe;4 mesures"
+        },
+        {
+          "line": 863,
+          "text": "O6525013;Barrage de Puydarrieux;TRO_TR_MOY;Moyenne annuelle de profondeur au disque de Sechi;2012;2012;1.08;5;Hyper-trophe;4 mesures"
+        },
+        {
+          "line": 996,
+          "text": "O7105003;Lac de Charpal;TRO_TR_MIN;Minimum annuel de profondeur au disque de Sechi;2012;2012;1.7;3;Mésotrophe;4 mesures"
+        },
+        {
+          "line": 999,
+          "text": "O7105003;Lac de Charpal;TRO_TR_MOY;Moyenne annuelle de profondeur au disque de Sechi;2012;2012;2.06;4;Eutrophe;4 mesures"
+        },
+        {
+          "line": 1067,
+          "text": "O7285003;Barrage de Golinhac;TRO_TR_MIN;Minimum annuel de profondeur au disque de Sechi;2012;2012;1.5;4;Eutrophe;4 mesures"
+        },
+        {
+          "line": 1070,
+          "text": "O7285003;Barrage de Golinhac;TRO_TR_MOY;Moyenne annuelle de profondeur au disque de Sechi;2012;2012;2.46;4;Eutrophe;4 mesures"
+        },
+        {
+          "line": 1140,
+          "text": "O77-5013;Barrage de Couesque;TRO_TR_MIN;Minimum annuel de profondeur au disque de Sechi;2012;2012;1.65;3;Mésotrophe;4 mesures"
+        },
+        {
+          "line": 1143,
+          "text": "O77-5013;Barrage de Couesque;TRO_TR_MOY;Moyenne annuelle de profondeur au disque de Sechi;2012;2012;1.96;4;Eutrophe;4 mesures"
+        },
+        {
+          "line": 1211,
+          "text": "O7785013;Lac des Galens;TRO_TR_MIN;Minimum annuel de profondeur au disque de Sechi;2012;2012;1.9;3;Mésotrophe;4 mesures"
+        },
+        {
+          "line": 1214,
+          "text": "O7785013;Lac des Galens;TRO_TR_MOY;Moyenne annuelle de profondeur au disque de Sechi;2012;2012;2.24;4;Eutrophe;4 mesures"
+        },
+        {
+          "line": 1376,
+          "text": "O97-4003;Lac de Bordeaux;TRO_TR_MIN;Minimum annuel de profondeur au disque de Sechi;2012;2012;2.2;3;Mésotrophe;4 mesures"
+        },
+        {
+          "line": 1379,
+          "text": "O97-4003;Lac de Bordeaux;TRO_TR_MOY;Moyenne annuelle de profondeur au disque de Sechi;2012;2012;3.45;3;Mésotrophe;4 mesures"
+        },
+        {
+          "line": 1767,
+          "text": "P18-4003;Barrage de Saint-Etienne-Cantalès;TRO_TR_MIN;Minimum annuel de profondeur au disque de Sechi;2012;2012;2.1;3;Mésotrophe;4 mesures"
+        },
+        {
+          "line": 1770,
+          "text": "P18-4003;Barrage de Saint-Etienne-Cantalès;TRO_TR_MOY;Moyenne annuelle de profondeur au disque de Sechi;2012;2012;2.59;4;Eutrophe;4 mesures"
+        },
+        {
+          "line": 1933,
+          "text": "Q0555003;Barrage de l'Arrêt Darré;TRO_TR_MIN;Minimum annuel de profondeur au disque de Sechi;2012;2012;0.4;5;Hyper-trophe;4 mesures"
+        },
+        {
+          "line": 1936,
+          "text": "Q0555003;Barrage de l'Arrêt Darré;TRO_TR_MOY;Moyenne annuelle de profondeur au disque de Sechi;2012;2012;0.96;5;Hyper-trophe;4 mesures"
+        },
+        {
+          "line": 2297,
+          "text": "Q4615043;Lac de Migouélou;TRO_TR_MIN;Minimum annuel de profondeur au disque de Sechi;2012;2012;7.0;1;Ultra-oligotrophe;4 mesures"
+        },
+        {
+          "line": 2300,
+          "text": "Q4615043;Lac de Migouélou;TRO_TR_MOY;Moyenne annuelle de profondeur au disque de Sechi;2012;2012;12.1;1;Ultra-oligotrophe;4 mesures"
+        },
+        {
+          "line": 2466,
+          "text": "S1205023;Etang de Carcans-Hourtin;TRO_TR_MIN;Minimum annuel de profondeur au disque de Sechi;2012;2012;2.8;3;Mésotrophe;4 mesures"
+        },
+        {
+          "line": 2469,
+          "text": "S1205023;Etang de Carcans-Hourtin;TRO_TR_MOY;Moyenne annuelle de profondeur au disque de Sechi;2012;2012;3.02;3;Mésotrophe;4 mesures"
+        },
+        {
+          "line": 2505,
+          "text": "S1215013;Etang de Lacanau;TRO_TR_MIN;Minimum annuel de profondeur au disque de Sechi;2012;2012;2.2;3;Mésotrophe;4 mesures"
+        },
+        {
+          "line": 2508,
+          "text": "S1215013;Etang de Lacanau;TRO_TR_MOY;Moyenne annuelle de profondeur au disque de Sechi;2012;2012;2.7;4;Eutrophe;4 mesures"
+        },
+        {
+          "line": 2543,
+          "text": "S3025003;Etang de Cazaux-Sanguinet;TRO_TR_MIN;Minimum annuel de profondeur au disque de Sechi;2012;2012;2.0;3;Mésotrophe;4 mesures"
+        },
+        {
+          "line": 2546,
+          "text": "S3025003;Etang de Cazaux-Sanguinet;TRO_TR_MOY;Moyenne annuelle de profondeur au disque de Sechi;2012;2012;3.55;3;Mésotrophe;4 mesures"
+        },
+        {
+          "line": 2582,
+          "text": "S3105033;Petit étang de Biscarrosse;TRO_TR_MIN;Minimum annuel de profondeur au disque de Sechi;2012;2012;0.95;4;Eutrophe;4 mesures"
+        },
+        {
+          "line": 2585,
+          "text": "S3105033;Petit étang de Biscarrosse;TRO_TR_MOY;Moyenne annuelle de profondeur au disque de Sechi;2012;2012;1.4;5;Hyper-trophe;4 mesures"
+        },
+        {
+          "line": 2621,
+          "text": "S31-4003;Etang de Parentis-Biscarrosse;TRO_TR_MIN;Minimum annuel de profondeur au disque de Sechi;2012;2012;2.27;3;Mésotrophe;4 mesures"
+        },
+        {
+          "line": 2624,
+          "text": "S31-4003;Etang de Parentis-Biscarrosse;TRO_TR_MOY;Moyenne annuelle de profondeur au disque de Sechi;2012;2012;2.91;4;Eutrophe;4 mesures"
+        },
+        {
+          "line": 2660,
+          "text": "S32-4003;Etang d'Aureilhan;TRO_TR_MIN;Minimum annuel de profondeur au disque de Sechi;2012;2012;0.98;4;Eutrophe;4 mesures"
+        },
+        {
+          "line": 2663,
+          "text": "S32-4003;Etang d'Aureilhan;TRO_TR_MOY;Moyenne annuelle de profondeur au disque de Sechi;2012;2012;1.3;5;Hyper-trophe;4 mesures"
+        }
+      ]
+    }
+  ]
+}
