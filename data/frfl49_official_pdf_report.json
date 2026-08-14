@@ -1,0 +1,162 @@
+{
+  "url": "https://adour-garonne.eaufrance.fr/upload/DOC/FICHES/LACS/BATHYMETRIE/FRFL49_Bathym.pdf",
+  "bytes": 468681,
+  "content_type": "application/pdf",
+  "metadata": {
+    "format": "PDF 1.6",
+    "title": "",
+    "author": "",
+    "subject": "",
+    "keywords": "",
+    "creator": "Esri ArcMap 10.1.0.3035",
+    "producer": "",
+    "creationDate": "D:20130625100607Z",
+    "modDate": "D:20131126153533+01'00'",
+    "trapped": "",
+    "encryption": null
+  },
+  "pages": [
+    {
+      "page": 1,
+      "rect": [
+        0.0,
+        0.0,
+        1190.2393798828125,
+        841.492919921875
+      ],
+      "rotation": 0,
+      "text_chars": 480,
+      "text_excerpt": "Ü\n0\n150 300\nkm\nNational Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC\nÜ\n0\n1,5\n3\nkm\nBathymétrie\nSuivi de la qualité des plans d'eau \ndu bassin Adour Garonne\nLot 1\nSuivi 2012\nEtang de Lacanau\nSource : IGN, BdCarthage,\nMise à jour le 25/06/2013\nConception et realisation :\nLégende :\nPlan d'eau\nCote du plan d'eau : 13.21 NGF\nMise à l'eau\nPoint profond\nClasse de profondeur en m\n0 - 1\n1 - 2\n2 - 3\n3 - 4\n4 - 5\n5 - 6\n6 - 7\n7 - 8\n'\nO\nk\nk\nO\n",
+      "drawing_paths": 387,
+      "drawing_items": 38326,
+      "top_fills": [
+        [
+          "(0.3019599914550781, 0.6745100021362305, 0.7882400155067444)",
+          95
+        ],
+        [
+          "(0.0, 0.0, 0.0)",
+          2
+        ],
+        [
+          "(1.0, 0.0, 0.0)",
+          1
+        ],
+        [
+          "(0.713729977607727, 0.9294099807739258, 0.9411799907684326)",
+          1
+        ],
+        [
+          "(0.5686299800872803, 0.8039199709892273, 0.9294099807739258)",
+          1
+        ],
+        [
+          "(0.41960999369621277, 0.6823499798774719, 0.9097999930381775)",
+          1
+        ],
+        [
+          "(0.23921999335289001, 0.5647100210189819, 0.8902000188827515)",
+          1
+        ],
+        [
+          "(0.1254899948835373, 0.4470599889755249, 0.8392199873924255)",
+          1
+        ],
+        [
+          "(0.1254899948835373, 0.2980400025844574, 0.7411800026893616)",
+          1
+        ],
+        [
+          "(0.09803999960422516, 0.1725499927997589, 0.6588199734687805)",
+          1
+        ],
+        [
+          "(0.03528999909758568, 0.03528999909758568, 0.5686299800872803)",
+          1
+        ]
+      ],
+      "top_strokes": [
+        [
+          "(1.0, 1.0, 1.0)",
+          242
+        ],
+        [
+          "(0.43136999011039734, 0.43136999011039734, 0.43136999011039734)",
+          103
+        ],
+        [
+          "(0.0, 0.0, 0.0)",
+          6
+        ],
+        [
+          "(0.07842999696731567, 0.4823499917984009, 0.5803899765014648)",
+          5
+        ],
+        [
+          "(1.0, 0.0, 0.0)",
+          1
+        ]
+      ],
+      "images": [
+        {
+          "xref": 24,
+          "width": 1924,
+          "height": 273,
+          "ext": "jpeg",
+          "bytes": 34821
+        },
+        {
+          "xref": 25,
+          "width": 1924,
+          "height": 273,
+          "ext": "jpeg",
+          "bytes": 26378
+        },
+        {
+          "xref": 26,
+          "width": 1924,
+          "height": 67,
+          "ext": "png",
+          "bytes": 40560
+        },
+        {
+          "xref": 27,
+          "width": 344,
+          "height": 131,
+          "ext": "png",
+          "bytes": 14554
+        },
+        {
+          "xref": 28,
+          "width": 360,
+          "height": 315,
+          "ext": "png",
+          "bytes": 7647
+        },
+        {
+          "xref": 29,
+          "width": 1924,
+          "height": 273,
+          "ext": "jpeg",
+          "bytes": 28047
+        },
+        {
+          "xref": 30,
+          "width": 1924,
+          "height": 273,
+          "ext": "jpeg",
+          "bytes": 33726
+        },
+        {
+          "xref": 31,
+          "width": 1924,
+          "height": 273,
+          "ext": "jpeg",
+          "bytes": 37820
+        }
+      ],
+      "links": []
+    }
+  ],
+  "embedded_files": []
+}
