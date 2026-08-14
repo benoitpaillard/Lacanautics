@@ -1,0 +1,15 @@
+{
+  "version": "2.1-islands",
+  "island_features": 6,
+  "names": [
+    "",
+    "",
+    "",
+    "",
+    "Le Bois de Sémignan",
+    "Place des Oiseaux"
+  ],
+  "masked_grid_cells": 47,
+  "valid_cells_before": 50229,
+  "valid_cells_after": 50186
+}
