@@ -1,0 +1,146 @@
+{
+  "version": "4.0",
+  "pdf_bytes": 468681,
+  "pdf_metadata": {
+    "format": "PDF 1.6",
+    "title": "",
+    "author": "",
+    "subject": "",
+    "keywords": "",
+    "creator": "Esri ArcMap 10.1.0.3035",
+    "producer": "",
+    "creationDate": "D:20130625100607Z",
+    "modDate": "D:20131126153533+01'00'",
+    "trapped": "",
+    "encryption": null
+  },
+  "geopdf": {
+    "viewport_pdf_bbox": [
+      247.0,
+      714.0,
+      1171.0,
+      29.0
+    ],
+    "viewport_clip": [
+      247.0,
+      127.492919921875,
+      1171.0,
+      812.492919921875
+    ],
+    "gpts_latlon": [
+      [
+        44.93178,
+        -1.18496
+      ],
+      [
+        45.00437,
+        -1.18496
+      ],
+      [
+        45.00437,
+        -1.04651
+      ],
+      [
+        44.93178,
+        -1.04651
+      ]
+    ],
+    "bbox": {
+      "west": -1.18496,
+      "south": 44.93178,
+      "east": -1.04651,
+      "north": 45.00437
+    }
+  },
+  "render": {
+    "width": 1925,
+    "height": 1427,
+    "zoom": 2.0822510822510822
+  },
+  "crop_px": [
+    306,
+    0,
+    1510,
+    1427
+  ],
+  "output": {
+    "version": "4.0",
+    "source_url": "https://adour-garonne.eaufrance.fr/upload/DOC/FICHES/LACS/BATHYMETRIE/FRFL49_Bathym.pdf",
+    "source": "Adour-Garonne FRFL49_Bathym GeoPDF",
+    "creator": "Esri ArcMap 10.1.0.3035",
+    "water_level_reference_ngf_m": 13.21,
+    "vertical_definition": "official 1 m classes: 0=0–1 m ... 7=7–8 m",
+    "bbox": {
+      "west": -1.1629518441558442,
+      "south": 44.93178,
+      "east": -1.0763576623376623,
+      "north": 45.00437
+    },
+    "width": 1204,
+    "height": 1427,
+    "palette_rgb": [
+      [
+        217,
+        246,
+        242
+      ],
+      [
+        198,
+        239,
+        238
+      ],
+      [
+        175,
+        229,
+        236
+      ],
+      [
+        150,
+        217,
+        235
+      ],
+      [
+        97,
+        185,
+        230
+      ],
+      [
+        50,
+        127,
+        205
+      ],
+      [
+        49,
+        88,
+        180
+      ],
+      [
+        37,
+        28,
+        88
+      ]
+    ],
+    "georef_method": "embedded GeoPDF GPTS/LPTS; no manual calibration",
+    "native_resolution_m_per_px": [
+      5.664509096925657,
+      5.662732165381777
+    ]
+  },
+  "class_pixels": {
+    "0": 108793,
+    "1": 154454,
+    "2": 149601,
+    "3": 67741,
+    "4": 54399,
+    "5": 31970,
+    "6": 9472,
+    "7": 95687
+  },
+  "water_pixels": 672117,
+  "osm_island_pixels_removed": 539,
+  "segmentation_distance": {
+    "median_rgb_distance": NaN,
+    "p95_rgb_distance": NaN
+  },
+  "warning": "Official cartographic depth classes, not raw soundings. Not a certified navigation chart."
+}
