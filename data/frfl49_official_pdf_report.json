@@ -15,6 +15,66 @@
     "trapped": "",
     "encryption": null
   },
+  "pdf_xref_count": 65,
+  "geospatial_probe": {
+    "raw_token_presence": {
+      "/LGIDict": false,
+      "/GPTS": false,
+      "/LPTS": false,
+      "/VP": true,
+      "/Measure": true,
+      "/GCS": false,
+      "/DCS": false,
+      "/Projection": false,
+      "/WKT": false,
+      "/EPSG": false,
+      "/Geo": false
+    },
+    "xref_hits": [
+      {
+        "xref": 9,
+        "tokens": [
+          "/VP",
+          "/Measure"
+        ],
+        "object": "<<\n  /Contents [ 11 0 R 12 0 R 13 0 R 14 0 R 15 0 R 16 0 R 17 0 R\n      18 0 R ]\n  /CropBox [ 0 0 1190.2394 841.4929 ]\n  /MediaBox [ 0 0 1190.2394 841.4929 ]\n  /Parent 5 0 R\n  /Resources 43 0 R\n  /Rotate 0\n  /Type /Page\n  /VP [ <<\n        /BBox [ 17 714 248 461 ]\n        /Measure 62 0 R\n        /Name <FFFE4600720061006E00630065000000>\n        /Type /Viewport\n      >> <<\n        /BBox [ 247 714 1171 29 ]\n        /Measure 60 0 R\n        /Name <FFFE45006D007000720069007300650020007A006F006E006500200064002700E90074007500640065000000>\n        /Type /Viewport\n      >> ]\n>>"
+      },
+      {
+        "xref": 60,
+        "tokens": [
+          "/GPTS",
+          "/LPTS",
+          "/Measure",
+          "/GCS"
+        ],
+        "object": "<<\n  /Bounds [ 0 1 0 0 1 0 1 1 ]\n  /GCS 61 0 R\n  /GPTS [ 44.93178 -1.18496 45.00437 -1.18496 45.00437 -1.04651\n      44.93178 -1.04651 ]\n  /LPTS [ 0 1 0 0 1 0 1 1 ]\n  /Subtype /GEO\n  /Type /Measure\n>>"
+      },
+      {
+        "xref": 61,
+        "tokens": [
+          "/WKT"
+        ],
+        "object": "<<\n  /Type /PROJCS\n  /WKT (PROJCS[\"WGS_1984_Web_Mercator_Auxiliary_Sphere\",GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Mercator_Auxiliary_Sphere\"],PARAMETER[\"False_Easting\",0.0],PARAMETER[\"False_Northing\",0.0],PARAMETER[\"Central_Meridian\",0.0],PARAMETER[\"Standard_Parallel_1\",0.0],PARAMETER[\"Auxiliary_Sphere_Type\",0.0],UNIT[\"Meter\",1.0]])\n>>"
+      },
+      {
+        "xref": 62,
+        "tokens": [
+          "/GPTS",
+          "/LPTS",
+          "/Measure",
+          "/GCS"
+        ],
+        "object": "<<\n  /Bounds [ 0 1 0 0 1 0 1 1 ]\n  /GCS 63 0 R\n  /GPTS [ 39.87949 -4.5568 52.14967 -6.46604 52.19742 11.79746\n      39.91767 10.0214 ]\n  /LPTS [ 0 1 0 0 1 0 1 1 ]\n  /Subtype /GEO\n  /Type /Measure\n>>"
+      },
+      {
+        "xref": 63,
+        "tokens": [
+          "/WKT"
+        ],
+        "object": "<<\n  /Type /PROJCS\n  /WKT (PROJCS[\"RGF_1993_Lambert_93\",GEOGCS[\"GCS_RGF_1993\",DATUM[\"D_RGF_1993\",SPHEROID[\"GRS_1980\",6378137.0,298.257222101]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Lambert_Conformal_Conic\"],PARAMETER[\"False_Easting\",700000.0],PARAMETER[\"False_Northing\",6600000.0],PARAMETER[\"Central_Meridian\",3.0],PARAMETER[\"Standard_Parallel_1\",44.0],PARAMETER[\"Standard_Parallel_2\",49.0],PARAMETER[\"Latitude_Of_Origin\",46.5],UNIT[\"Meter\",1.0]])\n>>"
+      }
+    ]
+  },
   "pages": [
     {
       "page": 1,
@@ -29,6 +89,160 @@
       "text_excerpt": "Ü\n0\n150 300\nkm\nNational Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC\nÜ\n0\n1,5\n3\nkm\nBathymétrie\nSuivi de la qualité des plans d'eau \ndu bassin Adour Garonne\nLot 1\nSuivi 2012\nEtang de Lacanau\nSource : IGN, BdCarthage,\nMise à jour le 25/06/2013\nConception et realisation :\nLégende :\nPlan d'eau\nCote du plan d'eau : 13.21 NGF\nMise à l'eau\nPoint profond\nClasse de profondeur en m\n0 - 1\n1 - 2\n2 - 3\n3 - 4\n4 - 5\n5 - 6\n6 - 7\n7 - 8\n'\nO\nk\nk\nO\n",
       "drawing_paths": 387,
       "drawing_items": 38326,
+      "depth_class_drawings": [
+        {
+          "depth_class": 0,
+          "rgb": [
+            182,
+            237,
+            240
+          ],
+          "drawing_index": 370,
+          "rect": [
+            24.482460021972656,
+            552.30419921875,
+            66.48667907714844,
+            573.1866455078125
+          ],
+          "items": 4,
+          "closePath": false,
+          "even_odd": true,
+          "layer": ""
+        },
+        {
+          "depth_class": 1,
+          "rgb": [
+            145,
+            205,
+            237
+          ],
+          "drawing_index": 373,
+          "rect": [
+            24.482460021972656,
+            580.6275024414062,
+            66.48667907714844,
+            601.5099487304688
+          ],
+          "items": 4,
+          "closePath": false,
+          "even_odd": true,
+          "layer": ""
+        },
+        {
+          "depth_class": 2,
+          "rgb": [
+            107,
+            174,
+            232
+          ],
+          "drawing_index": 375,
+          "rect": [
+            24.482460021972656,
+            609.1907958984375,
+            66.48667907714844,
+            630.0732421875
+          ],
+          "items": 4,
+          "closePath": false,
+          "even_odd": true,
+          "layer": ""
+        },
+        {
+          "depth_class": 3,
+          "rgb": [
+            61,
+            144,
+            227
+          ],
+          "drawing_index": 377,
+          "rect": [
+            24.482460021972656,
+            637.5140991210938,
+            66.48667907714844,
+            658.3965454101562
+          ],
+          "items": 4,
+          "closePath": false,
+          "even_odd": true,
+          "layer": ""
+        },
+        {
+          "depth_class": 4,
+          "rgb": [
+            32,
+            114,
+            214
+          ],
+          "drawing_index": 379,
+          "rect": [
+            24.482460021972656,
+            665.83740234375,
+            66.48667907714844,
+            686.9598388671875
+          ],
+          "items": 4,
+          "closePath": false,
+          "even_odd": true,
+          "layer": ""
+        },
+        {
+          "depth_class": 5,
+          "rgb": [
+            32,
+            76,
+            189
+          ],
+          "drawing_index": 381,
+          "rect": [
+            24.482460021972656,
+            694.4007568359375,
+            66.48667907714844,
+            715.2831420898438
+          ],
+          "items": 4,
+          "closePath": false,
+          "even_odd": true,
+          "layer": ""
+        },
+        {
+          "depth_class": 6,
+          "rgb": [
+            25,
+            44,
+            168
+          ],
+          "drawing_index": 383,
+          "rect": [
+            24.482460021972656,
+            722.7239990234375,
+            66.48667907714844,
+            743.8464965820312
+          ],
+          "items": 4,
+          "closePath": false,
+          "even_odd": true,
+          "layer": ""
+        },
+        {
+          "depth_class": 7,
+          "rgb": [
+            9,
+            9,
+            145
+          ],
+          "drawing_index": 385,
+          "rect": [
+            24.482460021972656,
+            751.287353515625,
+            66.48667907714844,
+            772.1697998046875
+          ],
+          "items": 4,
+          "closePath": false,
+          "even_odd": true,
+          "layer": ""
+        }
+      ],
       "top_fills": [
         [
           "(0.3019599914550781, 0.6745100021362305, 0.7882400155067444)",
