@@ -7,6 +7,7 @@ on:
     paths:
       - '.github/workflows/extract-bathymetry.yml'
       - 'tools/extract_lacanau.py'
+      - 'tools/build_hires_bathymetry.py'
 
 permissions:
   contents: write
@@ -20,16 +21,20 @@ jobs:
         with:
           python-version: '3.12'
       - name: Install dependencies
-        run: pip install pyproj
+        run: pip install numpy scipy matplotlib
       - name: Extract Lacanau soundings
         run: python tools/extract_lacanau.py
-      - name: Show report
-        run: cat data/lacanau_soundings_report.json
-      - name: Commit extracted public data
+      - name: Build high-resolution bathymetry
+        run: python tools/build_hires_bathymetry.py
+      - name: Show QC reports
+        run: |
+          cat data/lacanau_soundings_report.json
+          cat data/lacanau_hires_report.json
+      - name: Commit extracted and derived public data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/lacanau_soundings_raw.csv data/lacanau_soundings.geojson data/lacanau_soundings_report.json
+          git add data/lacanau_soundings_raw.csv data/lacanau_soundings.geojson data/lacanau_soundings_report.json data/lacanau_depth_grid.json data/lacanau_hires_report.json bathymetry-hires.svg
           git diff --cached --quiet && exit 0
-          git commit -m "Add official Lacanau bathymetry soundings"
+          git commit -m "Add high-resolution Lacanau bathymetry"
           git push
