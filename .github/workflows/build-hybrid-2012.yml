@@ -21,6 +21,14 @@ jobs:
           python-version: '3.12'
       - name: Install numerical dependencies
         run: pip install numpy scipy pillow shapely
+      - name: Verify exact 2012 source
+        run: |
+          python - <<'PY'
+          from PIL import Image
+          im=Image.open('data/lacanau_2012_best.png')
+          assert im.size==(2048,1448), f'Unexpected source {im.size}'
+          print('Verified Aquabio source:', im.size)
+          PY
       - name: Build and calibrate 2012 layer
         run: python tools/build_hybrid_2012.py
       - name: Show validation report
