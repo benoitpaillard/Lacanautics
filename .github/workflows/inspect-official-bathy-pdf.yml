@@ -1,0 +1,28 @@
+name: Inspect official Lacanau bathymetry PDF
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/inspect-official-bathy-pdf.yml'
+      - 'tools/inspect_official_bathy_pdf.py'
+permissions:
+  contents: write
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pymupdf
+      - run: python tools/inspect_official_bathy_pdf.py
+      - run: cat data/frfl49_official_pdf_report.json
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/frfl49_official_pdf_report.json data/frfl49_page_*.svg
+          git diff --cached --quiet && exit 0
+          git commit -m "Add official FRFL49 PDF structure inspection"
+          git push
