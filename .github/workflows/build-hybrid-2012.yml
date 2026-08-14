@@ -7,6 +7,7 @@ on:
     paths:
       - '.github/workflows/build-hybrid-2012.yml'
       - 'tools/build_hybrid_2012.py'
+      - 'tools/build_hybrid_2012_auto_palette.py'
 
 permissions:
   contents: write
@@ -29,8 +30,8 @@ jobs:
           assert im.size==(2048,1448), f'Unexpected source {im.size}'
           print('Verified Aquabio source:', im.size)
           PY
-      - name: Build and calibrate 2012 layer
-        run: python tools/build_hybrid_2012.py
+      - name: Detect legend, build and calibrate 2012 layer
+        run: python tools/build_hybrid_2012_auto_palette.py
       - name: Show validation report
         run: cat data/lacanau_2012_hybrid_report.json
       - name: Commit validated hybrid products
@@ -39,5 +40,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add bathymetry-2012-v3.webp data/lacanau_2012_bands_v3.json data/lacanau_2012_hybrid_report.json
           git diff --cached --quiet && exit 0
-          git commit -m "Add calibrated 2012 survey bathymetry v3"
+          git commit -m "Add auto-segmented 2012 survey bathymetry v3"
           git push
