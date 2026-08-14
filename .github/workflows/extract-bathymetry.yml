@@ -24,17 +24,17 @@ jobs:
         run: pip install numpy scipy matplotlib
       - name: Extract Lacanau soundings
         run: python tools/extract_lacanau.py
-      - name: Build high-resolution bathymetry
+      - name: Build bathymetry v2
         run: python tools/build_hires_bathymetry.py
       - name: Show QC reports
         run: |
           cat data/lacanau_soundings_report.json
-          cat data/lacanau_hires_report.json
+          cat data/lacanau_hires_v2_report.json
       - name: Commit extracted and derived public data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/lacanau_soundings_raw.csv data/lacanau_soundings.geojson data/lacanau_soundings_report.json data/lacanau_depth_grid.json data/lacanau_hires_report.json bathymetry-hires.svg
+          git add data/lacanau_soundings_raw.csv data/lacanau_soundings.geojson data/lacanau_soundings_report.json data/lacanau_depth_grid_v2.json data/lacanau_hires_v2_report.json bathymetry-v2.svg
           git diff --cached --quiet && exit 0
-          git commit -m "Add high-resolution Lacanau bathymetry"
+          git commit -m "Publish shoreline-aware bathymetry v2"
           git push
