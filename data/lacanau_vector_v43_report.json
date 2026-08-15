@@ -1,0 +1,128 @@
+{
+  "version": "4.3-subpixel",
+  "source_version": "4.1-fixed",
+  "method": "native RGB transition projection + 0.42 px regularization for internal class boundaries; 0.62 px shoreline regularization; cumulative nesting enforced",
+  "source_resolution_m_per_px": [
+    5.6650782484264655,
+    5.663059626851989
+  ],
+  "vertical_definition": "official 1 m classes",
+  "layers": [
+    {
+      "threshold_m": 0,
+      "rings": 5,
+      "vertices_scalar_contour": 7165,
+      "vertices_after_0_10px_geometric_compression": 3581
+    },
+    {
+      "threshold_m": 1,
+      "rings": 243,
+      "vertices_scalar_contour": 21317,
+      "vertices_after_0_10px_geometric_compression": 12473
+    },
+    {
+      "threshold_m": 2,
+      "rings": 385,
+      "vertices_scalar_contour": 18362,
+      "vertices_after_0_10px_geometric_compression": 10621
+    },
+    {
+      "threshold_m": 3,
+      "rings": 32,
+      "vertices_scalar_contour": 7450,
+      "vertices_after_0_10px_geometric_compression": 4378
+    },
+    {
+      "threshold_m": 4,
+      "rings": 30,
+      "vertices_scalar_contour": 5314,
+      "vertices_after_0_10px_geometric_compression": 3162
+    },
+    {
+      "threshold_m": 5,
+      "rings": 19,
+      "vertices_scalar_contour": 3511,
+      "vertices_after_0_10px_geometric_compression": 1942
+    },
+    {
+      "threshold_m": 6,
+      "rings": 8,
+      "vertices_scalar_contour": 1330,
+      "vertices_after_0_10px_geometric_compression": 747
+    },
+    {
+      "threshold_m": 7,
+      "rings": 3,
+      "vertices_scalar_contour": 91,
+      "vertices_after_0_10px_geometric_compression": 58
+    }
+  ],
+  "svg_bytes": 671074,
+  "qc": {
+    "water_mask_iou": 0.9996480969221612,
+    "stable_interior_exact_class_fraction": 1.0,
+    "all_overlap_exact_class_fraction": 0.9925093567364124,
+    "all_overlap_within_1m_fraction": 0.999283686440307,
+    "relative_area_error_by_class": [
+      -0.009956033574361397,
+      0.003978840997872242,
+      0.00507705008255366,
+      -0.0021380123857269243,
+      -0.0003115607360164211,
+      -0.0014162077104642014,
+      -0.0008441489922971405,
+      1.3831775700934579
+    ],
+    "mean_depth_midpoint_original_m": 2.392721413685003,
+    "mean_depth_midpoint_vector_m": 2.396225110256334,
+    "boundary_displacement_px": {
+      "p50": 0.0,
+      "p95": 1.0,
+      "p99": 30.0,
+      "max": 762.5693411093839,
+      "per_threshold": [
+        {
+          "threshold_m": 0,
+          "p95_boundary_displacement_px": 0.0,
+          "max_boundary_displacement_px": 1.0
+        },
+        {
+          "threshold_m": 1,
+          "p95_boundary_displacement_px": 1.0,
+          "max_boundary_displacement_px": 17.029386365926403
+        },
+        {
+          "threshold_m": 2,
+          "p95_boundary_displacement_px": 1.4142135623730951,
+          "max_boundary_displacement_px": 98.59513172565875
+        },
+        {
+          "threshold_m": 3,
+          "p95_boundary_displacement_px": 0.0,
+          "max_boundary_displacement_px": 294.0017006753532
+        },
+        {
+          "threshold_m": 4,
+          "p95_boundary_displacement_px": 0.0,
+          "max_boundary_displacement_px": 359.7026549804713
+        },
+        {
+          "threshold_m": 5,
+          "p95_boundary_displacement_px": 9.112840899841594,
+          "max_boundary_displacement_px": 434.0368647937638
+        },
+        {
+          "threshold_m": 6,
+          "p95_boundary_displacement_px": 68.89847145102675,
+          "max_boundary_displacement_px": 580.9388952377005
+        },
+        {
+          "threshold_m": 7,
+          "p95_boundary_displacement_px": 319.9498179388113,
+          "max_boundary_displacement_px": 762.5693411093839
+        }
+      ]
+    }
+  },
+  "navigation_note": "GPS depth lookup remains the unsmoothed corrected v4.1 class mask. v4.3 changes only the visual/vector boundary representation."
+}
