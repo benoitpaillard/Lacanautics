@@ -1,0 +1,46 @@
+name: Build sub-pixel vector bathymetry v4.3
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/build_vector_v43_subpixel.py'
+      - '.github/workflows/build-vector-v43.yml'
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pillow numpy scipy scikit-image cairosvg
+      - run: python tools/build_vector_v43_subpixel.py
+      - name: Show vector QC
+        run: cat data/lacanau_vector_v43_report.json
+      - name: Validate inline JavaScript
+        run: |
+          python - <<'PY'
+          import re, pathlib
+          s=pathlib.Path('hires.html').read_text()
+          blocks=re.findall(r'<script>(.*?)</script>',s,re.S)
+          pathlib.Path('/tmp/lacanautics-inline.js').write_text('\n'.join(blocks))
+          PY
+          node --check /tmp/lacanautics-inline.js
+      - name: Validate vector assets
+        run: |
+          test -s bathymetry-geopdf-v43-subpixel.svg
+          grep -q '4.3-subpixel' data/lacanau_vector_v43_report.json
+          grep -q 'lacanautics-v4.3-subpixel' sw.js
+          grep -q 'bathymetry-geopdf-v43-subpixel.svg' hires.html
+      - name: Commit vector app
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add bathymetry-geopdf-v43-subpixel.svg data/lacanau_vector_v43_report.json hires.html index.html sw.js manifest.webmanifest
+          git diff --cached --quiet && exit 0
+          git commit -m "Add sub-pixel vector GeoPDF bathymetry v4.3"
+          git pull --rebase origin main
+          git push
