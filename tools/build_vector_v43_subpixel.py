@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
-import io, json, re
+import io, json
 from pathlib import Path
 import cairosvg
 import numpy as np
@@ -35,10 +35,9 @@ def chaikin_closed(pts,iterations):
 
 
 def smoothing_passes(k,nsrc):
-    # Broad 0–5 m zones benefit from smoothing. Deeper zones are much smaller and
-    # more sensitive, so preserve them almost exactly.
-    if k>=5:
-        return 1 if nsrc>=400 else 0
+    # Deep zones remain EXACT. They are small enough that pixel-centre raster QC becomes
+    # unstable, and preserving their original half-pixel geometry is more defensible.
+    if k>=5: return 0
     if nsrc<24: return 0
     if nsrc<80: return 1
     return 2
@@ -70,7 +69,7 @@ def build_svg(pal,cls):
         stats.append({'threshold_m':k,'rings':len(paths),'vertices_source_half_pixel':raw,'vertices_vector':n,'ring_stats':rs})
     return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" preserveAspectRatio="none" shape-rendering="geometricPrecision">'
             '<title>Lac de Lacanau bathymetry — bounded smooth vector reconstruction</title>'
-            '<desc>Official 1 m classes from corrected GeoPDF 4.1. Broad shallow/medium contours use bounded corner cutting; small deep contours remain exact. Every smoothed point remains within the local source-cell envelope.</desc>'
+            '<desc>Official 1 m classes from corrected GeoPDF 4.1. Broad 0–5 m contours use bounded corner cutting; all boundaries at 5 m and deeper remain on exact source half-pixel geometry.</desc>'
             +''.join(layers)+'</svg>'),stats
 
 
@@ -108,28 +107,35 @@ def qc(svg,pal,cls):
             'all_overlap_within_1m_fraction':within1,'relative_area_error_by_class':rel,'mean_depth_midpoint_original_m':mo,
             'mean_depth_midpoint_vector_m':mr,'threshold_qc':th}
     if water_iou<.995 or exact_stable<.9995 or within1<.998 or abs(mr-mo)>.02: raise RuntimeError(f'global QC failed {report}')
-    for q in th[:7]:
-        if q['iou']<.975 or q['boundary_p95_px']>1.5: raise RuntimeError(f'threshold QC failed {q}')
-    if th[7]['iou']<.75 or th[7]['boundary_p95_px']>1.5 or abs(rel[7])>.35: raise RuntimeError(f'deepest QC failed {th[7]}, area={rel[7]}')
+    # Boundary displacement is meaningful on the large smoothed 0–5 m zones.
+    for q in th[:5]:
+        if q['iou']<.975 or q['boundary_p95_px']>1.5: raise RuntimeError(f'shallow/medium threshold QC failed {q}')
+    # Deep zones are exact SVG source rings. At 1x rasterization, tiny polygons may not
+    # cover the same pixel centres, so use overlap/area fidelity rather than distance.
+    for q in th[5:7]:
+        if q['iou']<.99: raise RuntimeError(f'deep threshold IoU failed {q}')
+    if th[7]['iou']<.80 or abs(rel[7])>.35: raise RuntimeError(f'deepest QC failed {th[7]}, area={rel[7]}')
     return report
 
 
 def patch_ui():
     p=ROOT/'hires.html'; s=p.read_text()
     s=s.replace('Vector 4.3: sub-pixel depth polygons reconstructed from native GeoPDF colour transitions. Pixel staircases are regularized inside the ~5.66 m source-cell uncertainty; GPS still samples the unsmoothed corrected 4.1 classes. Not a certified chart.',
-                'Vector 4.3: bounded smooth polygons from corrected 4.1. Broad 0–5 m contours are de-pixelated inside the source-cell envelope; small deep contours stay exact. GPS still samples the unsmoothed 4.1 classes. Not a certified chart.')
+                'Vector 4.3: bounded smooth polygons from corrected 4.1. Broad 0–5 m contours are de-pixelated inside the source-cell envelope; all boundaries at 5 m and deeper stay exact. GPS still samples unsmoothed 4.1 classes. Not a certified chart.')
     s=s.replace('The corrected GeoPDF 4.1 bathymetry is rendered as <b>sub-pixel SVG depth polygons</b>. Instead of tracing square raster cells, boundaries use the anti-aliased colour transitions already present in the native GeoPDF and are regularized only within one source-cell uncertainty.',
-                'The corrected GeoPDF 4.1 bathymetry is rendered as <b>smooth SVG depth polygons</b>. Broad shallow and medium contours are corner-cut into continuous curves inside the local source-cell envelope; small deep structures remain on their exact half-pixel boundaries.')
+                'The corrected GeoPDF 4.1 bathymetry is rendered as <b>smooth SVG depth polygons</b>. Broad shallow and medium contours are corner-cut into continuous curves inside the local source-cell envelope. All boundaries at 5 m and deeper remain on the exact corrected 4.1 half-pixel geometry.')
     s=s.replace("warn.textContent='Vector 4.3: sub-pixel polygons from native GeoPDF colour transitions; staircase regularization is constrained to source-pixel uncertainty. Tap VECTOR for corrected raster 4.1, then v3.1. Not a certified chart.'",
-                "warn.textContent='Vector 4.3: broad corrected 4.1 contours de-pixelated with bounded curves; small deep structures stay exact. Tap VECTOR for corrected raster 4.1, then v3.1. Not a certified chart.'")
+                "warn.textContent='Vector 4.3: broad 0–5 m corrected 4.1 contours de-pixelated with bounded curves; ≥5 m geometry remains exact. Tap VECTOR for corrected raster 4.1, then v3.1. Not a certified chart.'")
     p.write_text(s)
-    sw=(ROOT/'sw.js').read_text(); sw=sw.replace('lacanautics-v4.3-subpixel','lacanautics-v4.3-depthaware').replace('lacanautics-v4.3-bounded2','lacanautics-v4.3-depthaware').replace('lacanautics-v4.3-bounded3','lacanautics-v4.3-depthaware')
+    sw=(ROOT/'sw.js').read_text()
+    for old in ['lacanautics-v4.3-subpixel','lacanautics-v4.3-bounded2','lacanautics-v4.3-bounded3','lacanautics-v4.3-depthaware']:
+        sw=sw.replace(old,'lacanautics-v4.3-depthaware2')
     (ROOT/'sw.js').write_text(sw)
 
 
 def main():
     meta,pal,cls=load_classes(); svg,layers=build_svg(pal,cls); q=qc(svg,pal,cls); OUT_SVG.write_text(svg)
-    report={'version':'4.3-depthaware','source_version':'4.1-fixed','method':'half-pixel contours; bounded depth-aware Chaikin smoothing: normal policy for thresholds 0–4, deep thresholds 5–7 exact unless a ring has >=400 vertices',
+    report={'version':'4.3-depthaware2','source_version':'4.1-fixed','method':'half-pixel contours; bounded Chaikin smoothing only for thresholds 0–4; thresholds 5–7 exact',
             'source_resolution_m_per_px':meta['native_resolution_m_per_px'],'vertical_definition':'official 1 m classes','layers':layers,
             'svg_bytes':len(svg.encode()),'qc':q,'navigation_note':'GPS lookup remains exact corrected v4.1 class mask; v4.3 is visual geometry only.'}
     OUT_REPORT.write_text(json.dumps(report,indent=2)); patch_ui(); print(json.dumps(report,indent=2))
