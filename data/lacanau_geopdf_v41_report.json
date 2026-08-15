@@ -1,0 +1,227 @@
+{
+  "version": "4.1",
+  "pdf_bbox": [
+    247.0,
+    714.0,
+    1171.0,
+    29.0
+  ],
+  "gpts": [
+    [
+      44.93178,
+      -1.18496
+    ],
+    [
+      45.00437,
+      -1.18496
+    ],
+    [
+      45.00437,
+      -1.04651
+    ],
+    [
+      44.93178,
+      -1.04651
+    ]
+  ],
+  "native_mosaic": [
+    1924,
+    1432
+  ],
+  "strip_manifest": [
+    {
+      "xref": 29,
+      "size": [
+        1924,
+        273
+      ],
+      "pdf_rect": [
+        247.94491577148438,
+        127.454833984375,
+        1171.5577392578125,
+        258.51007080078125
+      ],
+      "mosaic_y": [
+        0,
+        273
+      ]
+    },
+    {
+      "xref": 30,
+      "size": [
+        1924,
+        273
+      ],
+      "pdf_rect": [
+        247.94491577148438,
+        258.030029296875,
+        1171.5577392578125,
+        389.08526611328125
+      ],
+      "mosaic_y": [
+        273,
+        546
+      ]
+    },
+    {
+      "xref": 31,
+      "size": [
+        1924,
+        273
+      ],
+      "pdf_rect": [
+        247.94491577148438,
+        388.60516357421875,
+        1171.5577392578125,
+        519.660400390625
+      ],
+      "mosaic_y": [
+        546,
+        819
+      ]
+    },
+    {
+      "xref": 24,
+      "size": [
+        1924,
+        273
+      ],
+      "pdf_rect": [
+        247.94491577148438,
+        519.1803588867188,
+        1171.5577392578125,
+        650.235595703125
+      ],
+      "mosaic_y": [
+        819,
+        1092
+      ]
+    },
+    {
+      "xref": 25,
+      "size": [
+        1924,
+        273
+      ],
+      "pdf_rect": [
+        247.94491577148438,
+        649.7555541992188,
+        1171.5577392578125,
+        780.810791015625
+      ],
+      "mosaic_y": [
+        1092,
+        1365
+      ]
+    },
+    {
+      "xref": 26,
+      "size": [
+        1924,
+        67
+      ],
+      "pdf_rect": [
+        247.94491577148438,
+        780.3306884765625,
+        1171.5577392578125,
+        812.4944458007812
+      ],
+      "mosaic_y": [
+        1365,
+        1432
+      ]
+    }
+  ],
+  "crop_px": [
+    537,
+    0,
+    1508,
+    1432
+  ],
+  "output": {
+    "version": "4.1",
+    "source": "Adour-Garonne FRFL49_Bathym GeoPDF native image strips",
+    "source_url": "https://adour-garonne.eaufrance.fr/upload/DOC/FICHES/LACS/BATHYMETRIE/FRFL49_Bathym.pdf",
+    "water_level_reference_ngf_m": 13.21,
+    "vertical_definition": "official 1 m classes",
+    "bbox": {
+      "west": -1.1463177702702703,
+      "east": -1.0764451351351352,
+      "north": 45.00437,
+      "south": 44.93178
+    },
+    "width": 971,
+    "height": 1432,
+    "palette_rgb": [
+      [
+        217,
+        246,
+        242
+      ],
+      [
+        198,
+        239,
+        238
+      ],
+      [
+        175,
+        229,
+        236
+      ],
+      [
+        150,
+        217,
+        235
+      ],
+      [
+        97,
+        185,
+        230
+      ],
+      [
+        50,
+        127,
+        205
+      ],
+      [
+        49,
+        88,
+        180
+      ],
+      [
+        37,
+        28,
+        88
+      ]
+    ],
+    "visual_image": "bathymetry-geopdf-v41-native.webp",
+    "class_image": "bathymetry-geopdf-v41-classes.webp",
+    "contours_svg": "bathymetry-geopdf-v41-contours.svg",
+    "georef_method": "embedded GeoPDF GPTS/LPTS; native raster strips extracted without PDF rendering",
+    "native_resolution_m_per_px": [
+      5.667453228472906,
+      5.642960055865778
+    ]
+  },
+  "class_pixels": {
+    "0": 110297,
+    "1": 153325,
+    "2": 145217,
+    "3": 67800,
+    "4": 54781,
+    "5": 31805,
+    "6": 9586,
+    "7": 107
+  },
+  "water_pixels": 572918,
+  "area_weighted_class_midpoint_mean_m": 2.3913230165573434,
+  "published_mean_depth_m": 2.4,
+  "island_pixels_removed": 507,
+  "contour_paths": 492,
+  "contour_vertices": 63108,
+  "segmentation_rgb_distance": {
+    "median": 3.0,
+    "p95": 25.45584487915039
+  },
+  "note": "Visible layer keeps native source pixels. Separate class raster is used for GPS lookup. SVG contours are traced at native pixel boundaries without smoothing."
+}
