@@ -1,49 +1,63 @@
-const CACHE='lacanautics-v4.5-taubin-harmonized-loopfix1';
-const CORE=['./','./index.html','./hires.html','./manifest.webmanifest','./gps-max.js','./bathymetry-geopdf-v45-taubin.svg','./bathymetry-geopdf-v41-classes.webp','./data/lacanau_geopdf_v41.json','./bathymetry-2012-v3.webp','./data/lacanau_2012_bands_v3.json','./data/lacanau_lake_level.json'];
+const CACHE='lacanautics-v4.5-singlepage1';
+const CORE=['./','./index.html','./manifest.webmanifest','./gps-max.js','./bathymetry-geopdf-v45-taubin.svg','./bathymetry-geopdf-v41-classes.webp','./data/lacanau_geopdf_v41.json','./bathymetry-2012-v3.webp','./data/lacanau_2012_bands_v3.json','./data/lacanau_lake_level.json'];
 
-self.addEventListener('install',e=>{
+self.addEventListener('install',event=>{
   self.skipWaiting();
-  e.waitUntil(caches.open(CACHE).then(c=>c.addAll(CORE)));
+  event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)));
 });
 
-self.addEventListener('activate',e=>{
-  e.waitUntil(Promise.all([
-    caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))),
+self.addEventListener('activate',event=>{
+  event.waitUntil(Promise.all([
+    caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))),
     self.clients.claim()
   ]));
 });
 
-async function injectGpsLayer(resp){
-  if(!resp)return resp;
-  const text=await resp.text();
-  const patched=text.includes('gps-max.js')?text:text.replace('</body>','<script src="./gps-max.js?v=1"></script></body>');
-  const headers=new Headers(resp.headers);
-  headers.delete('content-length');
-  return new Response(patched,{status:resp.status,statusText:resp.statusText,headers});
+async function networkFirst(request){
+  try{
+    const response=await fetch(request,{cache:'no-store'});
+    if(response.ok){
+      const copy=response.clone();
+      caches.open(CACHE).then(cache=>cache.put(request,copy));
+    }
+    return response;
+  }catch(error){
+    return (await caches.match(request)) || Response.error();
+  }
 }
 
-self.addEventListener('fetch',e=>{
-  if(e.request.method!=='GET')return;
-  const u=new URL(e.request.url);
-  const isHires=u.pathname.endsWith('/hires.html');
-  const fresh=isHires||u.pathname.endsWith('.html')||u.pathname.endsWith('.json')||u.pathname.endsWith('.svg')||u.pathname.endsWith('.webp')||u.pathname.endsWith('/Lacanautics/')||u.pathname.endsWith('/Lacanautics');
+self.addEventListener('fetch',event=>{
+  if(event.request.method!=='GET')return;
+  const url=new URL(event.request.url);
 
-  if(isHires){
-    e.respondWith(
-      fetch(e.request,{cache:'no-store'})
-        .then(resp=>injectGpsLayer(resp))
-        .then(resp=>{if(resp.ok){const copy=resp.clone();caches.open(CACHE).then(c=>c.put('./hires.html',copy))}return resp})
-        .catch(async()=>{
-          const cached=await caches.match('./hires.html');
-          return cached?injectGpsLayer(cached):Response.error();
+  if(event.request.mode==='navigate'){
+    event.respondWith(
+      fetch(event.request,{cache:'no-store'})
+        .then(response=>{
+          if(response.ok){
+            const copy=response.clone();
+            caches.open(CACHE).then(cache=>cache.put('./index.html',copy));
+          }
+          return response;
         })
+        .catch(()=>caches.match('./index.html'))
     );
     return;
   }
 
+  const fresh=/\.(?:json|svg|webp|js)$/.test(url.pathname);
   if(fresh){
-    e.respondWith(fetch(e.request,{cache:'no-store'}).then(resp=>{if(resp.ok){const copy=resp.clone();caches.open(CACHE).then(c=>c.put(e.request,copy))}return resp}).catch(()=>caches.match(e.request)));
-  }else{
-    e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request).then(resp=>{if(resp.ok){const copy=resp.clone();caches.open(CACHE).then(c=>c.put(e.request,copy))}return resp})));
+    event.respondWith(networkFirst(event.request));
+    return;
   }
+
+  event.respondWith(
+    caches.match(event.request).then(cached=>cached||fetch(event.request).then(response=>{
+      if(response.ok){
+        const copy=response.clone();
+        caches.open(CACHE).then(cache=>cache.put(event.request,copy));
+      }
+      return response;
+    }))
+  );
 });
