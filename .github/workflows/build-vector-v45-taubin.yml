@@ -1,11 +1,11 @@
-name: Build Taubin vector bathymetry candidate
+name: Build Taubin vector bathymetry
 on:
   workflow_dispatch:
   push:
     branches: [agent/taubin-smoothing]
     paths:
       - 'tools/build_vector_v45_taubin.py'
-      - 'tools/run_vector_v45_taubin.py'
+      - 'tools/activate_vector_v45_taubin.py'
       - '.github/workflows/build-vector-v45-taubin.yml'
 permissions:
   contents: write
@@ -18,38 +18,51 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install pillow numpy scipy scikit-image cairosvg
-      - run: python tools/run_vector_v45_taubin.py
+      - name: Activate production settings and UI
+        run: python tools/activate_vector_v45_taubin.py
+      - name: Build compact Taubin bathymetry
+        run: python tools/build_vector_v45_taubin.py
       - name: Render preview
         run: |
           python - <<'PY'
           import cairosvg
           cairosvg.svg2png(url='bathymetry-geopdf-v45-taubin.svg', write_to='bathymetry-geopdf-v45-taubin-preview.png', output_width=971, output_height=1427)
           PY
-      - name: Show Taubin QC
-        run: cat data/lacanau_vector_v45_taubin_report.json
-      - name: Validate candidate
+      - name: Validate production candidate
         run: |
           test -s bathymetry-geopdf-v45-taubin.svg
           test -s bathymetry-geopdf-v45-taubin-preview.png
-          grep -q '4.5-taubin-candidate' data/lacanau_vector_v45_taubin_report.json
+          test -s data/lacanau_vector_v45_taubin_report.json
           grep -q 'isobath-1m' bathymetry-geopdf-v45-taubin.svg
-          grep -q '>1 m</text>' bathymetry-geopdf-v45-taubin.svg
+          grep -q 'geom-1' bathymetry-geopdf-v45-taubin.svg
+          grep -q 'clip-0' bathymetry-geopdf-v45-taubin.svg
+          grep -q 'bathymetry-geopdf-v45-taubin.svg' hires.html
+          grep -q 'VECTOR 4.5' hires.html
+          grep -q 'lacanautics-v4.5-taubin' sw.js
           python - <<'PY'
           import json
           r=json.load(open('data/lacanau_vector_v45_taubin_report.json'))
+          assert r['target_iterations'] == [0,4,4,4,3,2,0,0]
           assert r['nested_violations'] == [0]*7
-          assert r['size_ratio_vs_v44'] < 1.35
+          assert r['size_ratio_vs_v44'] < 0.5
           assert r['qc']['all_overlap_within_1m_fraction'] > 0.999
+          assert r['qc']['threshold_qc'][6]['iou'] > 0.998
           broad=[x for x in r['layers'][1:5] if x['rings_taubin_smoothed']]
-          assert broad
-          assert sum(x['roughness_ratio'] for x in broad)/len(broad) < 0.90
+          assert sum(x['roughness_ratio'] for x in broad)/len(broad) < 0.45
           PY
-      - name: Commit candidate assets
+          python - <<'PY'
+          import re, pathlib
+          html=pathlib.Path('hires.html').read_text()
+          scripts=re.findall(r'<script>(.*?)</script>',html,re.S)
+          pathlib.Path('/tmp/app.js').write_text('\n'.join(scripts))
+          PY
+          node --check /tmp/app.js
+      - name: Commit production candidate
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add bathymetry-geopdf-v45-taubin.svg bathymetry-geopdf-v45-taubin-preview.png data/lacanau_vector_v45_taubin_report.json
+          git add bathymetry-geopdf-v45-taubin.svg data/lacanau_vector_v45_taubin_report.json hires.html index.html sw.js tools/build_vector_v45_taubin.py .github/workflows/validate-web.yml
           git diff --cached --quiet && exit 0
-          git commit -m "Build Taubin-smoothed bathymetry candidate"
+          git commit -m "Activate compact Taubin-smoothed v4.5"
           git pull --rebase origin agent/taubin-smoothing
           git push
