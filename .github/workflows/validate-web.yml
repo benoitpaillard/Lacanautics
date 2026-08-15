@@ -70,12 +70,16 @@ jobs:
           node --check gps-max.js
           grep -q 'enableHighAccuracy:true' gps-max.js
           grep -q 'maximumAge:0' gps-max.js
-      - name: Check compact SVG and service worker
+      - name: Check compact SVG and loop-safe service worker
         run: |
           grep -q 'geom-1' bathymetry-geopdf-v45-taubin.svg
           grep -q 'clip-0' bathymetry-geopdf-v45-taubin.svg
-          grep -q "lacanautics-v4.5-taubin-gpsmax-harmonized-v31" sw.js
+          grep -q "lacanautics-v4.5-taubin-harmonized-loopfix1" sw.js
+          grep -q "'./hires.html'" sw.js
           grep -q 'gps-max.js' sw.js
           grep -q 'bathymetry-geopdf-v41-classes.webp' sw.js
           grep -q 'bathymetry-2012-v3.webp' sw.js
+          ! grep -q "cached?injectGpsLayer(cached):caches.match('./index.html')" sw.js
+          ! grep -q 'controllerchange' index.html
+          grep -q 'sw.js?v=loopfix1' index.html
           ! grep -q 'bathymetry-geopdf-v41-native.webp' sw.js
