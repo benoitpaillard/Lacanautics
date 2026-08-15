@@ -6,9 +6,13 @@ on:
     paths:
       - 'tools/build_vector_v45.py'
       - 'tools/build_vector_v45_fast.py'
+      - 'tools/build_vector_v45_lowpass.py'
       - '.github/workflows/build-vector-v45.yml'
 permissions:
   contents: write
+concurrency:
+  group: lacanautics-v45-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -18,7 +22,7 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install pillow numpy scipy scikit-image shapely
-      - run: python tools/build_vector_v45_fast.py
+      - run: python tools/build_vector_v45_lowpass.py
       - name: Show vector QC
         run: cat data/lacanau_vector_v45_report.json
       - name: Validate inline JavaScript
@@ -34,6 +38,7 @@ jobs:
         run: |
           test -s bathymetry-geopdf-v45-faired.svg
           grep -q '4.5-spline-faired' data/lacanau_vector_v45_report.json
+          grep -q 'periodic Gaussian low-pass in contour arc length' data/lacanau_vector_v45_report.json
           grep -q 'lacanautics-v4.5-spline-faired' sw.js
           grep -q 'bathymetry-geopdf-v45-faired.svg' hires.html
           grep -q 'VECTOR 4.5' hires.html
@@ -42,10 +47,14 @@ jobs:
           grep -q ' C ' bathymetry-geopdf-v45-faired.svg
       - name: Commit spline-faired vector app
         run: |
+          git fetch origin "$GITHUB_REF_NAME"
+          if [ "$(git rev-parse origin/$GITHUB_REF_NAME)" != "$GITHUB_SHA" ]; then
+            echo "Branch advanced during build; skip stale generated assets."
+            exit 0
+          fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add bathymetry-geopdf-v45-faired.svg data/lacanau_vector_v45_report.json hires.html index.html sw.js manifest.webmanifest
           git diff --cached --quiet && exit 0
           git commit -m "Add spline-faired v4.5 bathymetry"
-          git pull --rebase origin "$GITHUB_REF_NAME"
           git push origin "HEAD:$GITHUB_REF_NAME"
