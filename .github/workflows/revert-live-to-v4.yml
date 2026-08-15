@@ -1,0 +1,30 @@
+name: Revert live app to GeoPDF v4
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/revert-live-to-v4.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  revert:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Restore last validated GeoPDF v4 frontend
+        run: |
+          git checkout 97bca770301e9e19367a1328fc60902e9877a8e1 -- hires.html index.html sw.js manifest.webmanifest
+      - name: Commit revert
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add hires.html index.html sw.js manifest.webmanifest
+          git diff --cached --quiet && exit 0
+          git commit -m "Revert live app to validated GeoPDF v4"
+          git push
