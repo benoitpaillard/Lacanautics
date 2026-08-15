@@ -8,6 +8,7 @@ on:
       - 'hires.html'
       - 'index.html'
       - 'sw.js'
+      - 'gps-max.js'
       - 'manifest.webmanifest'
       - 'bathymetry-geopdf-v45-taubin.svg'
       - 'data/lacanau_vector_v45_taubin_report.json'
@@ -27,10 +28,11 @@ jobs:
           test -s bathymetry-geopdf-v41-classes.webp
           test -s data/lacanau_geopdf_v41.json
           test -s data/lacanau_lake_level.json
+          test -s gps-max.js
           python -m json.tool data/lacanau_vector_v45_taubin_report.json >/dev/null
           python -m json.tool data/lacanau_geopdf_v41.json >/dev/null
           python -m json.tool data/lacanau_lake_level.json >/dev/null
-      - name: Check inline JavaScript syntax
+      - name: Check JavaScript syntax
         run: |
           python - <<'PY'
           import re, pathlib, json
@@ -46,8 +48,12 @@ jobs:
           assert r['qc']['all_overlap_within_1m_fraction'] > 0.999
           PY
           node --check /tmp/lacanautics-app.js
-      - name: Check compact SVG structure
+          node --check gps-max.js
+          grep -q 'enableHighAccuracy:true' gps-max.js
+          grep -q 'maximumAge:0' gps-max.js
+      - name: Check compact SVG and GPS service worker
         run: |
           grep -q 'geom-1' bathymetry-geopdf-v45-taubin.svg
           grep -q 'clip-0' bathymetry-geopdf-v45-taubin.svg
-          grep -q "lacanautics-v4.5-taubin" sw.js
+          grep -q "lacanautics-v4.5-taubin-gpsmax1" sw.js
+          grep -q 'gps-max.js' sw.js
