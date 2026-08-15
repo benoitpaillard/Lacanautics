@@ -52,7 +52,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A index.html sw.js bathymetry-2012-v3.webp
+          git add index.html sw.js
           git diff --cached --quiet && exit 0
           git commit -m "Force matched Survey v3.1 vector lines"
           git push
