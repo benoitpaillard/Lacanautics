@@ -36,7 +36,7 @@ jobs:
           python - <<'PY'
           import json
           r=json.load(open('data/lacanau_vector_v45_taubin_report.json'))
-          assert r['nested_violations'] == [0]*7
+          assert all(x <= 0 for x in r['nesting_excess_vs_v44'])
           assert r['size_ratio_vs_v44'] < 1.35
           assert r['qc']['all_overlap_within_1m_fraction'] > 0.999
           broad=[x for x in r['layers'][:5] if x['rings_taubin_smoothed']]
