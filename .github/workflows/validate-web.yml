@@ -9,8 +9,10 @@ on:
       - 'index.html'
       - 'sw.js'
       - 'manifest.webmanifest'
-      - 'bathymetry-geopdf-v4.webp'
-      - 'data/lacanau_geopdf_v4.json'
+      - 'bathymetry-geopdf-v45-taubin.svg'
+      - 'data/lacanau_vector_v45_taubin_report.json'
+      - 'bathymetry-geopdf-v41-classes.webp'
+      - 'data/lacanau_geopdf_v41.json'
       - '.github/workflows/validate-web.yml'
 
 jobs:
@@ -18,24 +20,34 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Check referenced v4 assets
+      - name: Check referenced v4.5 assets
         run: |
-          test -s bathymetry-geopdf-v4.webp
-          test -s data/lacanau_geopdf_v4.json
+          test -s bathymetry-geopdf-v45-taubin.svg
+          test -s data/lacanau_vector_v45_taubin_report.json
+          test -s bathymetry-geopdf-v41-classes.webp
+          test -s data/lacanau_geopdf_v41.json
           test -s data/lacanau_lake_level.json
-          python -m json.tool data/lacanau_geopdf_v4.json >/dev/null
+          python -m json.tool data/lacanau_vector_v45_taubin_report.json >/dev/null
+          python -m json.tool data/lacanau_geopdf_v41.json >/dev/null
           python -m json.tool data/lacanau_lake_level.json >/dev/null
       - name: Check inline JavaScript syntax
         run: |
           python - <<'PY'
-          import re, pathlib
+          import re, pathlib, json
           html=pathlib.Path('hires.html').read_text(encoding='utf-8')
           scripts=re.findall(r'<script>(.*?)</script>',html,re.S)
           assert scripts, 'No inline script found'
           pathlib.Path('/tmp/lacanautics-app.js').write_text('\n'.join(scripts),encoding='utf-8')
-          assert 'bathymetry-geopdf-v4.webp' in html
-          assert 'lacanau_geopdf_v4.json' in html
+          assert 'bathymetry-geopdf-v45-taubin.svg' in html
+          assert 'VECTOR 4.5' in html
+          r=json.loads(pathlib.Path('data/lacanau_vector_v45_taubin_report.json').read_text())
+          assert r['nested_violations'] == [0]*7
+          assert r['size_ratio_vs_v44'] < 0.5
+          assert r['qc']['all_overlap_within_1m_fraction'] > 0.999
           PY
           node --check /tmp/lacanautics-app.js
-      - name: Check service worker version
-        run: grep -q "lacanautics-v4" sw.js
+      - name: Check compact SVG structure
+        run: |
+          grep -q 'geom-1' bathymetry-geopdf-v45-taubin.svg
+          grep -q 'clip-0' bathymetry-geopdf-v45-taubin.svg
+          grep -q "lacanautics-v4.5-taubin" sw.js
