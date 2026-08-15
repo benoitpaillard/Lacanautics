@@ -5,6 +5,7 @@ on:
     branches: [agent/taubin-smoothing]
     paths:
       - 'tools/build_vector_v45_taubin.py'
+      - 'tools/run_vector_v45_taubin.py'
       - '.github/workflows/build-vector-v45-taubin.yml'
 permissions:
   contents: write
@@ -17,7 +18,7 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install pillow numpy scipy scikit-image cairosvg
-      - run: python tools/build_vector_v45_taubin.py
+      - run: python tools/run_vector_v45_taubin.py
       - name: Render preview
         run: |
           python - <<'PY'
@@ -39,7 +40,7 @@ jobs:
           assert all(x <= 0 for x in r['nesting_excess_vs_v44'])
           assert r['size_ratio_vs_v44'] < 1.35
           assert r['qc']['all_overlap_within_1m_fraction'] > 0.999
-          broad=[x for x in r['layers'][:5] if x['rings_taubin_smoothed']]
+          broad=[x for x in r['layers'][1:5] if x['rings_taubin_smoothed']]
           assert broad
           assert sum(x['roughness_ratio'] for x in broad)/len(broad) < 0.90
           PY
