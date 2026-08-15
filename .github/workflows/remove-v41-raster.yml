@@ -1,0 +1,45 @@
+name: Remove v4 raster view
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/remove_v41_raster.py'
+      - '.github/workflows/remove-v41-raster.yml'
+permissions:
+  contents: write
+jobs:
+  remove:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Remove raster comparison layer
+        run: python tools/remove_v41_raster.py
+      - name: Validate no visible raster 4.1 layer remains
+        run: |
+          grep -q "bathymetry-geopdf-v45-taubin.svg" hires.html
+          grep -q "bathymetry-2012-v3.webp" hires.html
+          ! grep -q "bathymetry-geopdf-v41-native.webp" hires.html
+          ! grep -q "mode==='raster'" hires.html
+          ! grep -q "RASTER 4.1" hires.html
+          ! grep -q "bathymetry-geopdf-v41-native.webp" sw.js
+          grep -q "bathymetry-geopdf-v41-classes.webp" sw.js
+          test ! -e bathymetry-geopdf-v41-native.webp
+          python - <<'PY'
+          import re, pathlib
+          html=pathlib.Path('hires.html').read_text(encoding='utf-8')
+          scripts=re.findall(r'<script(?: [^>]*)?>(.*?)</script>',html,re.S)
+          inline='\n'.join(s for s in scripts if s.strip())
+          pathlib.Path('/tmp/lacanautics-inline.js').write_text(inline,encoding='utf-8')
+          PY
+          node --check /tmp/lacanautics-inline.js
+      - name: Commit removal
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A hires.html sw.js bathymetry-geopdf-v41-native.webp
+          git diff --cached --quiet && exit 0
+          git commit -m "Remove raster 4.1 comparison view"
+          git push
