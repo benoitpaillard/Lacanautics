@@ -1,0 +1,68 @@
+{
+  "version": "3.1-harmonized-visual",
+  "source_version": "3.0",
+  "geometry_note": "Original 10 m v3.1 class grid unchanged; only visual rendering changed.",
+  "palette_rgb": [
+    [
+      217,
+      246,
+      242
+    ],
+    [
+      198,
+      239,
+      238
+    ],
+    [
+      175,
+      229,
+      236
+    ],
+    [
+      150,
+      217,
+      235
+    ],
+    [
+      97,
+      185,
+      230
+    ],
+    [
+      50,
+      127,
+      205
+    ],
+    [
+      49,
+      88,
+      180
+    ],
+    [
+      37,
+      28,
+      88
+    ]
+  ],
+  "palette_hex": [
+    "#d9f6f2",
+    "#c6efee",
+    "#afe5ec",
+    "#96d9eb",
+    "#61b9e6",
+    "#327fcd",
+    "#3158b4",
+    "#251c58"
+  ],
+  "land_hex": "#eef0e8",
+  "contour_hex": "#244e5a",
+  "inner_contour_opacity": 0.48,
+  "shoreline_opacity": 0.62,
+  "render_scale": 2,
+  "render_size_px": [
+    982,
+    1642
+  ],
+  "survey_step_m": 10.0,
+  "webp_bytes": 39752
+}
