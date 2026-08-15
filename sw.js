@@ -1,4 +1,4 @@
-const CACHE='lacanautics-v4.5-taubin-gpsmax-noraster';
+const CACHE='lacanautics-v4.5-taubin-gpsmax-harmonized-v31';
 const CORE=['./','./index.html','./manifest.webmanifest','./gps-max.js','./bathymetry-geopdf-v45-taubin.svg','./bathymetry-geopdf-v41-classes.webp','./data/lacanau_geopdf_v41.json','./bathymetry-2012-v3.webp','./data/lacanau_2012_bands_v3.json','./data/lacanau_lake_level.json'];
 
 self.addEventListener('install',e=>{
