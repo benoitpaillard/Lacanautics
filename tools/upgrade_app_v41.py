@@ -19,7 +19,6 @@ repls=[
 ("Official GeoPDF · ${r[0]?r[0].toFixed(2):'~5.7'} m/px · exact WGS84","Native GeoPDF strips · ${r[0]?r[0].toFixed(2):'~5.7'} m/px · vector contours"),
 ("new Promise((resolve,reject)=>{if(map.complete&&map.naturalWidth)resolve();else{map.onload=resolve;map.onerror=()=>reject(Error('map image failed'))}})","new Promise((resolve,reject)=>{if(classMap.complete&&classMap.naturalWidth)resolve();else{classMap.onload=resolve;classMap.onerror=()=>reject(Error('class image failed'))}})"),
 ("GeoPDF v4 unavailable","GeoPDF v4.1 unavailable"),
-("Lacanautics GeoPDF v4: ","Lacanautics GeoPDF v4.1: "),
 ]
 for old,new in repls:
     if old not in s:
@@ -27,7 +26,6 @@ for old,new in repls:
     s=s.replace(old,new)
 p.write_text(s)
 
-# index + cache + manifest
 idx=Path('index.html').read_text().replace('Survey v3.1','GeoPDF v4.1').replace('hires.html?v=31','hires.html?v=41').replace('Lacanautics Survey v3.1','Lacanautics GeoPDF v4.1')
 Path('index.html').write_text(idx)
 sw=Path('sw.js').read_text()
