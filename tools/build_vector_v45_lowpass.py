@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Arc-length spectral-style fairing for Lacanautics v4.5.
+"""Arc-length low-pass fairing for Lacanautics v4.5.
 
 The v4.4 contour is uniformly resampled in arc length. A periodic 1-D Gaussian
 low-pass is applied to x(s), y(s), then the faired ring is represented by a periodic
@@ -21,13 +21,16 @@ import build_vector_v45 as v
 v.MIN_SPLINE_PERIMETER_PX = [42, 40, 38, 36, 34, 30, 27, 24]
 v.RESAMPLE_SPACING_PX = 0.80
 v.QC_SAMPLE_SPACING_PX = 0.50
-v.FAIRING_SCALE_TRIALS = [1.0, 0.72, 0.50, 0.32]
+# IMPORTANT: the fallback scale changes only filter strength. Geometric admissibility
+# remains tied to the native-source uncertainty; otherwise weak fallback trials can
+# paradoxically reject every curve, which was the bug in the first v4.5 attempt.
+v.FAIRING_SCALE_TRIALS = [1.00, 0.84, 0.70, 0.58, 0.48, 0.40, 0.33, 0.27, 0.22, 0.18]
 
 # Physical sigma along the contour, in native source pixels. At sigma~1.3 px,
 # a 4 px wavelength is attenuated to ~12%, while a 20 px feature remains ~92%.
 BASE_ARCLENGTH_SIGMA_PX = [1.65, 1.65, 1.60, 1.50, 1.35, 1.10, 0.82, 0.60]
-SIGMA_MULTIPLIERS = [1.0, 0.82, 0.66, 0.52, 0.40, 0.30, 0.22]
-SVG_KNOT_SPACING_PX = 1.45
+SIGMA_MULTIPLIERS = [1.00, 0.82, 0.66, 0.52, 0.40, 0.30, 0.22, 0.16, 0.11]
+SVG_KNOT_SPACING_PX = 0.80
 
 
 def cubic_svg_path(pts: np.ndarray) -> str:
@@ -79,8 +82,10 @@ def fit_periodic_lowpass(pts: np.ndarray, threshold: int, fairing_scale: float):
         return original_path, pts, base_stats
 
     src_area = v.signed_area(src)
-    allowed_disp = v.MAX_DISP_BY_THRESHOLD_PX[threshold] * fairing_scale
-    allowed_area = v.AREA_CHANGE_LIMIT_BY_THRESHOLD[threshold] * max(0.65, fairing_scale)
+    # Hard error limits are physical/cartographic constraints and do NOT shrink in
+    # fallback trials. Only the low-pass sigma shrinks.
+    allowed_disp = v.MAX_DISP_BY_THRESHOLD_PX[threshold]
+    allowed_area = v.AREA_CHANGE_LIMIT_BY_THRESHOLD[threshold]
     base_sigma = BASE_ARCLENGTH_SIGMA_PX[threshold] * fairing_scale
 
     for mult in SIGMA_MULTIPLIERS:
@@ -145,6 +150,7 @@ if __name__ == "__main__":
         "base_sigma_by_threshold_px": BASE_ARCLENGTH_SIGMA_PX,
         "sigma_multipliers": SIGMA_MULTIPLIERS,
         "svg_knot_spacing_px": SVG_KNOT_SPACING_PX,
+        "hard_displacement_limits_px": v.MAX_DISP_BY_THRESHOLD_PX,
         "interpretation": "sigma~1.3 px attenuates a 4 px wavelength to about 12% while preserving about 92% of a 20 px wavelength",
     }
     v.OUT_REPORT.write_text(json.dumps(report, indent=2))
