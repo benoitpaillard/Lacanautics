@@ -1,5 +1,5 @@
 {
-  "version": "4.1",
+  "version": "4.1-fixed",
   "pdf_bbox": [
     247.0,
     714.0,
@@ -24,10 +24,39 @@
       -1.04651
     ]
   ],
+  "view_bbox": {
+    "west": -1.18496,
+    "south": 44.93178,
+    "east": -1.04651,
+    "north": 45.00437
+  },
+  "native_image_bbox": {
+    "west": -1.1848184160296948,
+    "east": -1.0464264296534154,
+    "north": 45.00437403599738,
+    "south": 44.93177983830139
+  },
   "native_mosaic": [
     1924,
-    1432
+    1427
   ],
+  "stitch": {
+    "pixel_scale_pdf_pt": [
+      0.4800482450552641,
+      0.4800558125143086
+    ],
+    "native_offsets_y": [
+      0,
+      272,
+      544,
+      816,
+      1088,
+      1360
+    ],
+    "stitched_height": 1427,
+    "expected_simple_concat_height": 1432,
+    "overlap_rows_removed": 5
+  },
   "strip_manifest": [
     {
       "xref": 29,
@@ -44,7 +73,8 @@
       "mosaic_y": [
         0,
         273
-      ]
+      ],
+      "flipped_y": true
     },
     {
       "xref": 30,
@@ -59,9 +89,10 @@
         389.08526611328125
       ],
       "mosaic_y": [
-        273,
-        546
-      ]
+        272,
+        545
+      ],
+      "flipped_y": true
     },
     {
       "xref": 31,
@@ -76,9 +107,10 @@
         519.660400390625
       ],
       "mosaic_y": [
-        546,
-        819
-      ]
+        544,
+        817
+      ],
+      "flipped_y": true
     },
     {
       "xref": 24,
@@ -93,9 +125,10 @@
         650.235595703125
       ],
       "mosaic_y": [
-        819,
-        1092
-      ]
+        816,
+        1089
+      ],
+      "flipped_y": true
     },
     {
       "xref": 25,
@@ -110,9 +143,10 @@
         780.810791015625
       ],
       "mosaic_y": [
-        1092,
-        1365
-      ]
+        1088,
+        1361
+      ],
+      "flipped_y": true
     },
     {
       "xref": 26,
@@ -127,31 +161,32 @@
         812.4944458007812
       ],
       "mosaic_y": [
-        1365,
-        1432
-      ]
+        1360,
+        1427
+      ],
+      "flipped_y": true
     }
   ],
   "crop_px": [
     537,
     0,
     1508,
-    1432
+    1427
   ],
   "output": {
-    "version": "4.1",
+    "version": "4.1-fixed",
     "source": "Adour-Garonne FRFL49_Bathym GeoPDF native image strips",
     "source_url": "https://adour-garonne.eaufrance.fr/upload/DOC/FICHES/LACS/BATHYMETRIE/FRFL49_Bathym.pdf",
     "water_level_reference_ngf_m": 13.21,
     "vertical_definition": "official 1 m classes",
     "bbox": {
-      "west": -1.1463177702702703,
-      "east": -1.0764451351351352,
-      "north": 45.00437,
-      "south": 44.93178
+      "west": -1.1461923782521157,
+      "east": -1.0763490213023406,
+      "north": 45.00437403599738,
+      "south": 44.93177983830139
     },
     "width": 971,
-    "height": 1432,
+    "height": 1427,
     "palette_rgb": [
       [
         217,
@@ -197,31 +232,37 @@
     "visual_image": "bathymetry-geopdf-v41-native.webp",
     "class_image": "bathymetry-geopdf-v41-classes.webp",
     "contours_svg": "bathymetry-geopdf-v41-contours.svg",
-    "georef_method": "embedded GeoPDF GPTS/LPTS; native raster strips extracted without PDF rendering",
+    "georef_method": "embedded GeoPDF GPTS/LPTS + exact native image placement; each strip vertically flipped per PDF matrix; 1-row strip overlaps stitched",
     "native_resolution_m_per_px": [
-      5.667453228472906,
-      5.642960055865778
+      5.6650782484264655,
+      5.663059626851989
     ]
   },
   "class_pixels": {
-    "0": 110297,
-    "1": 153325,
-    "2": 145217,
-    "3": 67800,
-    "4": 54781,
-    "5": 31805,
-    "6": 9586,
+    "0": 110084,
+    "1": 151803,
+    "2": 145360,
+    "3": 67820,
+    "4": 54564,
+    "5": 31775,
+    "6": 9477,
     "7": 107
   },
-  "water_pixels": 572918,
-  "area_weighted_class_midpoint_mean_m": 2.3913230165573434,
+  "water_pixels": 570990,
+  "area_weighted_class_midpoint_mean_m": 2.392721413685003,
   "published_mean_depth_m": 2.4,
-  "island_pixels_removed": 507,
-  "contour_paths": 492,
-  "contour_vertices": 63108,
+  "comparison_to_v3_1": {
+    "n": 45540,
+    "exact_fraction": 0.6745937637241985,
+    "within_1m_band_fraction": 0.9521299956082565,
+    "mean_abs_class_difference": 0.37450592885375494
+  },
+  "island_pixels_removed": 502,
+  "contour_paths": 462,
+  "contour_vertices": 56288,
   "segmentation_rgb_distance": {
     "median": 3.0,
-    "p95": 25.45584487915039
+    "p95": 25.15949058532715
   },
-  "note": "Visible layer keeps native source pixels. Separate class raster is used for GPS lookup. SVG contours are traced at native pixel boundaries without smoothing."
+  "note": "Corrected native GeoPDF reconstruction. Visible layer keeps native pixels; contours are generated but not required for the default UI."
 }

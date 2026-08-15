@@ -1,17 +1,17 @@
 {
-  "version": "4.1",
+  "version": "4.1-fixed",
   "source": "Adour-Garonne FRFL49_Bathym GeoPDF native image strips",
   "source_url": "https://adour-garonne.eaufrance.fr/upload/DOC/FICHES/LACS/BATHYMETRIE/FRFL49_Bathym.pdf",
   "water_level_reference_ngf_m": 13.21,
   "vertical_definition": "official 1 m classes",
   "bbox": {
-    "west": -1.1463177702702703,
-    "east": -1.0764451351351352,
-    "north": 45.00437,
-    "south": 44.93178
+    "west": -1.1461923782521157,
+    "east": -1.0763490213023406,
+    "north": 45.00437403599738,
+    "south": 44.93177983830139
   },
   "width": 971,
-  "height": 1432,
+  "height": 1427,
   "palette_rgb": [
     [
       217,
@@ -57,9 +57,9 @@
   "visual_image": "bathymetry-geopdf-v41-native.webp",
   "class_image": "bathymetry-geopdf-v41-classes.webp",
   "contours_svg": "bathymetry-geopdf-v41-contours.svg",
-  "georef_method": "embedded GeoPDF GPTS/LPTS; native raster strips extracted without PDF rendering",
+  "georef_method": "embedded GeoPDF GPTS/LPTS + exact native image placement; each strip vertically flipped per PDF matrix; 1-row strip overlaps stitched",
   "native_resolution_m_per_px": [
-    5.667453228472906,
-    5.642960055865778
+    5.6650782484264655,
+    5.663059626851989
   ]
 }
