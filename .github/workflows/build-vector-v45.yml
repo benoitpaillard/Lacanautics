@@ -7,6 +7,7 @@ on:
       - 'tools/build_vector_v45.py'
       - 'tools/build_vector_v45_fast.py'
       - 'tools/build_vector_v45_lowpass.py'
+      - 'tools/run_v45_probe.py'
       - '.github/workflows/build-vector-v45.yml'
 permissions:
   contents: write
@@ -22,7 +23,7 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install pillow numpy scipy scikit-image shapely
-      - run: python tools/build_vector_v45_lowpass.py
+      - run: python tools/run_v45_probe.py
       - name: Show vector QC
         run: cat data/lacanau_vector_v45_report.json
       - name: Validate inline JavaScript
