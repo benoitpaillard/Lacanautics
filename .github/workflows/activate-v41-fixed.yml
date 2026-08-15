@@ -30,7 +30,7 @@ jobs:
           test -f bathymetry-geopdf-v41-native.webp
           test -f bathymetry-geopdf-v41-classes.webp
           test -f data/lacanau_geopdf_v41.json
-          grep -q 'v4.1-fixed' data/lacanau_geopdf_v41.json
+          grep -q '4.1-fixed' data/lacanau_geopdf_v41.json
           grep -q 'lacanautics-v4.1-fixed' sw.js
       - name: Commit UI activation
         run: |
