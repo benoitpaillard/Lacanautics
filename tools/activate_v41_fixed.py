@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from pathlib import Path
 
+# Activation rerun after corrected v4.1 assets have landed on main.
 p=Path('hires.html'); s=p.read_text(encoding='utf-8')
 
 def rep(old,new):
@@ -51,11 +52,9 @@ end=s.index("$('#plus').onclick",start)
 new_toggle="function toggleLayer(){mode=mode==='v41'?'v31':'v41';configure();if(last){const p=ll(last.coords.latitude,last.coords.longitude);me.style.left=p.x+'px';me.style.top=p.y+'px';updateDepth(last.coords.latitude,last.coords.longitude)}}\n"
 s=s[:start]+new_toggle+s[end:]
 
-# Share string labels
 s=s.replace("${mode==='survey'?'corrected depth '+dv.textContent:'model depth '+dv.textContent}","${mode==='v41'?'4.1 depth ':'3.1 depth '}${dv.textContent}")
 p.write_text(s,encoding='utf-8')
 
-# Root redirect: use an unmistakably new cache-busting query.
 idx=Path('index.html').read_text(encoding='utf-8')
 idx=idx.replace('Lacanautics Survey v3.1','Lacanautics GeoPDF v4.1 fixed').replace('Survey v3.1','GeoPDF v4.1 fixed')
 import re
