@@ -1,7 +1,8 @@
 {
-  "version": "3.1-harmonized-visual",
+  "version": "3.1-harmonized-vector-lines",
   "source_version": "3.0",
-  "geometry_note": "Original 10 m v3.1 class grid unchanged; only visual rendering changed.",
+  "geometry_note": "Original 10 m v3.1 class grid unchanged; boundaries are vectorized at cell edges with no smoothing.",
+  "asset": "bathymetry-2012-v31.svg",
   "palette_rgb": [
     [
       217,
@@ -58,11 +59,25 @@
   "contour_hex": "#244e5a",
   "inner_contour_opacity": 0.48,
   "shoreline_opacity": 0.62,
-  "render_scale": 2,
-  "render_size_px": [
-    982,
-    1642
-  ],
+  "inner_contour_width_px": 0.62,
+  "shoreline_width_px": 0.72,
+  "line_join": "round",
+  "line_cap": "round",
+  "vector_effect": "non-scaling-stroke",
   "survey_step_m": 10.0,
-  "webp_bytes": 39752
+  "source_grid_size": [
+    491,
+    821
+  ],
+  "rings_by_threshold": [
+    7,
+    151,
+    99,
+    32,
+    25,
+    16,
+    7,
+    3
+  ],
+  "svg_bytes": 277109
 }
