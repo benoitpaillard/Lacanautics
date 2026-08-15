@@ -1,0 +1,41 @@
+name: Build harmonized Survey v3.1 visual
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/build_v31_harmonized.py'
+      - '.github/workflows/build-v31-harmonized.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pillow numpy
+      - name: Render Survey v3.1 with Vector 4.5 styling
+        run: python tools/build_v31_harmonized.py
+      - name: Validate visual scale
+        run: |
+          test -s bathymetry-2012-v3.webp
+          test -s data/lacanau_v31_visual_report.json
+          python - <<'PY'
+          import json
+          r=json.load(open('data/lacanau_v31_visual_report.json'))
+          assert r['palette_hex'] == ['#d9f6f2','#c6efee','#afe5ec','#96d9eb','#61b9e6','#327fcd','#3158b4','#251c58']
+          assert r['land_hex'] == '#eef0e8'
+          assert r['contour_hex'] == '#244e5a'
+          assert r['render_size_px'] == [982,1642]
+          PY
+      - name: Commit harmonized visual
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add bathymetry-2012-v3.webp data/lacanau_v31_visual_report.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Harmonize Survey v3.1 visual scale with Vector 4.5"
+          git push
