@@ -6,7 +6,7 @@ import sys
 sys.path.insert(0, "tools")
 import build_vector_v45_lowpass as m
 
-PROBE_SCALE = 0.45
+PROBE_SCALE = 0.40
 m.v.FAIRING_SCALE_TRIALS = [PROBE_SCALE]
 m.v.fit_periodic_spline = m.fit_periodic_lowpass
 m.v.main()
