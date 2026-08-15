@@ -29,10 +29,11 @@ jobs:
           test -s data/lacanau_geopdf_v41.json
           test -s data/lacanau_lake_level.json
           test -s gps-max.js
+          test ! -e bathymetry-geopdf-v41-native.webp
           python -m json.tool data/lacanau_vector_v45_taubin_report.json >/dev/null
           python -m json.tool data/lacanau_geopdf_v41.json >/dev/null
           python -m json.tool data/lacanau_lake_level.json >/dev/null
-      - name: Check JavaScript syntax
+      - name: Check JavaScript syntax and layer set
         run: |
           python - <<'PY'
           import re, pathlib, json
@@ -41,7 +42,11 @@ jobs:
           assert scripts, 'No inline script found'
           pathlib.Path('/tmp/lacanautics-app.js').write_text('\n'.join(scripts),encoding='utf-8')
           assert 'bathymetry-geopdf-v45-taubin.svg' in html
+          assert 'bathymetry-2012-v3.webp' in html
           assert 'VECTOR 4.5' in html
+          assert 'bathymetry-geopdf-v41-native.webp' not in html
+          assert "mode==='raster'" not in html
+          assert 'RASTER 4.1' not in html
           r=json.loads(pathlib.Path('data/lacanau_vector_v45_taubin_report.json').read_text())
           assert r['nested_violations'] == [0]*7
           assert r['size_ratio_vs_v44'] < 0.5
@@ -51,9 +56,11 @@ jobs:
           node --check gps-max.js
           grep -q 'enableHighAccuracy:true' gps-max.js
           grep -q 'maximumAge:0' gps-max.js
-      - name: Check compact SVG and GPS service worker
+      - name: Check compact SVG and service worker
         run: |
           grep -q 'geom-1' bathymetry-geopdf-v45-taubin.svg
           grep -q 'clip-0' bathymetry-geopdf-v45-taubin.svg
-          grep -q "lacanautics-v4.5-taubin-gpsmax1" sw.js
+          grep -q "lacanautics-v4.5-taubin-gpsmax-noraster" sw.js
           grep -q 'gps-max.js' sw.js
+          grep -q 'bathymetry-geopdf-v41-classes.webp' sw.js
+          ! grep -q 'bathymetry-geopdf-v41-native.webp' sw.js
