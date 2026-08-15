@@ -27,6 +27,7 @@ jobs:
             'Survey v3.1: original 10 m depth classes vectorized at cell edges, using the same line widths, opacity, round joins/caps and 0–8 m colors as Vector 4.5. Tap 3.1 to return to Vector 4.5.'
           )
           s=s.replace('Survey v3.1 · 10 m grid · harmonized scale','Survey v3.1 · 10 m grid · matched vector lines')
+          s=s.replace("register('./sw.js?v=singlepage1')","register('./sw.js?v=singlepage2-v31lines')")
           p.write_text(s,encoding='utf-8')
 
           p=Path('sw.js')
@@ -42,6 +43,7 @@ jobs:
           test ! -e bathymetry-2012-v3.webp
           grep -q 'bathymetry-2012-v31.svg?v=31v1' index.html
           grep -q 'matched vector lines' index.html
+          grep -q "sw.js?v=singlepage2-v31lines" index.html
           grep -q 'lacanautics-v4.5-singlepage2-v31lines' sw.js
           grep -q 'bathymetry-2012-v31.svg' sw.js
           ! grep -q 'bathymetry-2012-v3.webp' sw.js
@@ -52,5 +54,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A index.html sw.js bathymetry-2012-v3.webp
           git diff --cached --quiet && exit 0
-          git commit -m "Use matched vector lines for Survey v3.1"
+          git commit -m "Force matched Survey v3.1 vector lines"
           git push
