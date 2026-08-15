@@ -1,0 +1,29 @@
+name: Build GeoPDF bathymetry v4.1
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/build_geopdf_v41_native.py'
+      - '.github/workflows/build-geopdf-v41.yml'
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pymupdf pillow numpy scipy shapely scikit-image
+      - run: python tools/build_geopdf_v41_native.py
+      - run: cat data/lacanau_geopdf_v41_report.json
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add bathymetry-geopdf-v41-native.webp bathymetry-geopdf-v41-classes.webp bathymetry-geopdf-v41-contours.svg data/lacanau_geopdf_v41.json data/lacanau_geopdf_v41_report.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Add native-strip GeoPDF bathymetry v4.1"
+          git pull --rebase origin main
+          git push
