@@ -1,0 +1,50 @@
+name: Build spline-faired vector bathymetry v4.5
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, v4.5-spline-fairing]
+    paths:
+      - 'tools/build_vector_v45.py'
+      - '.github/workflows/build-vector-v45.yml'
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pillow numpy scipy scikit-image shapely
+      - run: python tools/build_vector_v45.py
+      - name: Show vector QC
+        run: cat data/lacanau_vector_v45_report.json
+      - name: Validate inline JavaScript
+        run: |
+          python - <<'PY'
+          import re, pathlib
+          s=pathlib.Path('hires.html').read_text()
+          blocks=re.findall(r'<script>(.*?)</script>',s,re.S)
+          pathlib.Path('/tmp/lacanautics-inline.js').write_text('\n'.join(blocks))
+          PY
+          node --check /tmp/lacanautics-inline.js
+      - name: Validate v4.5 assets
+        run: |
+          test -s bathymetry-geopdf-v45-faired.svg
+          grep -q '4.5-spline-faired' data/lacanau_vector_v45_report.json
+          grep -q 'lacanautics-v4.5-spline-faired' sw.js
+          grep -q 'bathymetry-geopdf-v45-faired.svg' hires.html
+          grep -q 'VECTOR 4.5' hires.html
+          grep -q 'isobath-1m' bathymetry-geopdf-v45-faired.svg
+          grep -q '>1 m</text>' bathymetry-geopdf-v45-faired.svg
+          grep -q ' C ' bathymetry-geopdf-v45-faired.svg
+      - name: Commit spline-faired vector app
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add bathymetry-geopdf-v45-faired.svg data/lacanau_vector_v45_report.json hires.html index.html sw.js manifest.webmanifest
+          git diff --cached --quiet && exit 0
+          git commit -m "Add spline-faired v4.5 bathymetry"
+          git pull --rebase origin "$GITHUB_REF_NAME"
+          git push origin "HEAD:$GITHUB_REF_NAME"
