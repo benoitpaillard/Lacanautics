@@ -18,8 +18,8 @@ OUT_REPORT = ROOT / 'data/lacanau_vector_v45_taubin_report.json'
 SIGMA_BY_THRESHOLD = v44.SIGMA_BY_THRESHOLD
 TAUBIN_LAMBDA = 0.50
 TAUBIN_MU = -0.53
-# Shoreline and the tiny 7–8 m pockets stay exactly on the v4.4 geometry.
-TARGET_ITERATIONS = [0, 4, 4, 4, 3, 2, 1, 0]
+# Shoreline and the small 6–8 m zones stay exactly on the v4.4 geometry.
+TARGET_ITERATIONS = [0, 4, 4, 4, 3, 2, 0, 0]
 MIN_PERIMETER_PX = [1e9, 28, 28, 28, 24, 20, 16, 1e9]
 SIMPLIFY_TOLERANCE_PX = 0.18
 V44_SIMPLIFY_TOLERANCE_PX = 0.12
