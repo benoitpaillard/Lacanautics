@@ -1,0 +1,173 @@
+{
+  "version": "4.4-smooth-isobaths",
+  "source_version": "4.1-fixed",
+  "method": "depth-threshold occupancy Gaussian low-pass -> 0.5 iso-contours; no corner-cut/Chaikin stage; explicit labelled integer isobaths",
+  "sigma_by_threshold_px": [
+    1.3,
+    1.3,
+    1.3,
+    1.3,
+    1.3,
+    1.1,
+    0.9,
+    0.8
+  ],
+  "source_resolution_m_per_px": [
+    5.6650782484264655,
+    5.663059626851989
+  ],
+  "vertical_definition": "official 1 m classes",
+  "simplify_tolerance_px": 0.12,
+  "nested_violations": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "depth_label_count": 11,
+  "layers": [
+    {
+      "threshold_m": 0,
+      "sigma_px": 1.3,
+      "rings": 5,
+      "vertices": 2150
+    },
+    {
+      "threshold_m": 1,
+      "sigma_px": 1.3,
+      "rings": 80,
+      "vertices": 6802
+    },
+    {
+      "threshold_m": 2,
+      "sigma_px": 1.3,
+      "rings": 74,
+      "vertices": 5186
+    },
+    {
+      "threshold_m": 3,
+      "sigma_px": 1.3,
+      "rings": 28,
+      "vertices": 2795
+    },
+    {
+      "threshold_m": 4,
+      "sigma_px": 1.3,
+      "rings": 27,
+      "vertices": 1991
+    },
+    {
+      "threshold_m": 5,
+      "sigma_px": 1.1,
+      "rings": 19,
+      "vertices": 1389
+    },
+    {
+      "threshold_m": 6,
+      "sigma_px": 0.9,
+      "rings": 8,
+      "vertices": 520
+    },
+    {
+      "threshold_m": 7,
+      "sigma_px": 0.8,
+      "rings": 3,
+      "vertices": 41
+    }
+  ],
+  "svg_bytes": 761984,
+  "qc": {
+    "water_mask_iou": 0.9986593297348764,
+    "all_overlap_exact_class_fraction": 0.9803168649993866,
+    "all_overlap_within_1m_fraction": 0.9998755673951524,
+    "mean_depth_midpoint_source_m": 2.392721413685003,
+    "mean_depth_midpoint_vector_m": 2.3911317159290735,
+    "mean_depth_shift_m": -0.0015896977559295422,
+    "threshold_qc": [
+      {
+        "threshold_m": 0,
+        "sigma_px": 1.3,
+        "iou": 0.9986593297348764,
+        "area_ratio": 0.9999404542986743,
+        "boundary_p95_px": 1.0,
+        "boundary_p99_px": 1.0,
+        "source_components": 1,
+        "smoothed_components": 1
+      },
+      {
+        "threshold_m": 1,
+        "sigma_px": 1.3,
+        "iou": 0.9904825119941537,
+        "area_ratio": 0.9974398250402469,
+        "boundary_p95_px": 1.4142135623730951,
+        "boundary_p99_px": 7.0710678118654755,
+        "source_components": 320,
+        "smoothed_components": 69
+      },
+      {
+        "threshold_m": 2,
+        "sigma_px": 1.3,
+        "iou": 0.9867046899687849,
+        "area_ratio": 1.0013911220531668,
+        "boundary_p95_px": 1.4142135623730951,
+        "boundary_p99_px": 6.324555320336759,
+        "source_components": 118,
+        "smoothed_components": 42
+      },
+      {
+        "threshold_m": 3,
+        "sigma_px": 1.3,
+        "iou": 0.9908493393891858,
+        "area_ratio": 0.9996763220412476,
+        "boundary_p95_px": 1.0,
+        "boundary_p99_px": 1.0,
+        "source_components": 24,
+        "smoothed_components": 23
+      },
+      {
+        "threshold_m": 4,
+        "sigma_px": 1.3,
+        "iou": 0.9891070928386916,
+        "area_ratio": 0.9988532468750977,
+        "boundary_p95_px": 1.0,
+        "boundary_p99_px": 1.0,
+        "source_components": 34,
+        "smoothed_components": 23
+      },
+      {
+        "threshold_m": 5,
+        "sigma_px": 1.1,
+        "iou": 0.9865423435547438,
+        "area_ratio": 0.9986943591479485,
+        "boundary_p95_px": 1.0,
+        "boundary_p99_px": 1.0,
+        "source_components": 21,
+        "smoothed_components": 19
+      },
+      {
+        "threshold_m": 6,
+        "sigma_px": 0.9,
+        "iou": 0.9984358706986444,
+        "area_ratio": 0.9996869782971619,
+        "boundary_p95_px": 0.0,
+        "boundary_p99_px": 0.0,
+        "source_components": 9,
+        "smoothed_components": 8
+      },
+      {
+        "threshold_m": 7,
+        "sigma_px": 0.8,
+        "iou": 0.9813084112149533,
+        "area_ratio": 0.9813084112149533,
+        "boundary_p95_px": 0.0,
+        "boundary_p99_px": 0.9300000000000068,
+        "source_components": 3,
+        "smoothed_components": 3
+      }
+    ]
+  },
+  "navigation_note": "GPS lookup remains the exact corrected v4.1 class raster; v4.4 smoothing and contour lines are visual/cartographic only."
+}
