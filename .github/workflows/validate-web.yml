@@ -5,7 +5,6 @@ on:
   push:
     branches: [main]
     paths:
-      - 'hires.html'
       - 'index.html'
       - 'sw.js'
       - 'gps-max.js'
@@ -23,8 +22,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Check referenced map assets
+      - name: Check single-page app and map assets
         run: |
+          test -s index.html
+          test ! -e hires.html
           test -s bathymetry-geopdf-v45-taubin.svg
           test -s data/lacanau_vector_v45_taubin_report.json
           test -s bathymetry-2012-v3.webp
@@ -38,14 +39,19 @@ jobs:
           python -m json.tool data/lacanau_v31_visual_report.json >/dev/null
           python -m json.tool data/lacanau_geopdf_v41.json >/dev/null
           python -m json.tool data/lacanau_lake_level.json >/dev/null
-      - name: Check JavaScript syntax and layer set
+      - name: Check application JavaScript and layers
         run: |
           python - <<'PY'
           import re, pathlib, json
-          html=pathlib.Path('hires.html').read_text(encoding='utf-8')
-          scripts=re.findall(r'<script>(.*?)</script>',html,re.S)
-          assert scripts, 'No inline script found'
-          pathlib.Path('/tmp/lacanautics-app.js').write_text('\n'.join(scripts),encoding='utf-8')
+          html=pathlib.Path('index.html').read_text(encoding='utf-8')
+          scripts=re.findall(r'<script(?: [^>]*)?>(.*?)</script>',html,re.S)
+          inline='\n'.join(s for s in scripts if s.strip())
+          assert inline, 'No inline application script found'
+          pathlib.Path('/tmp/lacanautics-app.js').write_text(inline,encoding='utf-8')
+          assert 'src="./gps-max.js?v=2"' in html
+          assert "register('./sw.js?v=singlepage1')" in html
+          assert 'location.replace(' not in html
+          assert 'hires.html' not in html
           assert 'bathymetry-geopdf-v45-taubin.svg' in html
           assert 'bathymetry-2012-v3.webp?v=31h1' in html
           assert 'VECTOR 4.5' in html
@@ -68,18 +74,20 @@ jobs:
           PY
           node --check /tmp/lacanautics-app.js
           node --check gps-max.js
+          node --check sw.js
           grep -q 'enableHighAccuracy:true' gps-max.js
           grep -q 'maximumAge:0' gps-max.js
-      - name: Check compact SVG and loop-safe service worker
+      - name: Check compact SVG and simple service worker
         run: |
           grep -q 'geom-1' bathymetry-geopdf-v45-taubin.svg
           grep -q 'clip-0' bathymetry-geopdf-v45-taubin.svg
-          grep -q "lacanautics-v4.5-taubin-harmonized-loopfix1" sw.js
-          grep -q "'./hires.html'" sw.js
+          grep -q "lacanautics-v4.5-singlepage1" sw.js
+          grep -q "'./index.html'" sw.js
           grep -q 'gps-max.js' sw.js
           grep -q 'bathymetry-geopdf-v41-classes.webp' sw.js
           grep -q 'bathymetry-2012-v3.webp' sw.js
-          ! grep -q "cached?injectGpsLayer(cached):caches.match('./index.html')" sw.js
+          ! grep -q 'hires.html' sw.js
+          ! grep -q 'injectGpsLayer' sw.js
+          ! grep -q 'location.replace' index.html
           ! grep -q 'controllerchange' index.html
-          grep -q 'sw.js?v=loopfix1' index.html
           ! grep -q 'bathymetry-geopdf-v41-native.webp' sw.js
