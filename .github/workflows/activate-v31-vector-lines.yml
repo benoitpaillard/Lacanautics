@@ -34,17 +34,6 @@ jobs:
           s=s.replace("lacanautics-v4.5-singlepage1","lacanautics-v4.5-singlepage2-v31lines")
           s=s.replace("'./bathymetry-2012-v3.webp'","'./bathymetry-2012-v31.svg'")
           p.write_text(s,encoding='utf-8')
-
-          p=Path('.github/workflows/validate-web.yml')
-          s=p.read_text(encoding='utf-8')
-          s=s.replace("      - 'bathymetry-2012-v3.webp'","      - 'bathymetry-2012-v31.svg'")
-          s=s.replace('test -s bathymetry-2012-v3.webp','test -s bathymetry-2012-v31.svg')
-          s=s.replace("assert 'bathymetry-2012-v3.webp?v=31h1' in html","assert 'bathymetry-2012-v31.svg?v=31v1' in html")
-          s=s.replace("assert v31['shoreline_opacity'] == 0.62","assert v31['shoreline_opacity'] == 0.62\n          assert v31['inner_contour_width_px'] == 0.62\n          assert v31['shoreline_width_px'] == 0.72\n          assert v31['line_join'] == 'round'\n          assert v31['line_cap'] == 'round'")
-          s=s.replace("grep -q \"lacanautics-v4.5-singlepage1\" sw.js","grep -q \"lacanautics-v4.5-singlepage2-v31lines\" sw.js")
-          s=s.replace("grep -q 'bathymetry-2012-v3.webp' sw.js","grep -q 'bathymetry-2012-v31.svg' sw.js")
-          s=s.replace("! grep -q 'bathymetry-geopdf-v41-native.webp' sw.js","grep -q 'stroke-width=\"0.62\"' bathymetry-2012-v31.svg\n          grep -q 'stroke-width=\"0.72\"' bathymetry-2012-v31.svg\n          ! grep -q 'bathymetry-geopdf-v41-native.webp' sw.js")
-          p.write_text(s,encoding='utf-8')
           PY
           rm -f bathymetry-2012-v3.webp
       - name: Validate activation
@@ -61,7 +50,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A index.html sw.js .github/workflows/validate-web.yml bathymetry-2012-v3.webp
+          git add -A index.html sw.js bathymetry-2012-v3.webp
           git diff --cached --quiet && exit 0
           git commit -m "Use matched vector lines for Survey v3.1"
           git push
