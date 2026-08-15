@@ -1,0 +1,42 @@
+name: Build mobile raster display assets
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/build_mobile_rasters.py'
+      - '.github/workflows/build-mobile-rasters.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install renderer
+        run: pip install cairosvg pillow
+      - name: Build mobile rasters
+        run: python tools/build_mobile_rasters.py
+      - name: Validate outputs
+        run: |
+          test -s bathymetry-geopdf-v45-mobile.webp
+          test -s bathymetry-2012-v31-mobile.webp
+          python - <<'PY'
+          from PIL import Image
+          for p in ['bathymetry-geopdf-v45-mobile.webp','bathymetry-2012-v31-mobile.webp']:
+              im=Image.open(p)
+              assert im.width >= 1900
+              assert im.height >= 1600
+              print(p, im.size)
+          PY
+      - name: Commit mobile rasters
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add bathymetry-geopdf-v45-mobile.webp bathymetry-2012-v31-mobile.webp
+          git diff --cached --quiet && exit 0
+          git commit -m "Add fast mobile bathymetry rasters"
+          git push
