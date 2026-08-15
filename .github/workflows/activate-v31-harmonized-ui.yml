@@ -1,0 +1,41 @@
+name: Activate harmonized Survey v3.1 UI
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/activate_v31_harmonized_ui.py'
+      - '.github/workflows/activate-v31-harmonized-ui.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  activate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Apply harmonized Survey v3.1 UI
+        run: python tools/activate_v31_harmonized_ui.py
+      - name: Validate UI and JavaScript
+        run: |
+          grep -q 'bathymetry-2012-v3.webp?v=31h1' hires.html
+          grep -q 'SURVEY v3.1 · harmonized' hires.html
+          grep -q 'harmonized scale' hires.html
+          grep -q 'lacanautics-v4.5-taubin-gpsmax-harmonized-v31' sw.js
+          python - <<'PY'
+          import re, pathlib
+          h=pathlib.Path('hires.html').read_text(encoding='utf-8')
+          scripts=re.findall(r'<script(?: [^>]*)?>(.*?)</script>',h,re.S)
+          pathlib.Path('/tmp/lacanautics-inline.js').write_text('\n'.join(x for x in scripts if x.strip()),encoding='utf-8')
+          PY
+          node --check /tmp/lacanautics-inline.js
+      - name: Commit UI activation
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add hires.html sw.js
+          git diff --cached --quiet && exit 0
+          git commit -m "Match Survey v3.1 appearance to Vector 4.5"
+          git push
