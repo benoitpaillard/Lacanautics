@@ -13,7 +13,7 @@
     4,
     3,
     2,
-    1,
+    0,
     0
   ],
   "source_resolution_m_per_px": [
@@ -148,19 +148,19 @@
     {
       "threshold_m": 6,
       "gaussian_sigma_px": 0.9,
-      "taubin_iterations": 1,
+      "taubin_iterations": 0,
       "lambda": 0.5,
       "mu": -0.53,
-      "simplify_tolerance_px": 0.18,
+      "simplify_tolerance_px": 0.12,
       "rings": 8,
-      "rings_taubin_smoothed": 7,
+      "rings_taubin_smoothed": 0,
       "raw_vertices": 1308,
-      "svg_vertices": 403,
-      "roughness_rms_before": 0.3052782049840123,
-      "roughness_rms_after": 0.16105271574765734,
-      "roughness_ratio": 0.5275604780108419,
-      "max_taubin_displacement_px": 0.2659517476363997,
-      "max_abs_area_change_fraction": 0.00043904672357508723,
+      "svg_vertices": 520,
+      "roughness_rms_before": 0.0,
+      "roughness_rms_after": 0.0,
+      "roughness_ratio": 1.0,
+      "max_taubin_displacement_px": 0.0,
+      "max_abs_area_change_fraction": 0.0,
       "preclip_spill_cells": 0,
       "cells_removed_by_parent_clip": 0
     },
@@ -184,16 +184,16 @@
       "cells_removed_by_parent_clip": 0
     }
   ],
-  "svg_bytes": 292081,
+  "svg_bytes": 294187,
   "v44_svg_bytes": 761984,
-  "size_ratio_vs_v44": 0.3833164475894507,
+  "size_ratio_vs_v44": 0.38608028515034437,
   "qc": {
     "water_mask_iou": 0.9986540790680416,
-    "all_overlap_exact_class_fraction": 0.9787061394668999,
+    "all_overlap_exact_class_fraction": 0.9789515008228369,
     "all_overlap_within_1m_fraction": 0.9998632986731208,
     "mean_depth_midpoint_source_m": 2.392721413685003,
-    "mean_depth_midpoint_vector_m": 2.3908474077551043,
-    "mean_depth_shift_m": -0.0018740059298987255,
+    "mean_depth_midpoint_vector_m": 2.390871928162213,
+    "mean_depth_shift_m": -0.001849485522789962,
     "threshold_qc": [
       {
         "threshold_m": 0,
@@ -251,10 +251,10 @@
       },
       {
         "threshold_m": 6,
-        "iou": 0.9839428157049622,
-        "area_ratio": 0.9982262103505843,
-        "boundary_p95_px": 1.0,
-        "boundary_p99_px": 1.0,
+        "iou": 0.9984358706986444,
+        "area_ratio": 0.9996869782971619,
+        "boundary_p95_px": 0.0,
+        "boundary_p99_px": 0.0,
         "source_components": 9,
         "vector_components": 8
       },
