@@ -5,6 +5,7 @@ on:
     branches: [main, v4.5-spline-fairing]
     paths:
       - 'tools/build_vector_v45.py'
+      - 'tools/build_vector_v45_fast.py'
       - '.github/workflows/build-vector-v45.yml'
 permissions:
   contents: write
@@ -17,7 +18,7 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install pillow numpy scipy scikit-image shapely
-      - run: python tools/build_vector_v45.py
+      - run: python tools/build_vector_v45_fast.py
       - name: Show vector QC
         run: cat data/lacanau_vector_v45_report.json
       - name: Validate inline JavaScript
