@@ -1,5 +1,5 @@
-const CACHE='lacanautics-v4.5-taubin-gpsmax-harmonized-v31';
-const CORE=['./','./index.html','./manifest.webmanifest','./gps-max.js','./bathymetry-geopdf-v45-taubin.svg','./bathymetry-geopdf-v41-classes.webp','./data/lacanau_geopdf_v41.json','./bathymetry-2012-v3.webp','./data/lacanau_2012_bands_v3.json','./data/lacanau_lake_level.json'];
+const CACHE='lacanautics-v4.5-taubin-harmonized-loopfix1';
+const CORE=['./','./index.html','./hires.html','./manifest.webmanifest','./gps-max.js','./bathymetry-geopdf-v45-taubin.svg','./bathymetry-geopdf-v41-classes.webp','./data/lacanau_geopdf_v41.json','./bathymetry-2012-v3.webp','./data/lacanau_2012_bands_v3.json','./data/lacanau_lake_level.json'];
 
 self.addEventListener('install',e=>{
   self.skipWaiting();
@@ -32,17 +32,17 @@ self.addEventListener('fetch',e=>{
     e.respondWith(
       fetch(e.request,{cache:'no-store'})
         .then(resp=>injectGpsLayer(resp))
-        .then(resp=>{if(resp.ok){const copy=resp.clone();caches.open(CACHE).then(c=>c.put(e.request,copy))}return resp})
+        .then(resp=>{if(resp.ok){const copy=resp.clone();caches.open(CACHE).then(c=>c.put('./hires.html',copy))}return resp})
         .catch(async()=>{
-          const cached=await caches.match(e.request)||await caches.match('./hires.html');
-          return cached?injectGpsLayer(cached):caches.match('./index.html');
+          const cached=await caches.match('./hires.html');
+          return cached?injectGpsLayer(cached):Response.error();
         })
     );
     return;
   }
 
   if(fresh){
-    e.respondWith(fetch(e.request,{cache:'no-store'}).then(resp=>{if(resp.ok){const copy=resp.clone();caches.open(CACHE).then(c=>c.put(e.request,copy))}return resp}).catch(()=>caches.match(e.request).then(r=>r||caches.match('./index.html'))));
+    e.respondWith(fetch(e.request,{cache:'no-store'}).then(resp=>{if(resp.ok){const copy=resp.clone();caches.open(CACHE).then(c=>c.put(e.request,copy))}return resp}).catch(()=>caches.match(e.request)));
   }else{
     e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request).then(resp=>{if(resp.ok){const copy=resp.clone();caches.open(CACHE).then(c=>c.put(e.request,copy))}return resp})));
   }
