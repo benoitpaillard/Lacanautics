@@ -1,0 +1,105 @@
+{
+  "version": "4.2-vector",
+  "source_version": "4.1-fixed",
+  "source_class_image": "bathymetry-geopdf-v41-classes.webp",
+  "source_resolution_px": [
+    971,
+    1427
+  ],
+  "source_resolution_m_per_px": [
+    5.6650782484264655,
+    5.663059626851989
+  ],
+  "vertical_definition": "official 1 m classes",
+  "vectorization": "cumulative filled SVG polygons; marching squares at exact half-pixel boundaries; exact collinear point removal only; no smoothing",
+  "layers": [
+    {
+      "threshold_m": 0,
+      "rings": 5,
+      "vertices_raw": 7160,
+      "vertices_after_exact_collinear_reduction": 3028
+    },
+    {
+      "threshold_m": 1,
+      "rings": 277,
+      "vertices_raw": 21296,
+      "vertices_after_exact_collinear_reduction": 10003
+    },
+    {
+      "threshold_m": 2,
+      "rings": 462,
+      "vertices_raw": 18600,
+      "vertices_after_exact_collinear_reduction": 9440
+    },
+    {
+      "threshold_m": 3,
+      "rings": 33,
+      "vertices_raw": 7450,
+      "vertices_after_exact_collinear_reduction": 3381
+    },
+    {
+      "threshold_m": 4,
+      "rings": 42,
+      "vertices_raw": 5370,
+      "vertices_after_exact_collinear_reduction": 2389
+    },
+    {
+      "threshold_m": 5,
+      "rings": 21,
+      "vertices_raw": 3520,
+      "vertices_after_exact_collinear_reduction": 1500
+    },
+    {
+      "threshold_m": 6,
+      "rings": 9,
+      "vertices_raw": 1336,
+      "vertices_after_exact_collinear_reduction": 556
+    },
+    {
+      "threshold_m": 7,
+      "rings": 3,
+      "vertices_raw": 90,
+      "vertices_after_exact_collinear_reduction": 40
+    }
+  ],
+  "svg_bytes": 430326,
+  "qc": {
+    "water_mask_iou_at_alpha_128": 0.9999947459951348,
+    "stable_interior_pixels": 364316,
+    "stable_interior_exact_class_fraction": 1.0,
+    "all_overlap_exact_class_fraction": 0.9964430200178637,
+    "all_overlap_within_1m_fraction": 0.9992066410970419,
+    "original_class_pixels": [
+      110084,
+      151803,
+      145360,
+      67820,
+      54564,
+      31775,
+      9477,
+      107
+    ],
+    "rendered_class_pixels_nearest_palette": [
+      108272,
+      153015,
+      145798,
+      67998,
+      54563,
+      31778,
+      9476,
+      93
+    ],
+    "relative_area_error_by_class": [
+      -0.016460157697758077,
+      0.007984031936127744,
+      0.0030132085855806272,
+      0.0026245945148923623,
+      -1.8327102118613003e-05,
+      9.44138473642801e-05,
+      -0.00010551862403714256,
+      -0.1308411214953271
+    ],
+    "mean_depth_midpoint_original_m": 2.392721413685003,
+    "mean_depth_midpoint_vector_render_m": 2.397140595418858
+  }
+}
