@@ -1,4 +1,4 @@
-const CACHE='lacanautics-v4.3-subpixel';
+const CACHE='lacanautics-v4.3-final';
 const CORE=['./','./index.html','./hires.html','./manifest.webmanifest','./bathymetry-geopdf-v43-subpixel.svg','./bathymetry-geopdf-v41-native.webp','./bathymetry-geopdf-v41-classes.webp','./data/lacanau_geopdf_v41.json','./bathymetry-2012-v3.webp','./data/lacanau_2012_bands_v3.json','./data/lacanau_lake_level.json'];
 self.addEventListener('install',e=>{self.skipWaiting();e.waitUntil(caches.open(CACHE).then(c=>c.addAll(CORE)))});
 self.addEventListener('activate',e=>{e.waitUntil(Promise.all([caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))),self.clients.claim()]))});

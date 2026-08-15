@@ -1,7 +1,7 @@
 {
-  "version": "4.3-subpixel",
+  "version": "4.3-final",
   "source_version": "4.1-fixed",
-  "method": "native RGB transition projection + 0.42 px regularization for internal class boundaries; 0.62 px shoreline regularization; cumulative nesting enforced",
+  "method": "half-pixel contours; bounded Chaikin smoothing only for thresholds 0\u20134; thresholds 5\u20137 exact; source-ring topology asserted",
   "source_resolution_m_per_px": [
     5.6650782484264655,
     5.663059626851989
@@ -10,119 +10,4429 @@
   "layers": [
     {
       "threshold_m": 0,
-      "rings": 5,
-      "vertices_scalar_contour": 7165,
-      "vertices_after_0_10px_geometric_compression": 3581
+      "source_rings": 5,
+      "emitted_rings": 5,
+      "vertices_source_half_pixel": 7160,
+      "vertices_vector": 6917,
+      "ring_stats": [
+        {
+          "source_vertices": 6908,
+          "chaikin_iterations": 2,
+          "vector_vertices": 6686
+        },
+        {
+          "source_vertices": 62,
+          "chaikin_iterations": 1,
+          "vector_vertices": 53
+        },
+        {
+          "source_vertices": 106,
+          "chaikin_iterations": 2,
+          "vector_vertices": 104
+        },
+        {
+          "source_vertices": 52,
+          "chaikin_iterations": 1,
+          "vector_vertices": 43
+        },
+        {
+          "source_vertices": 32,
+          "chaikin_iterations": 1,
+          "vector_vertices": 31
+        }
+      ]
     },
     {
       "threshold_m": 1,
-      "rings": 243,
-      "vertices_scalar_contour": 21317,
-      "vertices_after_0_10px_geometric_compression": 12473
+      "source_rings": 277,
+      "emitted_rings": 277,
+      "vertices_source_half_pixel": 21296,
+      "vertices_vector": 21266,
+      "ring_stats": [
+        {
+          "source_vertices": 2044,
+          "chaikin_iterations": 2,
+          "vector_vertices": 2111
+        },
+        {
+          "source_vertices": 10,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 126,
+          "chaikin_iterations": 2,
+          "vector_vertices": 138
+        },
+        {
+          "source_vertices": 10140,
+          "chaikin_iterations": 2,
+          "vector_vertices": 10696
+        },
+        {
+          "source_vertices": 42,
+          "chaikin_iterations": 1,
+          "vector_vertices": 30
+        },
+        {
+          "source_vertices": 226,
+          "chaikin_iterations": 2,
+          "vector_vertices": 145
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 20,
+          "chaikin_iterations": 0,
+          "vector_vertices": 10
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 18,
+          "chaikin_iterations": 0,
+          "vector_vertices": 9
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 16,
+          "chaikin_iterations": 0,
+          "vector_vertices": 12
+        },
+        {
+          "source_vertices": 10,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 10,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 32,
+          "chaikin_iterations": 1,
+          "vector_vertices": 42
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 18,
+          "chaikin_iterations": 0,
+          "vector_vertices": 12
+        },
+        {
+          "source_vertices": 30,
+          "chaikin_iterations": 1,
+          "vector_vertices": 40
+        },
+        {
+          "source_vertices": 10,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 22,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 26,
+          "chaikin_iterations": 1,
+          "vector_vertices": 20
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 18,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 28,
+          "chaikin_iterations": 1,
+          "vector_vertices": 24
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 22,
+          "chaikin_iterations": 0,
+          "vector_vertices": 10
+        },
+        {
+          "source_vertices": 58,
+          "chaikin_iterations": 1,
+          "vector_vertices": 58
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 18,
+          "chaikin_iterations": 0,
+          "vector_vertices": 10
+        },
+        {
+          "source_vertices": 18,
+          "chaikin_iterations": 0,
+          "vector_vertices": 10
+        },
+        {
+          "source_vertices": 30,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 9
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 18,
+          "chaikin_iterations": 0,
+          "vector_vertices": 12
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 30,
+          "chaikin_iterations": 1,
+          "vector_vertices": 30
+        },
+        {
+          "source_vertices": 10,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 10
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 16,
+          "chaikin_iterations": 0,
+          "vector_vertices": 10
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 10,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 22,
+          "chaikin_iterations": 0,
+          "vector_vertices": 17
+        },
+        {
+          "source_vertices": 20,
+          "chaikin_iterations": 0,
+          "vector_vertices": 15
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 24,
+          "chaikin_iterations": 1,
+          "vector_vertices": 28
+        },
+        {
+          "source_vertices": 10,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 26,
+          "chaikin_iterations": 1,
+          "vector_vertices": 32
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 134,
+          "chaikin_iterations": 2,
+          "vector_vertices": 161
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 160,
+          "chaikin_iterations": 2,
+          "vector_vertices": 158
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 26,
+          "chaikin_iterations": 1,
+          "vector_vertices": 30
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 816,
+          "chaikin_iterations": 2,
+          "vector_vertices": 848
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 10,
+          "chaikin_iterations": 0,
+          "vector_vertices": 7
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 14,
+          "chaikin_iterations": 0,
+          "vector_vertices": 11
+        },
+        {
+          "source_vertices": 444,
+          "chaikin_iterations": 2,
+          "vector_vertices": 435
+        },
+        {
+          "source_vertices": 36,
+          "chaikin_iterations": 1,
+          "vector_vertices": 32
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 22,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 48,
+          "chaikin_iterations": 1,
+          "vector_vertices": 52
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 7
+        },
+        {
+          "source_vertices": 74,
+          "chaikin_iterations": 1,
+          "vector_vertices": 52
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 10,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 10,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 46,
+          "chaikin_iterations": 1,
+          "vector_vertices": 59
+        },
+        {
+          "source_vertices": 36,
+          "chaikin_iterations": 1,
+          "vector_vertices": 46
+        },
+        {
+          "source_vertices": 10,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 18,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 174,
+          "chaikin_iterations": 2,
+          "vector_vertices": 172
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 10,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 428,
+          "chaikin_iterations": 2,
+          "vector_vertices": 465
+        },
+        {
+          "source_vertices": 14,
+          "chaikin_iterations": 0,
+          "vector_vertices": 9
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 22,
+          "chaikin_iterations": 0,
+          "vector_vertices": 14
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 16,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 32,
+          "chaikin_iterations": 1,
+          "vector_vertices": 30
+        },
+        {
+          "source_vertices": 46,
+          "chaikin_iterations": 1,
+          "vector_vertices": 30
+        },
+        {
+          "source_vertices": 46,
+          "chaikin_iterations": 1,
+          "vector_vertices": 48
+        },
+        {
+          "source_vertices": 16,
+          "chaikin_iterations": 0,
+          "vector_vertices": 11
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 174,
+          "chaikin_iterations": 2,
+          "vector_vertices": 219
+        },
+        {
+          "source_vertices": 18,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 10,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 26,
+          "chaikin_iterations": 1,
+          "vector_vertices": 24
+        },
+        {
+          "source_vertices": 304,
+          "chaikin_iterations": 2,
+          "vector_vertices": 302
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 7
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 20,
+          "chaikin_iterations": 0,
+          "vector_vertices": 11
+        },
+        {
+          "source_vertices": 58,
+          "chaikin_iterations": 1,
+          "vector_vertices": 28
+        },
+        {
+          "source_vertices": 16,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 30,
+          "chaikin_iterations": 1,
+          "vector_vertices": 20
+        },
+        {
+          "source_vertices": 30,
+          "chaikin_iterations": 1,
+          "vector_vertices": 32
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 28,
+          "chaikin_iterations": 1,
+          "vector_vertices": 38
+        },
+        {
+          "source_vertices": 22,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 14,
+          "chaikin_iterations": 0,
+          "vector_vertices": 9
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 30,
+          "chaikin_iterations": 1,
+          "vector_vertices": 39
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 7
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 322,
+          "chaikin_iterations": 2,
+          "vector_vertices": 365
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 40,
+          "chaikin_iterations": 1,
+          "vector_vertices": 46
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 7
+        },
+        {
+          "source_vertices": 24,
+          "chaikin_iterations": 1,
+          "vector_vertices": 20
+        },
+        {
+          "source_vertices": 14,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 9
+        },
+        {
+          "source_vertices": 18,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 174,
+          "chaikin_iterations": 2,
+          "vector_vertices": 166
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 18,
+          "chaikin_iterations": 0,
+          "vector_vertices": 9
+        },
+        {
+          "source_vertices": 84,
+          "chaikin_iterations": 2,
+          "vector_vertices": 97
+        },
+        {
+          "source_vertices": 288,
+          "chaikin_iterations": 2,
+          "vector_vertices": 274
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 16,
+          "chaikin_iterations": 0,
+          "vector_vertices": 9
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 1466,
+          "chaikin_iterations": 2,
+          "vector_vertices": 1344
+        },
+        {
+          "source_vertices": 18,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 194,
+          "chaikin_iterations": 2,
+          "vector_vertices": 168
+        },
+        {
+          "source_vertices": 14,
+          "chaikin_iterations": 0,
+          "vector_vertices": 5
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 9
+        },
+        {
+          "source_vertices": 10,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 36,
+          "chaikin_iterations": 1,
+          "vector_vertices": 36
+        },
+        {
+          "source_vertices": 52,
+          "chaikin_iterations": 1,
+          "vector_vertices": 54
+        },
+        {
+          "source_vertices": 26,
+          "chaikin_iterations": 1,
+          "vector_vertices": 28
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 20,
+          "chaikin_iterations": 0,
+          "vector_vertices": 10
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 42,
+          "chaikin_iterations": 1,
+          "vector_vertices": 35
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 10,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 7
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 192,
+          "chaikin_iterations": 2,
+          "vector_vertices": 210
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 30,
+          "chaikin_iterations": 1,
+          "vector_vertices": 32
+        },
+        {
+          "source_vertices": 10,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 14,
+          "chaikin_iterations": 0,
+          "vector_vertices": 10
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 58,
+          "chaikin_iterations": 1,
+          "vector_vertices": 30
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 16,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 14,
+          "chaikin_iterations": 0,
+          "vector_vertices": 10
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 14,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 10,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 18,
+          "chaikin_iterations": 0,
+          "vector_vertices": 12
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 7
+        },
+        {
+          "source_vertices": 34,
+          "chaikin_iterations": 1,
+          "vector_vertices": 36
+        },
+        {
+          "source_vertices": 18,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 90,
+          "chaikin_iterations": 2,
+          "vector_vertices": 96
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 48,
+          "chaikin_iterations": 1,
+          "vector_vertices": 46
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 10,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 26,
+          "chaikin_iterations": 1,
+          "vector_vertices": 28
+        },
+        {
+          "source_vertices": 22,
+          "chaikin_iterations": 0,
+          "vector_vertices": 12
+        },
+        {
+          "source_vertices": 10,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 40,
+          "chaikin_iterations": 1,
+          "vector_vertices": 30
+        }
+      ]
     },
     {
       "threshold_m": 2,
-      "rings": 385,
-      "vertices_scalar_contour": 18362,
-      "vertices_after_0_10px_geometric_compression": 10621
+      "source_rings": 462,
+      "emitted_rings": 462,
+      "vertices_source_half_pixel": 18600,
+      "vertices_vector": 18558,
+      "ring_stats": [
+        {
+          "source_vertices": 2426,
+          "chaikin_iterations": 2,
+          "vector_vertices": 2857
+        },
+        {
+          "source_vertices": 14,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 14,
+          "chaikin_iterations": 0,
+          "vector_vertices": 9
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 36,
+          "chaikin_iterations": 1,
+          "vector_vertices": 40
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 20,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 7
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 158,
+          "chaikin_iterations": 2,
+          "vector_vertices": 141
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 7
+        },
+        {
+          "source_vertices": 10,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 20,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 18,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 7456,
+          "chaikin_iterations": 2,
+          "vector_vertices": 7580
+        },
+        {
+          "source_vertices": 10,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 9
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 14,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 14,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 10,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 10,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 10,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 10,
+          "chaikin_iterations": 0,
+          "vector_vertices": 5
+        },
+        {
+          "source_vertices": 18,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 14,
+          "chaikin_iterations": 0,
+          "vector_vertices": 9
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 9
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 16,
+          "chaikin_iterations": 0,
+          "vector_vertices": 9
+        },
+        {
+          "source_vertices": 14,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 16,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 7
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 14,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 18,
+          "chaikin_iterations": 0,
+          "vector_vertices": 15
+        },
+        {
+          "source_vertices": 14,
+          "chaikin_iterations": 0,
+          "vector_vertices": 7
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 20,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 16,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 14,
+          "chaikin_iterations": 0,
+          "vector_vertices": 11
+        },
+        {
+          "source_vertices": 18,
+          "chaikin_iterations": 0,
+          "vector_vertices": 14
+        },
+        {
+          "source_vertices": 10,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 7
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 16,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 14,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 16,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 24,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 26,
+          "chaikin_iterations": 1,
+          "vector_vertices": 34
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 72,
+          "chaikin_iterations": 1,
+          "vector_vertices": 74
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 18,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 9
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 7
+        },
+        {
+          "source_vertices": 38,
+          "chaikin_iterations": 1,
+          "vector_vertices": 26
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 20,
+          "chaikin_iterations": 0,
+          "vector_vertices": 14
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 20,
+          "chaikin_iterations": 0,
+          "vector_vertices": 14
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 98,
+          "chaikin_iterations": 2,
+          "vector_vertices": 91
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 10,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 9
+        },
+        {
+          "source_vertices": 20,
+          "chaikin_iterations": 0,
+          "vector_vertices": 10
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 30,
+          "chaikin_iterations": 1,
+          "vector_vertices": 17
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 30,
+          "chaikin_iterations": 1,
+          "vector_vertices": 24
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 22,
+          "chaikin_iterations": 0,
+          "vector_vertices": 10
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 9
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 16,
+          "chaikin_iterations": 0,
+          "vector_vertices": 11
+        },
+        {
+          "source_vertices": 20,
+          "chaikin_iterations": 0,
+          "vector_vertices": 10
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 152,
+          "chaikin_iterations": 2,
+          "vector_vertices": 177
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 7
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 64,
+          "chaikin_iterations": 1,
+          "vector_vertices": 55
+        },
+        {
+          "source_vertices": 44,
+          "chaikin_iterations": 1,
+          "vector_vertices": 36
+        },
+        {
+          "source_vertices": 772,
+          "chaikin_iterations": 2,
+          "vector_vertices": 748
+        },
+        {
+          "source_vertices": 46,
+          "chaikin_iterations": 1,
+          "vector_vertices": 36
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 64,
+          "chaikin_iterations": 1,
+          "vector_vertices": 62
+        },
+        {
+          "source_vertices": 528,
+          "chaikin_iterations": 2,
+          "vector_vertices": 589
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 20,
+          "chaikin_iterations": 0,
+          "vector_vertices": 10
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 14,
+          "chaikin_iterations": 0,
+          "vector_vertices": 7
+        },
+        {
+          "source_vertices": 16,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 22,
+          "chaikin_iterations": 0,
+          "vector_vertices": 12
+        },
+        {
+          "source_vertices": 16,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 28,
+          "chaikin_iterations": 1,
+          "vector_vertices": 36
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 16,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 30,
+          "chaikin_iterations": 1,
+          "vector_vertices": 17
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 438,
+          "chaikin_iterations": 2,
+          "vector_vertices": 513
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 9
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 14,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 16,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 14,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 7
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 9
+        },
+        {
+          "source_vertices": 10,
+          "chaikin_iterations": 0,
+          "vector_vertices": 7
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 10,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 24,
+          "chaikin_iterations": 1,
+          "vector_vertices": 25
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 72,
+          "chaikin_iterations": 1,
+          "vector_vertices": 70
+        },
+        {
+          "source_vertices": 18,
+          "chaikin_iterations": 0,
+          "vector_vertices": 9
+        },
+        {
+          "source_vertices": 80,
+          "chaikin_iterations": 2,
+          "vector_vertices": 75
+        },
+        {
+          "source_vertices": 96,
+          "chaikin_iterations": 2,
+          "vector_vertices": 105
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 42,
+          "chaikin_iterations": 1,
+          "vector_vertices": 32
+        },
+        {
+          "source_vertices": 30,
+          "chaikin_iterations": 1,
+          "vector_vertices": 34
+        },
+        {
+          "source_vertices": 30,
+          "chaikin_iterations": 1,
+          "vector_vertices": 28
+        },
+        {
+          "source_vertices": 74,
+          "chaikin_iterations": 1,
+          "vector_vertices": 66
+        },
+        {
+          "source_vertices": 46,
+          "chaikin_iterations": 1,
+          "vector_vertices": 40
+        },
+        {
+          "source_vertices": 24,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
+        },
+        {
+          "source_vertices": 10,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 9
+        },
+        {
+          "source_vertices": 46,
+          "chaikin_iterations": 1,
+          "vector_vertices": 50
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 18,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 508,
+          "chaikin_iterations": 2,
+          "vector_vertices": 573
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 98,
+          "chaikin_iterations": 2,
+          "vector_vertices": 150
+        },
+        {
+          "source_vertices": 146,
+          "chaikin_iterations": 2,
+          "vector_vertices": 118
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 28,
+          "chaikin_iterations": 1,
+          "vector_vertices": 24
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 14,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 18,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 18,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 10,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 7
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 172,
+          "chaikin_iterations": 2,
+          "vector_vertices": 192
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 10,
+          "chaikin_iterations": 0,
+          "vector_vertices": 7
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 14,
+          "chaikin_iterations": 0,
+          "vector_vertices": 9
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 16,
+          "chaikin_iterations": 0,
+          "vector_vertices": 9
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 14,
+          "chaikin_iterations": 0,
+          "vector_vertices": 10
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 10,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 968,
+          "chaikin_iterations": 2,
+          "vector_vertices": 953
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 10,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 9
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 146,
+          "chaikin_iterations": 2,
+          "vector_vertices": 140
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 7
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 24,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
+        },
+        {
+          "source_vertices": 10,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 10,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 16,
+          "chaikin_iterations": 0,
+          "vector_vertices": 9
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 126,
+          "chaikin_iterations": 2,
+          "vector_vertices": 114
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 10,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 10,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 10,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 16,
+          "chaikin_iterations": 0,
+          "vector_vertices": 10
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 18,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 10,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 16,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 20,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 114,
+          "chaikin_iterations": 2,
+          "vector_vertices": 112
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 18,
+          "chaikin_iterations": 0,
+          "vector_vertices": 11
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 10
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 14,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 28,
+          "chaikin_iterations": 1,
+          "vector_vertices": 20
+        }
+      ]
     },
     {
       "threshold_m": 3,
-      "rings": 32,
-      "vertices_scalar_contour": 7450,
-      "vertices_after_0_10px_geometric_compression": 4378
+      "source_rings": 33,
+      "emitted_rings": 33,
+      "vertices_source_half_pixel": 7450,
+      "vertices_vector": 7685,
+      "ring_stats": [
+        {
+          "source_vertices": 140,
+          "chaikin_iterations": 2,
+          "vector_vertices": 163
+        },
+        {
+          "source_vertices": 54,
+          "chaikin_iterations": 1,
+          "vector_vertices": 54
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 270,
+          "chaikin_iterations": 2,
+          "vector_vertices": 276
+        },
+        {
+          "source_vertices": 10,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 336,
+          "chaikin_iterations": 2,
+          "vector_vertices": 347
+        },
+        {
+          "source_vertices": 94,
+          "chaikin_iterations": 2,
+          "vector_vertices": 90
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 46,
+          "chaikin_iterations": 1,
+          "vector_vertices": 48
+        },
+        {
+          "source_vertices": 30,
+          "chaikin_iterations": 1,
+          "vector_vertices": 32
+        },
+        {
+          "source_vertices": 4882,
+          "chaikin_iterations": 2,
+          "vector_vertices": 4985
+        },
+        {
+          "source_vertices": 28,
+          "chaikin_iterations": 1,
+          "vector_vertices": 33
+        },
+        {
+          "source_vertices": 112,
+          "chaikin_iterations": 2,
+          "vector_vertices": 120
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 30,
+          "chaikin_iterations": 1,
+          "vector_vertices": 32
+        },
+        {
+          "source_vertices": 18,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 24,
+          "chaikin_iterations": 1,
+          "vector_vertices": 22
+        },
+        {
+          "source_vertices": 158,
+          "chaikin_iterations": 2,
+          "vector_vertices": 188
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 9
+        },
+        {
+          "source_vertices": 8,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 40,
+          "chaikin_iterations": 1,
+          "vector_vertices": 44
+        },
+        {
+          "source_vertices": 80,
+          "chaikin_iterations": 2,
+          "vector_vertices": 100
+        },
+        {
+          "source_vertices": 92,
+          "chaikin_iterations": 2,
+          "vector_vertices": 106
+        },
+        {
+          "source_vertices": 78,
+          "chaikin_iterations": 1,
+          "vector_vertices": 64
+        },
+        {
+          "source_vertices": 60,
+          "chaikin_iterations": 1,
+          "vector_vertices": 56
+        },
+        {
+          "source_vertices": 206,
+          "chaikin_iterations": 2,
+          "vector_vertices": 242
+        },
+        {
+          "source_vertices": 24,
+          "chaikin_iterations": 1,
+          "vector_vertices": 20
+        },
+        {
+          "source_vertices": 16,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 378,
+          "chaikin_iterations": 2,
+          "vector_vertices": 400
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 128,
+          "chaikin_iterations": 2,
+          "vector_vertices": 138
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 48,
+          "chaikin_iterations": 1,
+          "vector_vertices": 48
+        }
+      ]
     },
     {
       "threshold_m": 4,
-      "rings": 30,
-      "vertices_scalar_contour": 5314,
-      "vertices_after_0_10px_geometric_compression": 3162
+      "source_rings": 42,
+      "emitted_rings": 42,
+      "vertices_source_half_pixel": 5370,
+      "vertices_vector": 5257,
+      "ring_stats": [
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 30,
+          "chaikin_iterations": 1,
+          "vector_vertices": 26
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 50,
+          "chaikin_iterations": 1,
+          "vector_vertices": 46
+        },
+        {
+          "source_vertices": 24,
+          "chaikin_iterations": 1,
+          "vector_vertices": 20
+        },
+        {
+          "source_vertices": 78,
+          "chaikin_iterations": 1,
+          "vector_vertices": 54
+        },
+        {
+          "source_vertices": 56,
+          "chaikin_iterations": 1,
+          "vector_vertices": 64
+        },
+        {
+          "source_vertices": 4286,
+          "chaikin_iterations": 2,
+          "vector_vertices": 4279
+        },
+        {
+          "source_vertices": 10,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 56,
+          "chaikin_iterations": 1,
+          "vector_vertices": 50
+        },
+        {
+          "source_vertices": 36,
+          "chaikin_iterations": 1,
+          "vector_vertices": 32
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 42,
+          "chaikin_iterations": 1,
+          "vector_vertices": 42
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 54,
+          "chaikin_iterations": 1,
+          "vector_vertices": 54
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 30,
+          "chaikin_iterations": 1,
+          "vector_vertices": 28
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 112,
+          "chaikin_iterations": 2,
+          "vector_vertices": 101
+        },
+        {
+          "source_vertices": 30,
+          "chaikin_iterations": 1,
+          "vector_vertices": 30
+        },
+        {
+          "source_vertices": 14,
+          "chaikin_iterations": 0,
+          "vector_vertices": 9
+        },
+        {
+          "source_vertices": 54,
+          "chaikin_iterations": 1,
+          "vector_vertices": 65
+        },
+        {
+          "source_vertices": 48,
+          "chaikin_iterations": 1,
+          "vector_vertices": 36
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 38,
+          "chaikin_iterations": 1,
+          "vector_vertices": 36
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 42,
+          "chaikin_iterations": 1,
+          "vector_vertices": 54
+        },
+        {
+          "source_vertices": 78,
+          "chaikin_iterations": 1,
+          "vector_vertices": 60
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 24,
+          "chaikin_iterations": 1,
+          "vector_vertices": 20
+        },
+        {
+          "source_vertices": 42,
+          "chaikin_iterations": 1,
+          "vector_vertices": 34
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 9
+        }
+      ]
     },
     {
       "threshold_m": 5,
-      "rings": 19,
-      "vertices_scalar_contour": 3511,
-      "vertices_after_0_10px_geometric_compression": 1942
+      "source_rings": 21,
+      "emitted_rings": 21,
+      "vertices_source_half_pixel": 3520,
+      "vertices_vector": 1501,
+      "ring_stats": [
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 1892,
+          "chaikin_iterations": 0,
+          "vector_vertices": 795
+        },
+        {
+          "source_vertices": 48,
+          "chaikin_iterations": 0,
+          "vector_vertices": 24
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 66,
+          "chaikin_iterations": 0,
+          "vector_vertices": 27
+        },
+        {
+          "source_vertices": 18,
+          "chaikin_iterations": 0,
+          "vector_vertices": 9
+        },
+        {
+          "source_vertices": 18,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 76,
+          "chaikin_iterations": 0,
+          "vector_vertices": 37
+        },
+        {
+          "source_vertices": 80,
+          "chaikin_iterations": 0,
+          "vector_vertices": 32
+        },
+        {
+          "source_vertices": 18,
+          "chaikin_iterations": 0,
+          "vector_vertices": 7
+        },
+        {
+          "source_vertices": 38,
+          "chaikin_iterations": 0,
+          "vector_vertices": 17
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 790,
+          "chaikin_iterations": 0,
+          "vector_vertices": 326
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 24,
+          "chaikin_iterations": 0,
+          "vector_vertices": 12
+        },
+        {
+          "source_vertices": 134,
+          "chaikin_iterations": 0,
+          "vector_vertices": 54
+        },
+        {
+          "source_vertices": 36,
+          "chaikin_iterations": 0,
+          "vector_vertices": 15
+        },
+        {
+          "source_vertices": 108,
+          "chaikin_iterations": 0,
+          "vector_vertices": 46
+        },
+        {
+          "source_vertices": 96,
+          "chaikin_iterations": 0,
+          "vector_vertices": 41
+        },
+        {
+          "source_vertices": 34,
+          "chaikin_iterations": 0,
+          "vector_vertices": 19
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        }
+      ]
     },
     {
       "threshold_m": 6,
-      "rings": 8,
-      "vertices_scalar_contour": 1330,
-      "vertices_after_0_10px_geometric_compression": 747
+      "source_rings": 9,
+      "emitted_rings": 9,
+      "vertices_source_half_pixel": 1336,
+      "vertices_vector": 558,
+      "ring_stats": [
+        {
+          "source_vertices": 226,
+          "chaikin_iterations": 0,
+          "vector_vertices": 84
+        },
+        {
+          "source_vertices": 474,
+          "chaikin_iterations": 0,
+          "vector_vertices": 196
+        },
+        {
+          "source_vertices": 108,
+          "chaikin_iterations": 0,
+          "vector_vertices": 49
+        },
+        {
+          "source_vertices": 54,
+          "chaikin_iterations": 0,
+          "vector_vertices": 26
+        },
+        {
+          "source_vertices": 12,
+          "chaikin_iterations": 0,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 60,
+          "chaikin_iterations": 0,
+          "vector_vertices": 25
+        },
+        {
+          "source_vertices": 150,
+          "chaikin_iterations": 0,
+          "vector_vertices": 58
+        },
+        {
+          "source_vertices": 248,
+          "chaikin_iterations": 0,
+          "vector_vertices": 108
+        },
+        {
+          "source_vertices": 4,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        }
+      ]
     },
     {
       "threshold_m": 7,
-      "rings": 3,
-      "vertices_scalar_contour": 91,
-      "vertices_after_0_10px_geometric_compression": 58
-    }
-  ],
-  "svg_bytes": 671074,
-  "qc": {
-    "water_mask_iou": 0.9996480969221612,
-    "stable_interior_exact_class_fraction": 1.0,
-    "all_overlap_exact_class_fraction": 0.9925093567364124,
-    "all_overlap_within_1m_fraction": 0.999283686440307,
-    "relative_area_error_by_class": [
-      -0.009956033574361397,
-      0.003978840997872242,
-      0.00507705008255366,
-      -0.0021380123857269243,
-      -0.0003115607360164211,
-      -0.0014162077104642014,
-      -0.0008441489922971405,
-      1.3831775700934579
-    ],
-    "mean_depth_midpoint_original_m": 2.392721413685003,
-    "mean_depth_midpoint_vector_m": 2.396225110256334,
-    "boundary_displacement_px": {
-      "p50": 0.0,
-      "p95": 1.0,
-      "p99": 30.0,
-      "max": 762.5693411093839,
-      "per_threshold": [
+      "source_rings": 3,
+      "emitted_rings": 3,
+      "vertices_source_half_pixel": 90,
+      "vertices_vector": 40,
+      "ring_stats": [
         {
-          "threshold_m": 0,
-          "p95_boundary_displacement_px": 0.0,
-          "max_boundary_displacement_px": 1.0
+          "source_vertices": 30,
+          "chaikin_iterations": 0,
+          "vector_vertices": 17
         },
         {
-          "threshold_m": 1,
-          "p95_boundary_displacement_px": 1.0,
-          "max_boundary_displacement_px": 17.029386365926403
+          "source_vertices": 24,
+          "chaikin_iterations": 0,
+          "vector_vertices": 9
         },
         {
-          "threshold_m": 2,
-          "p95_boundary_displacement_px": 1.4142135623730951,
-          "max_boundary_displacement_px": 98.59513172565875
-        },
-        {
-          "threshold_m": 3,
-          "p95_boundary_displacement_px": 0.0,
-          "max_boundary_displacement_px": 294.0017006753532
-        },
-        {
-          "threshold_m": 4,
-          "p95_boundary_displacement_px": 0.0,
-          "max_boundary_displacement_px": 359.7026549804713
-        },
-        {
-          "threshold_m": 5,
-          "p95_boundary_displacement_px": 9.112840899841594,
-          "max_boundary_displacement_px": 434.0368647937638
-        },
-        {
-          "threshold_m": 6,
-          "p95_boundary_displacement_px": 68.89847145102675,
-          "max_boundary_displacement_px": 580.9388952377005
-        },
-        {
-          "threshold_m": 7,
-          "p95_boundary_displacement_px": 319.9498179388113,
-          "max_boundary_displacement_px": 762.5693411093839
+          "source_vertices": 36,
+          "chaikin_iterations": 0,
+          "vector_vertices": 14
         }
       ]
     }
+  ],
+  "svg_bytes": 1120590,
+  "qc": {
+    "water_mask_iou": 0.9999947459951348,
+    "stable_interior_exact_class_fraction": 1.0,
+    "all_overlap_exact_class_fraction": 0.9971820872519659,
+    "all_overlap_within_1m_fraction": 0.9997005201492145,
+    "relative_area_error_by_class": [
+      -0.011754660077758803,
+      0.007760057442870036,
+      0.0008117776554760595,
+      -0.001961073429666765,
+      -1.8327102118613003e-05,
+      3.147128245476003e-05,
+      -0.00010551862403714256,
+      1.2616822429906542
+    ],
+    "mean_depth_midpoint_original_m": 2.392721413685003,
+    "mean_depth_midpoint_vector_m": 2.396135329154648,
+    "threshold_qc": [
+      {
+        "threshold_m": 0,
+        "iou_1x_render": 0.9999947459951348,
+        "boundary_p95_px_1x_render": 0.0,
+        "boundary_p99_px_1x_render": 0.0,
+        "boundary_max_px_1x_render": 1.0,
+        "source_rings": 5,
+        "emitted_rings": 5
+      },
+      {
+        "threshold_m": 1,
+        "iou_1x_render": 0.9971938736875355,
+        "boundary_p95_px_1x_render": 1.0,
+        "boundary_p99_px_1x_render": 4.242640687119285,
+        "boundary_max_px_1x_render": 17.029386365926403,
+        "source_rings": 277,
+        "emitted_rings": 277
+      },
+      {
+        "threshold_m": 2,
+        "iou_1x_render": 0.9994793738257616,
+        "boundary_p95_px_1x_render": 0.0,
+        "boundary_p99_px_1x_render": 1.0,
+        "boundary_max_px_1x_render": 52.354560450833695,
+        "source_rings": 462,
+        "emitted_rings": 462
+      },
+      {
+        "threshold_m": 3,
+        "iou_1x_render": 0.9999938929059996,
+        "boundary_p95_px_1x_render": 0.0,
+        "boundary_p99_px_1x_render": 0.0,
+        "boundary_max_px_1x_render": 269.51994360343724,
+        "source_rings": 33,
+        "emitted_rings": 33
+      },
+      {
+        "threshold_m": 4,
+        "iou_1x_render": 0.9982929469564493,
+        "boundary_p95_px_1x_render": 0.0,
+        "boundary_p99_px_1x_render": 1.0,
+        "boundary_max_px_1x_render": 33.54101966249684,
+        "source_rings": 42,
+        "emitted_rings": 42
+      },
+      {
+        "threshold_m": 5,
+        "iou_1x_render": 0.9960730461597764,
+        "boundary_p95_px_1x_render": 9.0,
+        "boundary_p99_px_1x_render": 29.587140836108368,
+        "boundary_max_px_1x_render": 63.63961030678928,
+        "source_rings": 21,
+        "emitted_rings": 21
+      },
+      {
+        "threshold_m": 6,
+        "iou_1x_render": 0.9831501078804069,
+        "boundary_p95_px_1x_render": 60.75355384092334,
+        "boundary_p99_px_1x_render": 118.81625970578149,
+        "boundary_max_px_1x_render": 188.48076824970764,
+        "source_rings": 9,
+        "emitted_rings": 9
+      },
+      {
+        "threshold_m": 7,
+        "iou_1x_render": 0.36328125,
+        "boundary_p95_px_1x_render": 297.8027708953624,
+        "boundary_p99_px_1x_render": 362.3899731618022,
+        "boundary_max_px_1x_render": 366.2963281279243,
+        "source_rings": 3,
+        "emitted_rings": 3
+      }
+    ]
   },
-  "navigation_note": "GPS depth lookup remains the unsmoothed corrected v4.1 class mask. v4.3 changes only the visual/vector boundary representation."
+  "navigation_note": "GPS lookup remains exact corrected v4.1 class mask; v4.3 is visual geometry only."
 }
