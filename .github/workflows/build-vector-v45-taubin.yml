@@ -6,6 +6,7 @@ on:
     paths:
       - 'tools/build_vector_v45_taubin.py'
       - 'tools/activate_vector_v45_taubin.py'
+      - 'tools/fix_v45_taubin_ui.py'
       - '.github/workflows/build-vector-v45-taubin.yml'
 permissions:
   contents: write
@@ -19,7 +20,9 @@ jobs:
           python-version: '3.12'
       - run: pip install pillow numpy scipy scikit-image cairosvg
       - name: Activate production settings and UI
-        run: python tools/activate_vector_v45_taubin.py
+        run: |
+          python tools/activate_vector_v45_taubin.py
+          python tools/fix_v45_taubin_ui.py
       - name: Build compact Taubin bathymetry
         run: python tools/build_vector_v45_taubin.py
       - name: Render preview
@@ -38,6 +41,11 @@ jobs:
           grep -q 'clip-0' bathymetry-geopdf-v45-taubin.svg
           grep -q 'bathymetry-geopdf-v45-taubin.svg' hires.html
           grep -q 'VECTOR 4.5' hires.html
+          grep -q '4.5 Taubin vector' hires.html
+          grep -q '4.5 vector depth' hires.html
+          ! grep -q 'Vector 4.3: source-pixel' hires.html
+          ! grep -q 'then vector 4.4.' hires.html
+          ! grep -q 'return to vector 4.4.' hires.html
           grep -q 'lacanautics-v4.5-taubin' sw.js
           python - <<'PY'
           import json
