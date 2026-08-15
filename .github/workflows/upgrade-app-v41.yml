@@ -1,0 +1,42 @@
+name: Upgrade app to GeoPDF v4.1
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/upgrade_app_v41.py'
+      - '.github/workflows/upgrade-app-v41.yml'
+permissions:
+  contents: write
+jobs:
+  upgrade:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python tools/upgrade_app_v41.py
+      - name: Validate inline JS
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          s=Path('hires.html').read_text()
+          js=re.findall(r'<script>(.*?)</script>',s,re.S)[-1]
+          Path('/tmp/app.js').write_text(js)
+          PY
+          node --check /tmp/app.js
+      - run: |
+          test -f bathymetry-geopdf-v41-native.webp
+          test -f bathymetry-geopdf-v41-classes.webp
+          test -f bathymetry-geopdf-v41-contours.svg
+          test -f data/lacanau_geopdf_v41.json
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add hires.html index.html sw.js manifest.webmanifest
+          git diff --cached --quiet && exit 0
+          git commit -m "Use native GeoPDF pixels and vector contours v4.1"
+          git pull --rebase origin main
+          git push
