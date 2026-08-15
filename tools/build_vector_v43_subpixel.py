@@ -55,9 +55,10 @@ def contour_paths(mask):
         if np.linalg.norm(pts[0]-pts[-1])<1e-8: pts=pts[:-1]
         if len(pts)<3: continue
         raw+=len(pts)
-        # One pass for very tiny features, two elsewhere. This preserves the small
-        # deepest patches while removing the visible staircase on normal contours.
-        it=1 if len(pts)<16 else 2
+        # Preserve tiny isolated features exactly. Medium contours receive one
+        # bounded corner-cut pass; only large contours receive two.
+        nsrc=len(pts)
+        it=0 if nsrc<24 else (1 if nsrc<80 else 2)
         sm=chaikin_closed(pts,it)
         closed=np.vstack([sm,sm[0]])
         # Sub-pixel compression only; 0.035 source pixel ≈ 0.2 m horizontally.
@@ -67,7 +68,7 @@ def contour_paths(mask):
         smooth_n+=len(simp)
         d=f'M {simp[0,0]:.3f},{simp[0,1]:.3f}'+''.join(f' L {x:.3f},{y:.3f}' for x,y in simp[1:])+' Z'
         ds.append(d)
-        ring_stats.append({'source_vertices':int(len(pts)),'chaikin_iterations':it,'vector_vertices':int(len(simp))})
+        ring_stats.append({'source_vertices':int(nsrc),'chaikin_iterations':it,'vector_vertices':int(len(simp))})
     return ds,raw,smooth_n,ring_stats
 
 
@@ -81,7 +82,7 @@ def build_svg(pal,cls):
         stats.append({'threshold_m':k,'rings':len(paths),'vertices_source_half_pixel':raw,'vertices_vector':n,'ring_stats':ring_stats})
     svg=(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" preserveAspectRatio="none" shape-rendering="geometricPrecision">'
          '<title>Lac de Lacanau bathymetry — bounded smooth vector reconstruction</title>'
-         '<desc>Official 1 m classes from corrected GeoPDF 4.1. Half-pixel raster boundaries are converted to bounded smooth curves using one or two Chaikin corner-cut passes. Every new point remains inside the local source-cell envelope.</desc>'
+         '<desc>Official 1 m classes from corrected GeoPDF 4.1. Tiny rings remain exact; medium and large half-pixel raster boundaries are converted to bounded smooth curves using one or two Chaikin corner-cut passes. Every new point remains inside the local source-cell envelope.</desc>'
          +''.join(layers)+'</svg>')
     return svg,stats
 
@@ -153,14 +154,14 @@ def qc(svg,pal,cls):
 def patch_ui():
     p=ROOT/'hires.html'; s=p.read_text()
     s=s.replace('Vector 4.3: sub-pixel depth polygons reconstructed from native GeoPDF colour transitions. Pixel staircases are regularized inside the ~5.66 m source-cell uncertainty; GPS still samples the unsmoothed corrected 4.1 classes. Not a certified chart.',
-                'Vector 4.3: smooth polygons reconstructed from the exact corrected 4.1 half-pixel boundaries. Bounded corner-cut curves remove raster staircases while staying inside the local source-cell envelope; GPS still samples unsmoothed 4.1 classes. Not a certified chart.')
+                'Vector 4.3: smooth polygons reconstructed from the exact corrected 4.1 half-pixel boundaries. Tiny features stay exact; bounded corner-cut curves remove raster staircases on medium/large contours while staying inside the local source-cell envelope. GPS still samples unsmoothed 4.1 classes. Not a certified chart.')
     s=s.replace('The corrected GeoPDF 4.1 bathymetry is rendered as <b>sub-pixel SVG depth polygons</b>. Instead of tracing square raster cells, boundaries use the anti-aliased colour transitions already present in the native GeoPDF and are regularized only within one source-cell uncertainty.',
-                'The corrected GeoPDF 4.1 bathymetry is rendered as <b>smooth SVG depth polygons</b>. The original half-pixel boundaries are corner-cut into continuous curves; every new point is a convex combination of neighbouring source-boundary points, so it cannot overshoot beyond the local raster-cell envelope.')
+                'The corrected GeoPDF 4.1 bathymetry is rendered as <b>smooth SVG depth polygons</b>. Tiny isolated features remain exact. Medium and large half-pixel boundaries are corner-cut into continuous curves; every new point is a convex combination of neighbouring source-boundary points, so it cannot overshoot beyond the local raster-cell envelope.')
     s=s.replace("warn.textContent='Vector 4.3: sub-pixel polygons from native GeoPDF colour transitions; staircase regularization is constrained to source-pixel uncertainty. Tap VECTOR for corrected raster 4.1, then v3.1. Not a certified chart.'",
-                "warn.textContent='Vector 4.3: bounded smooth curves from corrected 4.1 half-pixel boundaries; raster staircases removed within source-cell uncertainty. Tap VECTOR for corrected raster 4.1, then v3.1. Not a certified chart.'")
+                "warn.textContent='Vector 4.3: tiny features exact; medium/large corrected 4.1 boundaries use bounded curve smoothing inside source-cell uncertainty. Tap VECTOR for corrected raster 4.1, then v3.1. Not a certified chart.'")
     p.write_text(s)
 
-    sw=(ROOT/'sw.js').read_text(); sw=sw.replace("lacanautics-v4.3-subpixel","lacanautics-v4.3-bounded")
+    sw=(ROOT/'sw.js').read_text(); sw=sw.replace("lacanautics-v4.3-subpixel","lacanautics-v4.3-bounded").replace("lacanautics-v4.3-bounded","lacanautics-v4.3-bounded2")
     (ROOT/'sw.js').write_text(sw)
 
 
@@ -169,8 +170,8 @@ def main():
     svg,layers=build_svg(pal,cls)
     q=qc(svg,pal,cls)
     OUT_SVG.write_text(svg)
-    report={'version':'4.3-bounded','source_version':'4.1-fixed',
-            'method':'half-pixel contours + bounded Chaikin corner cutting (1 pass tiny rings, 2 passes normal rings); no spline overshoot; ring topology preserved',
+    report={'version':'4.3-bounded2','source_version':'4.1-fixed',
+            'method':'half-pixel contours; tiny rings exact (<24 vertices), one bounded Chaikin pass for medium rings (<80), two for large rings; no spline overshoot; ring topology preserved',
             'source_resolution_m_per_px':meta['native_resolution_m_per_px'],'vertical_definition':'official 1 m classes',
             'layers':layers,'svg_bytes':len(svg.encode()),'qc':q,
             'navigation_note':'GPS lookup remains the exact unsmoothed corrected v4.1 class mask; v4.3 changes visual geometry only.'}
