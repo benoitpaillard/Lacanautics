@@ -1,0 +1,288 @@
+{
+  "version": "4.5-spline-faired",
+  "source_version": "4.1-fixed",
+  "parent_vector_version": "4.4-smooth-isobaths",
+  "method": "Gaussian depth-threshold occupancy -> 0.5 iso-contours -> uniform arc-length resampling -> periodic Gaussian low-pass of x(s),y(s) targeting grid/scallop wavelength -> periodic cubic spline / exact SVG cubic Bezier spans -> exact shoreline-domain clipping; 7\u20138 m micro-features retain v4.4 geometry",
+  "sigma_by_threshold_px": [
+    1.3,
+    1.3,
+    1.3,
+    1.3,
+    1.3,
+    1.1,
+    0.9,
+    0.8
+  ],
+  "max_displacement_by_threshold_px": [
+    0.9,
+    0.9,
+    0.9,
+    0.85,
+    0.8,
+    0.68,
+    0.52,
+    0.38
+  ],
+  "selected_fairing_scale": 0.45,
+  "source_resolution_m_per_px": [
+    5.6650782484264655,
+    5.663059626851989
+  ],
+  "vertical_definition": "official 1 m classes",
+  "simplify_tolerance_px": 0.08,
+  "resample_spacing_px": 0.8,
+  "nested_violations": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "depth_label_count": 11,
+  "layers": [
+    {
+      "threshold_m": 0,
+      "sigma_px": 1.3,
+      "rings": 5,
+      "faired_rings": 3,
+      "linear_fallback_rings": 2,
+      "source_vertices": 2699,
+      "render_samples": 6939,
+      "cubic_segments": 6836,
+      "max_fairing_displacement_px": 0.27694649061010107,
+      "max_p95_fairing_displacement_px": 0.11002850542479856,
+      "max_area_change_fraction": 0.010085149540346979
+    },
+    {
+      "threshold_m": 1,
+      "sigma_px": 1.3,
+      "rings": 80,
+      "faired_rings": 22,
+      "linear_fallback_rings": 58,
+      "source_vertices": 8357,
+      "render_samples": 17600,
+      "cubic_segments": 16571,
+      "max_fairing_displacement_px": 0.3722061309004096,
+      "max_p95_fairing_displacement_px": 0.1571132230934285,
+      "max_area_change_fraction": 0.01092019204354452
+    },
+    {
+      "threshold_m": 2,
+      "sigma_px": 1.3,
+      "rings": 74,
+      "faired_rings": 22,
+      "linear_fallback_rings": 52,
+      "source_vertices": 6367,
+      "render_samples": 13937,
+      "cubic_segments": 13102,
+      "max_fairing_displacement_px": 0.3880715288273108,
+      "max_p95_fairing_displacement_px": 0.1402007398146224,
+      "max_area_change_fraction": 0.009325500992383646
+    },
+    {
+      "threshold_m": 3,
+      "sigma_px": 1.3,
+      "rings": 28,
+      "faired_rings": 16,
+      "linear_fallback_rings": 12,
+      "source_vertices": 3395,
+      "render_samples": 7098,
+      "cubic_segments": 6817,
+      "max_fairing_displacement_px": 0.27181778635878384,
+      "max_p95_fairing_displacement_px": 0.1503765041242719,
+      "max_area_change_fraction": 0.009622057326670786
+    },
+    {
+      "threshold_m": 4,
+      "sigma_px": 1.3,
+      "rings": 27,
+      "faired_rings": 10,
+      "linear_fallback_rings": 17,
+      "source_vertices": 2449,
+      "render_samples": 4976,
+      "cubic_segments": 4678,
+      "max_fairing_displacement_px": 0.22213081389593564,
+      "max_p95_fairing_displacement_px": 0.13058614822479295,
+      "max_area_change_fraction": 0.013119724309262473
+    },
+    {
+      "threshold_m": 5,
+      "sigma_px": 1.1,
+      "rings": 19,
+      "faired_rings": 9,
+      "linear_fallback_rings": 10,
+      "source_vertices": 1562,
+      "render_samples": 3426,
+      "cubic_segments": 3245,
+      "max_fairing_displacement_px": 0.16500676914493914,
+      "max_p95_fairing_displacement_px": 0.0695893497917639,
+      "max_area_change_fraction": 0.007121542015905942
+    },
+    {
+      "threshold_m": 6,
+      "sigma_px": 0.9,
+      "rings": 8,
+      "faired_rings": 7,
+      "linear_fallback_rings": 1,
+      "source_vertices": 576,
+      "render_samples": 1367,
+      "cubic_segments": 1338,
+      "max_fairing_displacement_px": 0.07514187023095875,
+      "max_p95_fairing_displacement_px": 0.04586014585727926,
+      "max_area_change_fraction": 0.002504452474905764
+    },
+    {
+      "threshold_m": 7,
+      "sigma_px": 0.8,
+      "rings": 3,
+      "faired_rings": 0,
+      "linear_fallback_rings": 3,
+      "source_vertices": 56,
+      "render_samples": 56,
+      "cubic_segments": 0,
+      "max_fairing_displacement_px": 0.0,
+      "max_p95_fairing_displacement_px": 0.0,
+      "max_area_change_fraction": 0.0
+    }
+  ],
+  "svg_bytes": 5365681,
+  "qc": {
+    "water_mask_iou": 0.9981225241114797,
+    "all_overlap_exact_class_fraction": 0.9780484854647035,
+    "all_overlap_within_1m_fraction": 0.9998544980269581,
+    "mean_depth_midpoint_source_m": 2.392721413685003,
+    "mean_depth_midpoint_vector_m": 2.390834925677936,
+    "mean_depth_shift_m": -0.0018864880070670331,
+    "threshold_qc": [
+      {
+        "threshold_m": 0,
+        "sigma_px": 1.3,
+        "iou": 0.9981225241114797,
+        "area_ratio": 0.9999492110194574,
+        "boundary_p95_px": 1.0,
+        "boundary_p99_px": 1.0,
+        "source_components": 1,
+        "faired_components": 1
+      },
+      {
+        "threshold_m": 1,
+        "sigma_px": 1.3,
+        "iou": 0.9892195228412576,
+        "area_ratio": 0.9973118162922592,
+        "boundary_p95_px": 1.4142135623730951,
+        "boundary_p99_px": 7.211102550927978,
+        "source_components": 320,
+        "faired_components": 70
+      },
+      {
+        "threshold_m": 2,
+        "sigma_px": 1.3,
+        "iou": 0.9854470054661998,
+        "area_ratio": 1.0011711306587125,
+        "boundary_p95_px": 2.0,
+        "boundary_p99_px": 6.4031242374328485,
+        "source_components": 118,
+        "faired_components": 43
+      },
+      {
+        "threshold_m": 3,
+        "sigma_px": 1.3,
+        "iou": 0.9899359449637184,
+        "area_ratio": 0.9996946434351393,
+        "boundary_p95_px": 1.0,
+        "boundary_p99_px": 1.0,
+        "source_components": 24,
+        "faired_components": 22
+      },
+      {
+        "threshold_m": 4,
+        "sigma_px": 1.3,
+        "iou": 0.9881168406972283,
+        "area_ratio": 0.9988115467614649,
+        "boundary_p95_px": 1.0,
+        "boundary_p99_px": 1.4142135623730951,
+        "source_components": 34,
+        "faired_components": 23
+      },
+      {
+        "threshold_m": 5,
+        "sigma_px": 1.1,
+        "iou": 0.9852761030912978,
+        "area_ratio": 0.9984283952706787,
+        "boundary_p95_px": 1.0,
+        "boundary_p99_px": 1.0,
+        "source_components": 21,
+        "faired_components": 19
+      },
+      {
+        "threshold_m": 6,
+        "sigma_px": 0.9,
+        "iou": 0.9801406702523789,
+        "area_ratio": 0.9974958263772955,
+        "boundary_p95_px": 1.0,
+        "boundary_p99_px": 1.0,
+        "source_components": 9,
+        "faired_components": 8
+      },
+      {
+        "threshold_m": 7,
+        "sigma_px": 0.8,
+        "iou": 0.9813084112149533,
+        "area_ratio": 0.9813084112149533,
+        "boundary_p95_px": 0.0,
+        "boundary_p99_px": 0.9300000000000068,
+        "source_components": 3,
+        "faired_components": 3
+      }
+    ]
+  },
+  "failed_stronger_trials": [],
+  "navigation_note": "GPS lookup remains the exact corrected v4.1 class raster; v4.5 spline fairing is visual/cartographic only.",
+  "fairing_filter": {
+    "type": "periodic Gaussian low-pass in contour arc length",
+    "base_sigma_by_threshold_px": [
+      1.65,
+      1.65,
+      1.6,
+      1.5,
+      1.35,
+      1.1,
+      0.82,
+      0.6
+    ],
+    "sigma_multipliers": [
+      1.0,
+      0.82,
+      0.66,
+      0.52,
+      0.4,
+      0.3,
+      0.22,
+      0.16,
+      0.11
+    ],
+    "svg_knot_spacing_px": 0.8,
+    "hard_displacement_limits_px": [
+      0.9,
+      0.9,
+      0.9,
+      0.85,
+      0.8,
+      0.68,
+      0.52,
+      0.38
+    ],
+    "selected_scale": 0.45,
+    "unfaired_thresholds_m": [
+      7
+    ],
+    "interpretation": "broad-zone sigma is about 0.74 source px at the selected scale, approximately halving a 4 px scallop while retaining about 97% of a 20 px feature"
+  },
+  "shoreline_domain_clip": {
+    "enabled": true,
+    "reason": "bathymetric layers are defined only inside the lake; removes sub-pixel fairing spill onto land",
+    "clip_id": "lake-domain-v45"
+  }
+}
