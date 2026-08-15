@@ -12,6 +12,8 @@ on:
       - 'manifest.webmanifest'
       - 'bathymetry-geopdf-v45-taubin.svg'
       - 'data/lacanau_vector_v45_taubin_report.json'
+      - 'bathymetry-2012-v3.webp'
+      - 'data/lacanau_v31_visual_report.json'
       - 'bathymetry-geopdf-v41-classes.webp'
       - 'data/lacanau_geopdf_v41.json'
       - '.github/workflows/validate-web.yml'
@@ -21,16 +23,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Check referenced v4.5 assets
+      - name: Check referenced map assets
         run: |
           test -s bathymetry-geopdf-v45-taubin.svg
           test -s data/lacanau_vector_v45_taubin_report.json
+          test -s bathymetry-2012-v3.webp
+          test -s data/lacanau_v31_visual_report.json
           test -s bathymetry-geopdf-v41-classes.webp
           test -s data/lacanau_geopdf_v41.json
           test -s data/lacanau_lake_level.json
           test -s gps-max.js
           test ! -e bathymetry-geopdf-v41-native.webp
           python -m json.tool data/lacanau_vector_v45_taubin_report.json >/dev/null
+          python -m json.tool data/lacanau_v31_visual_report.json >/dev/null
           python -m json.tool data/lacanau_geopdf_v41.json >/dev/null
           python -m json.tool data/lacanau_lake_level.json >/dev/null
       - name: Check JavaScript syntax and layer set
@@ -42,15 +47,24 @@ jobs:
           assert scripts, 'No inline script found'
           pathlib.Path('/tmp/lacanautics-app.js').write_text('\n'.join(scripts),encoding='utf-8')
           assert 'bathymetry-geopdf-v45-taubin.svg' in html
-          assert 'bathymetry-2012-v3.webp' in html
+          assert 'bathymetry-2012-v3.webp?v=31h1' in html
           assert 'VECTOR 4.5' in html
+          assert 'SURVEY v3.1 · harmonized' in html
           assert 'bathymetry-geopdf-v41-native.webp' not in html
           assert "mode==='raster'" not in html
           assert 'RASTER 4.1' not in html
-          r=json.loads(pathlib.Path('data/lacanau_vector_v45_taubin_report.json').read_text())
-          assert r['nested_violations'] == [0]*7
-          assert r['size_ratio_vs_v44'] < 0.5
-          assert r['qc']['all_overlap_within_1m_fraction'] > 0.999
+          v45=json.loads(pathlib.Path('data/lacanau_vector_v45_taubin_report.json').read_text())
+          v31=json.loads(pathlib.Path('data/lacanau_v31_visual_report.json').read_text())
+          v41=json.loads(pathlib.Path('data/lacanau_geopdf_v41.json').read_text())
+          canonical=['#%02x%02x%02x' % tuple(c) for c in v41['palette_rgb']]
+          assert v31['palette_hex'] == canonical
+          assert v31['land_hex'] == '#eef0e8'
+          assert v31['contour_hex'] == '#244e5a'
+          assert v31['inner_contour_opacity'] == 0.48
+          assert v31['shoreline_opacity'] == 0.62
+          assert v45['nested_violations'] == [0]*7
+          assert v45['size_ratio_vs_v44'] < 0.5
+          assert v45['qc']['all_overlap_within_1m_fraction'] > 0.999
           PY
           node --check /tmp/lacanautics-app.js
           node --check gps-max.js
@@ -60,7 +74,8 @@ jobs:
         run: |
           grep -q 'geom-1' bathymetry-geopdf-v45-taubin.svg
           grep -q 'clip-0' bathymetry-geopdf-v45-taubin.svg
-          grep -q "lacanautics-v4.5-taubin-gpsmax-noraster" sw.js
+          grep -q "lacanautics-v4.5-taubin-gpsmax-harmonized-v31" sw.js
           grep -q 'gps-max.js' sw.js
           grep -q 'bathymetry-geopdf-v41-classes.webp' sw.js
+          grep -q 'bathymetry-2012-v3.webp' sw.js
           ! grep -q 'bathymetry-geopdf-v41-native.webp' sw.js
