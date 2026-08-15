@@ -1,5 +1,5 @@
-const CACHE='lacanautics-v4.5-singlepage1';
-const CORE=['./','./index.html','./manifest.webmanifest','./gps-max.js','./bathymetry-geopdf-v45-taubin.svg','./bathymetry-geopdf-v41-classes.webp','./data/lacanau_geopdf_v41.json','./bathymetry-2012-v3.webp','./data/lacanau_2012_bands_v3.json','./data/lacanau_lake_level.json'];
+const CACHE='lacanautics-v4.5-singlepage2-v31lines';
+const CORE=['./','./index.html','./manifest.webmanifest','./gps-max.js','./bathymetry-geopdf-v45-taubin.svg','./bathymetry-geopdf-v41-classes.webp','./data/lacanau_geopdf_v41.json','./bathymetry-2012-v31.svg','./data/lacanau_2012_bands_v3.json','./data/lacanau_lake_level.json'];
 
 self.addEventListener('install',event=>{
   self.skipWaiting();
