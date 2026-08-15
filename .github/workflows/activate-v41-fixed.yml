@@ -1,0 +1,43 @@
+name: Activate corrected GeoPDF v4.1
+on:
+  push:
+    paths:
+      - 'tools/activate_v41_fixed.py'
+      - '.github/workflows/activate-v41-fixed.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  activate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python tools/activate_v41_fixed.py
+      - name: Validate inline JS
+        run: |
+          python - <<'PY'
+          import re, pathlib
+          s=pathlib.Path('hires.html').read_text()
+          blocks=re.findall(r'<script>(.*?)</script>',s,re.S)
+          pathlib.Path('/tmp/lacanautics-inline.js').write_text('\n'.join(blocks))
+          PY
+          node --check /tmp/lacanautics-inline.js
+      - name: Validate assets
+        run: |
+          test -f bathymetry-geopdf-v41-native.webp
+          test -f bathymetry-geopdf-v41-classes.webp
+          test -f data/lacanau_geopdf_v41.json
+          grep -q 'v4.1-fixed' data/lacanau_geopdf_v41.json
+          grep -q 'lacanautics-v4.1-fixed' sw.js
+      - name: Commit UI activation
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add hires.html index.html sw.js manifest.webmanifest
+          git diff --cached --quiet && exit 0
+          git commit -m "Activate corrected GeoPDF v4.1 with v3.1 toggle"
+          git pull --rebase origin main
+          git push
