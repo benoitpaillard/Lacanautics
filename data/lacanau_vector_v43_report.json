@@ -1,7 +1,7 @@
 {
   "version": "4.3-final",
   "source_version": "4.1-fixed",
-  "method": "half-pixel contours; bounded Chaikin smoothing only for thresholds 0\u20134; thresholds 5\u20137 exact; source-ring topology asserted",
+  "method": "cartographic vector reconstruction: pre-simplify raster staircase \u22641.0 source pixel for thresholds 0\u20134, \u22640.25 px for non-tiny thresholds 5\u20136; one bounded Chaikin pass; 7\u20138 m exact; source-ring topology asserted",
   "source_resolution_m_per_px": [
     5.6650782484264655,
     5.663059626851989
@@ -13,32 +13,37 @@
       "source_rings": 5,
       "emitted_rings": 5,
       "vertices_source_half_pixel": 7160,
-      "vertices_vector": 6917,
+      "vertices_vector": 1894,
       "ring_stats": [
         {
           "source_vertices": 6908,
-          "chaikin_iterations": 2,
-          "vector_vertices": 6686
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 1818
         },
         {
           "source_vertices": 62,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 53
+          "vector_vertices": 20
         },
         {
           "source_vertices": 106,
-          "chaikin_iterations": 2,
-          "vector_vertices": 104
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 28
         },
         {
           "source_vertices": 52,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 43
+          "vector_vertices": 16
         },
         {
           "source_vertices": 32,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 31
+          "vector_vertices": 12
         }
       ]
     },
@@ -47,1392 +52,1669 @@
       "source_rings": 277,
       "emitted_rings": 277,
       "vertices_source_half_pixel": 21296,
-      "vertices_vector": 21266,
+      "vertices_vector": 8010,
       "ring_stats": [
         {
           "source_vertices": 2044,
-          "chaikin_iterations": 2,
-          "vector_vertices": 2111
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 636
         },
         {
           "source_vertices": 10,
-          "chaikin_iterations": 0,
-          "vector_vertices": 8
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 126,
-          "chaikin_iterations": 2,
-          "vector_vertices": 138
-        },
-        {
-          "source_vertices": 10140,
-          "chaikin_iterations": 2,
-          "vector_vertices": 10696
-        },
-        {
-          "source_vertices": 42,
-          "chaikin_iterations": 1,
-          "vector_vertices": 30
-        },
-        {
-          "source_vertices": 226,
-          "chaikin_iterations": 2,
-          "vector_vertices": 145
-        },
-        {
-          "source_vertices": 12,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 20,
-          "chaikin_iterations": 0,
-          "vector_vertices": 10
-        },
-        {
-          "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 6,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 18,
-          "chaikin_iterations": 0,
-          "vector_vertices": 9
-        },
-        {
-          "source_vertices": 6,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
-        },
-        {
-          "source_vertices": 16,
-          "chaikin_iterations": 0,
-          "vector_vertices": 12
-        },
-        {
-          "source_vertices": 10,
-          "chaikin_iterations": 0,
-          "vector_vertices": 8
-        },
-        {
-          "source_vertices": 12,
-          "chaikin_iterations": 0,
-          "vector_vertices": 8
-        },
-        {
-          "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 10,
-          "chaikin_iterations": 0,
-          "vector_vertices": 8
-        },
-        {
-          "source_vertices": 32,
-          "chaikin_iterations": 1,
-          "vector_vertices": 42
-        },
-        {
-          "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 18,
-          "chaikin_iterations": 0,
-          "vector_vertices": 12
-        },
-        {
-          "source_vertices": 30,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
           "vector_vertices": 40
         },
         {
-          "source_vertices": 10,
-          "chaikin_iterations": 0,
+          "source_vertices": 10140,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 3518
+        },
+        {
+          "source_vertices": 42,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
-          "source_vertices": 22,
+          "source_vertices": 226,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 40
+        },
+        {
+          "source_vertices": 12,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 24
+        },
+        {
+          "source_vertices": 20,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 8,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
+        },
+        {
+          "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
-          "source_vertices": 26,
+          "source_vertices": 18,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 20
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
+        },
+        {
+          "source_vertices": 16,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 10,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 12,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 8,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 10,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 32,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 14
+        },
+        {
+          "source_vertices": 8,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
+        },
+        {
+          "source_vertices": 18,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 10
+        },
+        {
+          "source_vertices": 30,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 10
+        },
+        {
+          "source_vertices": 10,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 22,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 44
+        },
+        {
+          "source_vertices": 26,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 8
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 18,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 28,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 24
+          "vector_vertices": 12
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 22,
-          "chaikin_iterations": 0,
-          "vector_vertices": 10
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 8
         },
         {
           "source_vertices": 58,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 58
+          "vector_vertices": 14
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 18,
-          "chaikin_iterations": 0,
-          "vector_vertices": 10
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 8
         },
         {
           "source_vertices": 18,
-          "chaikin_iterations": 0,
-          "vector_vertices": 10
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
         },
         {
           "source_vertices": 30,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 12,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 18,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 30,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 12
+        },
+        {
+          "source_vertices": 10,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 12,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 12,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 24
+        },
+        {
+          "source_vertices": 8,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 16,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
+        },
+        {
+          "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 10,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 22,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 10
+        },
+        {
+          "source_vertices": 20,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 10
+        },
+        {
+          "source_vertices": 12,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 8,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
           "vector_vertices": 16
         },
         {
           "source_vertices": 4,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
-        },
-        {
-          "source_vertices": 12,
-          "chaikin_iterations": 0,
-          "vector_vertices": 9
-        },
-        {
-          "source_vertices": 6,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 8
-        },
-        {
-          "source_vertices": 4,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
-        },
-        {
-          "source_vertices": 18,
-          "chaikin_iterations": 0,
-          "vector_vertices": 12
-        },
-        {
-          "source_vertices": 6,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 4,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
-        },
-        {
-          "source_vertices": 4,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
-        },
-        {
-          "source_vertices": 6,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 30,
-          "chaikin_iterations": 1,
-          "vector_vertices": 30
-        },
-        {
-          "source_vertices": 10,
-          "chaikin_iterations": 0,
-          "vector_vertices": 8
-        },
-        {
-          "source_vertices": 12,
-          "chaikin_iterations": 0,
-          "vector_vertices": 10
-        },
-        {
-          "source_vertices": 12,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 16,
-          "chaikin_iterations": 0,
-          "vector_vertices": 10
-        },
-        {
-          "source_vertices": 6,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 6,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 6,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 6,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 10,
-          "chaikin_iterations": 0,
-          "vector_vertices": 8
-        },
-        {
-          "source_vertices": 6,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 22,
-          "chaikin_iterations": 0,
-          "vector_vertices": 17
-        },
-        {
-          "source_vertices": 20,
-          "chaikin_iterations": 0,
-          "vector_vertices": 15
-        },
-        {
-          "source_vertices": 12,
-          "chaikin_iterations": 0,
-          "vector_vertices": 8
-        },
-        {
-          "source_vertices": 4,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
-        },
-        {
-          "source_vertices": 4,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
-        },
-        {
-          "source_vertices": 4,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
-        },
-        {
-          "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 24,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 28
+          "vector_vertices": 12
         },
         {
           "source_vertices": 10,
-          "chaikin_iterations": 0,
-          "vector_vertices": 8
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
         },
         {
           "source_vertices": 26,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 32
+          "vector_vertices": 12
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 134,
-          "chaikin_iterations": 2,
-          "vector_vertices": 161
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 58
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 160,
-          "chaikin_iterations": 2,
-          "vector_vertices": 158
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 48
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 26,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 30
+          "vector_vertices": 10
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 816,
-          "chaikin_iterations": 2,
-          "vector_vertices": 848
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 200
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 6
         },
         {
           "source_vertices": 8,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
+        },
+        {
+          "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
-        },
-        {
-          "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 10,
-          "chaikin_iterations": 0,
-          "vector_vertices": 7
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 14,
-          "chaikin_iterations": 0,
-          "vector_vertices": 11
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
         },
         {
           "source_vertices": 444,
-          "chaikin_iterations": 2,
-          "vector_vertices": 435
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 142
         },
         {
           "source_vertices": 36,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 32
+          "vector_vertices": 14
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 22,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 48,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 52
+          "vector_vertices": 20
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
-          "vector_vertices": 7
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
         },
         {
           "source_vertices": 74,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 52
+          "vector_vertices": 22
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
         },
         {
           "source_vertices": 10,
-          "chaikin_iterations": 0,
-          "vector_vertices": 8
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 10,
-          "chaikin_iterations": 0,
-          "vector_vertices": 8
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 46,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 59
+          "vector_vertices": 14
         },
         {
           "source_vertices": 36,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 46
+          "vector_vertices": 16
         },
         {
           "source_vertices": 10,
-          "chaikin_iterations": 0,
-          "vector_vertices": 8
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
         },
         {
           "source_vertices": 18,
-          "chaikin_iterations": 0,
-          "vector_vertices": 8
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
         },
         {
           "source_vertices": 174,
-          "chaikin_iterations": 2,
-          "vector_vertices": 172
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 58
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 10,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 428,
-          "chaikin_iterations": 2,
-          "vector_vertices": 465
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 150
         },
         {
           "source_vertices": 14,
-          "chaikin_iterations": 0,
-          "vector_vertices": 9
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 22,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 14
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 16,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 32,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 30
+          "vector_vertices": 12
         },
         {
           "source_vertices": 46,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 30
+          "vector_vertices": 10
         },
         {
           "source_vertices": 46,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 48
+          "vector_vertices": 18
         },
         {
           "source_vertices": 16,
-          "chaikin_iterations": 0,
-          "vector_vertices": 11
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 174,
-          "chaikin_iterations": 2,
-          "vector_vertices": 219
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 64
         },
         {
           "source_vertices": 18,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 6
         },
         {
           "source_vertices": 10,
-          "chaikin_iterations": 0,
-          "vector_vertices": 8
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
         },
         {
           "source_vertices": 26,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 24
+          "vector_vertices": 10
         },
         {
           "source_vertices": 304,
-          "chaikin_iterations": 2,
-          "vector_vertices": 302
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 106
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
-          "vector_vertices": 7
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 8
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 20,
-          "chaikin_iterations": 0,
-          "vector_vertices": 11
-        },
-        {
-          "source_vertices": 58,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 28
-        },
-        {
-          "source_vertices": 16,
-          "chaikin_iterations": 0,
-          "vector_vertices": 8
-        },
-        {
-          "source_vertices": 8,
-          "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
-          "source_vertices": 30,
+          "source_vertices": 58,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 20
+          "vector_vertices": 12
+        },
+        {
+          "source_vertices": 16,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
         },
         {
           "source_vertices": 30,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 32
+          "vector_vertices": 10
+        },
+        {
+          "source_vertices": 30,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 28,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 38
+          "vector_vertices": 12
         },
         {
           "source_vertices": 22,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 14,
-          "chaikin_iterations": 0,
-          "vector_vertices": 9
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 30,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 39
+          "vector_vertices": 14
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
-          "vector_vertices": 7
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 6
         },
         {
           "source_vertices": 322,
-          "chaikin_iterations": 2,
-          "vector_vertices": 365
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 124
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 40,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 46
+          "vector_vertices": 16
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
-          "vector_vertices": 7
-        },
-        {
-          "source_vertices": 24,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 20
-        },
-        {
-          "source_vertices": 14,
-          "chaikin_iterations": 0,
           "vector_vertices": 8
         },
         {
+          "source_vertices": 24,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 10
+        },
+        {
+          "source_vertices": 14,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
+        },
+        {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
-          "vector_vertices": 9
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
         },
         {
           "source_vertices": 18,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 174,
-          "chaikin_iterations": 2,
-          "vector_vertices": 166
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 54
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 18,
-          "chaikin_iterations": 0,
-          "vector_vertices": 9
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 8
         },
         {
           "source_vertices": 84,
-          "chaikin_iterations": 2,
-          "vector_vertices": 97
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 34
         },
         {
           "source_vertices": 288,
-          "chaikin_iterations": 2,
-          "vector_vertices": 274
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 98
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 6
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 6
         },
         {
           "source_vertices": 16,
-          "chaikin_iterations": 0,
-          "vector_vertices": 9
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 8
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 1466,
-          "chaikin_iterations": 2,
-          "vector_vertices": 1344
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 398
         },
         {
           "source_vertices": 18,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 194,
-          "chaikin_iterations": 2,
-          "vector_vertices": 168
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 48
         },
         {
           "source_vertices": 14,
-          "chaikin_iterations": 0,
-          "vector_vertices": 5
-        },
-        {
-          "source_vertices": 12,
-          "chaikin_iterations": 0,
-          "vector_vertices": 9
-        },
-        {
-          "source_vertices": 10,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 6
         },
         {
+          "source_vertices": 12,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 10,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 20
+        },
+        {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 36,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 36
+          "vector_vertices": 16
         },
         {
           "source_vertices": 52,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 54
+          "vector_vertices": 14
         },
         {
           "source_vertices": 26,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 28
+          "vector_vertices": 12
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
-          "vector_vertices": 8
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
         },
         {
           "source_vertices": 20,
-          "chaikin_iterations": 0,
-          "vector_vertices": 10
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 8
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 42,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 35
+          "vector_vertices": 12
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 10,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
-          "vector_vertices": 7
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 192,
-          "chaikin_iterations": 2,
-          "vector_vertices": 210
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 64
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 30,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 32
+          "vector_vertices": 10
         },
         {
           "source_vertices": 10,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 14,
-          "chaikin_iterations": 0,
-          "vector_vertices": 10
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 24
         },
         {
           "source_vertices": 58,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 30
+          "vector_vertices": 16
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 16,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 32
         },
         {
           "source_vertices": 14,
-          "chaikin_iterations": 0,
-          "vector_vertices": 10
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
         },
         {
           "source_vertices": 14,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 28
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 6
         },
         {
           "source_vertices": 10,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 20
         },
         {
           "source_vertices": 18,
-          "chaikin_iterations": 0,
-          "vector_vertices": 12
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 10
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
-          "vector_vertices": 7
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
         },
         {
           "source_vertices": 34,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 36
+          "vector_vertices": 14
         },
         {
           "source_vertices": 18,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 90,
-          "chaikin_iterations": 2,
-          "vector_vertices": 96
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 36
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 48,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 46
+          "vector_vertices": 20
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
-          "vector_vertices": 8
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 10,
-          "chaikin_iterations": 0,
-          "vector_vertices": 8
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
         },
         {
           "source_vertices": 26,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 28
+          "vector_vertices": 10
         },
         {
           "source_vertices": 22,
-          "chaikin_iterations": 0,
-          "vector_vertices": 12
-        },
-        {
-          "source_vertices": 10,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
+          "source_vertices": 10,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
+        },
+        {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 40,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 30
+          "vector_vertices": 10
         }
       ]
     },
@@ -1441,2317 +1723,2779 @@
       "source_rings": 462,
       "emitted_rings": 462,
       "vertices_source_half_pixel": 18600,
-      "vertices_vector": 18558,
+      "vertices_vector": 8148,
       "ring_stats": [
         {
           "source_vertices": 2426,
-          "chaikin_iterations": 2,
-          "vector_vertices": 2857
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 776
         },
         {
           "source_vertices": 14,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 24
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 6
         },
         {
           "source_vertices": 14,
-          "chaikin_iterations": 0,
-          "vector_vertices": 9
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
         },
         {
           "source_vertices": 36,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 40
+          "vector_vertices": 12
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 20,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 7
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 158,
-          "chaikin_iterations": 2,
-          "vector_vertices": 141
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 40
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
+        },
+        {
+          "source_vertices": 8,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 6
-        },
-        {
-          "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 7
         },
         {
           "source_vertices": 10,
-          "chaikin_iterations": 0,
-          "vector_vertices": 8
-        },
-        {
-          "source_vertices": 20,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 6
         },
         {
+          "source_vertices": 20,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 40
+        },
+        {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 6
         },
         {
           "source_vertices": 18,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 36
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 7456,
-          "chaikin_iterations": 2,
-          "vector_vertices": 7580
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 2596
         },
         {
           "source_vertices": 10,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 6
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 8,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 12,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
+        },
+        {
+          "source_vertices": 8,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
+        },
+        {
+          "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
+        },
+        {
+          "source_vertices": 14,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 14,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 10,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 20
+        },
+        {
+          "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 10,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 10,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 20
+        },
+        {
+          "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
-          "vector_vertices": 9
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 24
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 6,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
-        },
-        {
-          "source_vertices": 4,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
-        },
-        {
-          "source_vertices": 6,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 14,
-          "chaikin_iterations": 0,
-          "vector_vertices": 8
-        },
-        {
-          "source_vertices": 4,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
-        },
-        {
-          "source_vertices": 4,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
-        },
-        {
-          "source_vertices": 14,
-          "chaikin_iterations": 0,
-          "vector_vertices": 8
-        },
-        {
-          "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 10,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 6
-        },
-        {
-          "source_vertices": 4,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
-        },
-        {
-          "source_vertices": 4,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
-        },
-        {
-          "source_vertices": 4,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
-        },
-        {
-          "source_vertices": 10,
-          "chaikin_iterations": 0,
-          "vector_vertices": 8
-        },
-        {
-          "source_vertices": 6,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 6,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 6,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 4,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
-        },
-        {
-          "source_vertices": 6,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 4,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
-        },
-        {
-          "source_vertices": 4,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
-        },
-        {
-          "source_vertices": 10,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 4,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
-        },
-        {
-          "source_vertices": 6,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 12,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 4,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
-        },
-        {
-          "source_vertices": 4,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
-        },
-        {
-          "source_vertices": 10,
-          "chaikin_iterations": 0,
-          "vector_vertices": 5
         },
         {
           "source_vertices": 18,
-          "chaikin_iterations": 0,
-          "vector_vertices": 8
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 14,
-          "chaikin_iterations": 0,
-          "vector_vertices": 9
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 10
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
-          "vector_vertices": 9
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
         },
         {
           "source_vertices": 8,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 16,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 14,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 28
+        },
+        {
+          "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 16,
-          "chaikin_iterations": 0,
-          "vector_vertices": 9
-        },
-        {
-          "source_vertices": 14,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 4,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
-        },
-        {
-          "source_vertices": 6,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 16,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 7
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 14,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 28
         },
         {
           "source_vertices": 18,
-          "chaikin_iterations": 0,
-          "vector_vertices": 15
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 8
         },
         {
           "source_vertices": 14,
-          "chaikin_iterations": 0,
-          "vector_vertices": 7
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 8
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 20,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 4,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
-        },
-        {
-          "source_vertices": 12,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 16,
-          "chaikin_iterations": 0,
-          "vector_vertices": 8
-        },
-        {
-          "source_vertices": 14,
-          "chaikin_iterations": 0,
-          "vector_vertices": 11
-        },
-        {
-          "source_vertices": 18,
-          "chaikin_iterations": 0,
-          "vector_vertices": 14
-        },
-        {
-          "source_vertices": 10,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 7
-        },
-        {
-          "source_vertices": 6,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 4,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
-        },
-        {
-          "source_vertices": 4,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
-        },
-        {
-          "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 16,
-          "chaikin_iterations": 0,
-          "vector_vertices": 8
-        },
-        {
-          "source_vertices": 4,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
-        },
-        {
-          "source_vertices": 6,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 14,
-          "chaikin_iterations": 0,
-          "vector_vertices": 8
-        },
-        {
-          "source_vertices": 6,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 4,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
-        },
-        {
-          "source_vertices": 4,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
-        },
-        {
-          "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 4,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
-        },
-        {
-          "source_vertices": 16,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 6,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 6,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 24,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
           "vector_vertices": 16
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 12,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 24
+        },
+        {
+          "source_vertices": 16,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 14,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 18,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 10,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 20
+        },
+        {
+          "source_vertices": 8,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 8,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 16,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 14,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 8,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
+        },
+        {
+          "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 16,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 32
+        },
+        {
+          "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 24,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 26,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 34
+          "vector_vertices": 8
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 72,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 74
+          "vector_vertices": 28
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 18,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 4,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
-        },
-        {
-          "source_vertices": 4,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
-        },
-        {
-          "source_vertices": 12,
-          "chaikin_iterations": 0,
-          "vector_vertices": 9
-        },
-        {
-          "source_vertices": 6,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 6,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 7
-        },
-        {
-          "source_vertices": 38,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 26
-        },
-        {
-          "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 20,
-          "chaikin_iterations": 0,
-          "vector_vertices": 14
+          "vector_vertices": 36
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 8,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 38,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 12
+        },
+        {
+          "source_vertices": 8,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
+        },
+        {
+          "source_vertices": 20,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 12,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
+          "source_vertices": 8,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
+        },
+        {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 20,
-          "chaikin_iterations": 0,
-          "vector_vertices": 14
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 8
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 98,
-          "chaikin_iterations": 2,
-          "vector_vertices": 91
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 34
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 10,
-          "chaikin_iterations": 0,
-          "vector_vertices": 8
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 6
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
-          "vector_vertices": 9
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
         },
         {
           "source_vertices": 20,
-          "chaikin_iterations": 0,
-          "vector_vertices": 10
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 8
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
         },
         {
           "source_vertices": 30,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 17
+          "vector_vertices": 6
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 6
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 30,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 12
+        },
+        {
+          "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 8,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
+        },
+        {
+          "source_vertices": 22,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 12,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 8,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 16,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 20,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 10
+        },
+        {
+          "source_vertices": 8,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 152,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 42
+        },
+        {
+          "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 12,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
           "vector_vertices": 24
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 12,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 6,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 4,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
-        },
-        {
-          "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 22,
-          "chaikin_iterations": 0,
-          "vector_vertices": 10
-        },
-        {
-          "source_vertices": 12,
-          "chaikin_iterations": 0,
-          "vector_vertices": 9
-        },
-        {
-          "source_vertices": 4,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
-        },
-        {
-          "source_vertices": 4,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
-        },
-        {
-          "source_vertices": 4,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
-        },
-        {
-          "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 16,
-          "chaikin_iterations": 0,
-          "vector_vertices": 11
-        },
-        {
-          "source_vertices": 20,
-          "chaikin_iterations": 0,
-          "vector_vertices": 10
-        },
-        {
-          "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 152,
-          "chaikin_iterations": 2,
-          "vector_vertices": 177
-        },
-        {
-          "source_vertices": 4,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
-        },
-        {
-          "source_vertices": 4,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
-        },
-        {
-          "source_vertices": 12,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 4,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
-        },
-        {
-          "source_vertices": 12,
-          "chaikin_iterations": 0,
-          "vector_vertices": 7
-        },
-        {
-          "source_vertices": 4,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
-        },
-        {
-          "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 64,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 55
+          "vector_vertices": 22
         },
         {
           "source_vertices": 44,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 36
+          "vector_vertices": 18
         },
         {
           "source_vertices": 772,
-          "chaikin_iterations": 2,
-          "vector_vertices": 748
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 170
         },
         {
           "source_vertices": 46,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 36
+          "vector_vertices": 12
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 64,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 62
+          "vector_vertices": 24
         },
         {
           "source_vertices": 528,
-          "chaikin_iterations": 2,
-          "vector_vertices": 589
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 170
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 20,
-          "chaikin_iterations": 0,
-          "vector_vertices": 10
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 14,
-          "chaikin_iterations": 0,
-          "vector_vertices": 7
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 8
         },
         {
           "source_vertices": 16,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 22,
-          "chaikin_iterations": 0,
-          "vector_vertices": 12
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 8
         },
         {
           "source_vertices": 16,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 28,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 36
+          "vector_vertices": 12
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 16,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 32
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 30,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 17
+          "vector_vertices": 10
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 438,
-          "chaikin_iterations": 2,
-          "vector_vertices": 513
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 152
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
-          "vector_vertices": 9
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 8
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 6
         },
         {
           "source_vertices": 14,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 28
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 6
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 6
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 16,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 14,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
-          "vector_vertices": 7
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
-          "vector_vertices": 9
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
         },
         {
           "source_vertices": 10,
-          "chaikin_iterations": 0,
-          "vector_vertices": 7
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 10,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 20
         },
         {
           "source_vertices": 24,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 25
+          "vector_vertices": 10
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 72,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 70
+          "vector_vertices": 24
         },
         {
           "source_vertices": 18,
-          "chaikin_iterations": 0,
-          "vector_vertices": 9
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
         },
         {
           "source_vertices": 80,
-          "chaikin_iterations": 2,
-          "vector_vertices": 75
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 32
         },
         {
           "source_vertices": 96,
-          "chaikin_iterations": 2,
-          "vector_vertices": 105
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 34
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 42,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 32
+          "vector_vertices": 12
         },
         {
           "source_vertices": 30,
-          "chaikin_iterations": 1,
-          "vector_vertices": 34
-        },
-        {
-          "source_vertices": 30,
-          "chaikin_iterations": 1,
-          "vector_vertices": 28
-        },
-        {
-          "source_vertices": 74,
-          "chaikin_iterations": 1,
-          "vector_vertices": 66
-        },
-        {
-          "source_vertices": 46,
-          "chaikin_iterations": 1,
-          "vector_vertices": 40
-        },
-        {
-          "source_vertices": 24,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
           "vector_vertices": 16
         },
         {
+          "source_vertices": 30,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 12
+        },
+        {
+          "source_vertices": 74,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 28
+        },
+        {
+          "source_vertices": 46,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 20
+        },
+        {
+          "source_vertices": 24,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 10
+        },
+        {
           "source_vertices": 10,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
-          "vector_vertices": 9
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
         },
         {
           "source_vertices": 46,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 50
+          "vector_vertices": 20
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 18,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 508,
-          "chaikin_iterations": 2,
-          "vector_vertices": 573
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 158
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 98,
-          "chaikin_iterations": 2,
-          "vector_vertices": 150
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 34
         },
         {
           "source_vertices": 146,
-          "chaikin_iterations": 2,
-          "vector_vertices": 118
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 30
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 28,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 24
+          "vector_vertices": 8
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 14,
-          "chaikin_iterations": 0,
-          "vector_vertices": 8
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
         },
         {
           "source_vertices": 18,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 18,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 36
         },
         {
           "source_vertices": 10,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 20
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 7
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 172,
-          "chaikin_iterations": 2,
-          "vector_vertices": 192
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 60
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 10,
-          "chaikin_iterations": 0,
-          "vector_vertices": 7
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 20
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 14,
-          "chaikin_iterations": 0,
-          "vector_vertices": 9
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 8
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 6
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 16,
-          "chaikin_iterations": 0,
-          "vector_vertices": 9
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 14,
-          "chaikin_iterations": 0,
-          "vector_vertices": 10
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 8
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 10,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 20
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 968,
-          "chaikin_iterations": 2,
-          "vector_vertices": 953
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 246
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 10,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 20
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
-          "vector_vertices": 9
-        },
-        {
-          "source_vertices": 8,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 6
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
+        },
+        {
+          "source_vertices": 8,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 6
         },
         {
           "source_vertices": 146,
-          "chaikin_iterations": 2,
-          "vector_vertices": 140
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 54
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 7
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 24,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 16
+          "vector_vertices": 10
         },
         {
           "source_vertices": 10,
-          "chaikin_iterations": 0,
-          "vector_vertices": 8
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
         },
         {
           "source_vertices": 10,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 6
         },
         {
           "source_vertices": 16,
-          "chaikin_iterations": 0,
-          "vector_vertices": 9
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 126,
-          "chaikin_iterations": 2,
-          "vector_vertices": 114
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 40
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
-        },
-        {
-          "source_vertices": 10,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
-        },
-        {
-          "source_vertices": 4,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
-        },
-        {
-          "source_vertices": 4,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
-        },
-        {
-          "source_vertices": 4,
-          "chaikin_iterations": 0,
-          "vector_vertices": 4
-        },
-        {
-          "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 10,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 20
+        },
+        {
+          "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
+          "chaikin_iterations": 0,
+          "vector_vertices": 4
+        },
+        {
+          "source_vertices": 10,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 10,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 20
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 16,
-          "chaikin_iterations": 0,
-          "vector_vertices": 10
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 8
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 18,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 36
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 10,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 20
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 24
         },
         {
           "source_vertices": 16,
-          "chaikin_iterations": 0,
-          "vector_vertices": 8
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 20,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 40
         },
         {
           "source_vertices": 114,
-          "chaikin_iterations": 2,
-          "vector_vertices": 112
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 38
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 18,
-          "chaikin_iterations": 0,
-          "vector_vertices": 11
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 8
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
-          "vector_vertices": 10
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 6,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
-          "vector_vertices": 6
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
         },
         {
           "source_vertices": 14,
-          "chaikin_iterations": 0,
-          "vector_vertices": 8
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 28,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 20
+          "vector_vertices": 6
         }
       ]
     },
@@ -3760,172 +4504,205 @@
       "source_rings": 33,
       "emitted_rings": 33,
       "vertices_source_half_pixel": 7450,
-      "vertices_vector": 7685,
+      "vertices_vector": 2764,
       "ring_stats": [
         {
           "source_vertices": 140,
-          "chaikin_iterations": 2,
-          "vector_vertices": 163
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 58
         },
         {
           "source_vertices": 54,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 54
+          "vector_vertices": 24
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 270,
-          "chaikin_iterations": 2,
-          "vector_vertices": 276
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 106
         },
         {
           "source_vertices": 10,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 336,
-          "chaikin_iterations": 2,
-          "vector_vertices": 347
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 120
         },
         {
           "source_vertices": 94,
-          "chaikin_iterations": 2,
-          "vector_vertices": 90
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 26
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 46,
-          "chaikin_iterations": 1,
-          "vector_vertices": 48
-        },
-        {
-          "source_vertices": 30,
-          "chaikin_iterations": 1,
-          "vector_vertices": 32
-        },
-        {
-          "source_vertices": 4882,
-          "chaikin_iterations": 2,
-          "vector_vertices": 4985
-        },
-        {
-          "source_vertices": 28,
-          "chaikin_iterations": 1,
-          "vector_vertices": 33
-        },
-        {
-          "source_vertices": 112,
-          "chaikin_iterations": 2,
-          "vector_vertices": 120
-        },
-        {
-          "source_vertices": 12,
-          "chaikin_iterations": 0,
-          "vector_vertices": 8
-        },
-        {
-          "source_vertices": 30,
-          "chaikin_iterations": 1,
-          "vector_vertices": 32
-        },
-        {
-          "source_vertices": 18,
-          "chaikin_iterations": 0,
-          "vector_vertices": 8
-        },
-        {
-          "source_vertices": 24,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
           "vector_vertices": 22
         },
         {
-          "source_vertices": 158,
-          "chaikin_iterations": 2,
-          "vector_vertices": 188
+          "source_vertices": 30,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 12
+        },
+        {
+          "source_vertices": 4882,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 1722
+        },
+        {
+          "source_vertices": 28,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 12
+        },
+        {
+          "source_vertices": 112,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 42
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
-          "vector_vertices": 9
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 30,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
+        },
+        {
+          "source_vertices": 18,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 10
+        },
+        {
+          "source_vertices": 24,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 158,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 60
+        },
+        {
+          "source_vertices": 12,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 8
         },
         {
           "source_vertices": 8,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 40,
-          "chaikin_iterations": 1,
-          "vector_vertices": 44
-        },
-        {
-          "source_vertices": 80,
-          "chaikin_iterations": 2,
-          "vector_vertices": 100
-        },
-        {
-          "source_vertices": 92,
-          "chaikin_iterations": 2,
-          "vector_vertices": 106
-        },
-        {
-          "source_vertices": 78,
-          "chaikin_iterations": 1,
-          "vector_vertices": 64
-        },
-        {
-          "source_vertices": 60,
-          "chaikin_iterations": 1,
-          "vector_vertices": 56
-        },
-        {
-          "source_vertices": 206,
-          "chaikin_iterations": 2,
-          "vector_vertices": 242
-        },
-        {
-          "source_vertices": 24,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
           "vector_vertices": 20
         },
         {
+          "source_vertices": 80,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 36
+        },
+        {
+          "source_vertices": 92,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 34
+        },
+        {
+          "source_vertices": 78,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 32
+        },
+        {
+          "source_vertices": 60,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 24
+        },
+        {
+          "source_vertices": 206,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 88
+        },
+        {
+          "source_vertices": 24,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 8
+        },
+        {
           "source_vertices": 16,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 378,
-          "chaikin_iterations": 2,
-          "vector_vertices": 400
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 140
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 128,
-          "chaikin_iterations": 2,
-          "vector_vertices": 138
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 56
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 48,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 48
+          "vector_vertices": 20
         }
       ]
     },
@@ -3934,217 +4711,259 @@
       "source_rings": 42,
       "emitted_rings": 42,
       "vertices_source_half_pixel": 5370,
-      "vertices_vector": 5257,
+      "vertices_vector": 1906,
       "ring_stats": [
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 30,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 26
+          "vector_vertices": 12
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 50,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 46
+          "vector_vertices": 18
         },
         {
           "source_vertices": 24,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 20
+          "vector_vertices": 8
         },
         {
           "source_vertices": 78,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 54
+          "vector_vertices": 24
         },
         {
           "source_vertices": 56,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 64
+          "vector_vertices": 24
         },
         {
           "source_vertices": 4286,
-          "chaikin_iterations": 2,
-          "vector_vertices": 4279
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 1436
         },
         {
           "source_vertices": 10,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 56,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 50
+          "vector_vertices": 20
         },
         {
           "source_vertices": 36,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 32
+          "vector_vertices": 18
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 42,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 42
+          "vector_vertices": 20
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 54,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 54
+          "vector_vertices": 24
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 30,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 28
+          "vector_vertices": 14
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 112,
-          "chaikin_iterations": 2,
-          "vector_vertices": 101
-        },
-        {
-          "source_vertices": 30,
-          "chaikin_iterations": 1,
-          "vector_vertices": 30
-        },
-        {
-          "source_vertices": 14,
-          "chaikin_iterations": 0,
-          "vector_vertices": 9
-        },
-        {
-          "source_vertices": 54,
-          "chaikin_iterations": 1,
-          "vector_vertices": 65
-        },
-        {
-          "source_vertices": 48,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
           "vector_vertices": 36
         },
         {
+          "source_vertices": 30,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 12
+        },
+        {
+          "source_vertices": 14,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 8
+        },
+        {
+          "source_vertices": 54,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
+        },
+        {
+          "source_vertices": 48,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 14
+        },
+        {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 38,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 36
+          "vector_vertices": 16
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 42,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 54
+          "vector_vertices": 22
         },
         {
           "source_vertices": 78,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 60
+          "vector_vertices": 24
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
           "vector_vertices": 8
         },
         {
           "source_vertices": 24,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 20
+          "vector_vertices": 10
         },
         {
           "source_vertices": 42,
+          "pre_simplify_tolerance_px": 1.0,
           "chaikin_iterations": 1,
-          "vector_vertices": 34
+          "vector_vertices": 16
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
-          "vector_vertices": 9
+          "pre_simplify_tolerance_px": 1.0,
+          "chaikin_iterations": 1,
+          "vector_vertices": 6
         }
       ]
     },
@@ -4153,112 +4972,133 @@
       "source_rings": 21,
       "emitted_rings": 21,
       "vertices_source_half_pixel": 3520,
-      "vertices_vector": 1501,
+      "vertices_vector": 2882,
       "ring_stats": [
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
-          "vector_vertices": 8
+          "pre_simplify_tolerance_px": 0.25,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
         },
         {
           "source_vertices": 1892,
-          "chaikin_iterations": 0,
-          "vector_vertices": 795
+          "pre_simplify_tolerance_px": 0.25,
+          "chaikin_iterations": 1,
+          "vector_vertices": 1522
         },
         {
           "source_vertices": 48,
-          "chaikin_iterations": 0,
-          "vector_vertices": 24
+          "pre_simplify_tolerance_px": 0.25,
+          "chaikin_iterations": 1,
+          "vector_vertices": 48
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 66,
-          "chaikin_iterations": 0,
-          "vector_vertices": 27
+          "pre_simplify_tolerance_px": 0.25,
+          "chaikin_iterations": 1,
+          "vector_vertices": 54
         },
         {
           "source_vertices": 18,
-          "chaikin_iterations": 0,
-          "vector_vertices": 9
+          "pre_simplify_tolerance_px": 0.25,
+          "chaikin_iterations": 1,
+          "vector_vertices": 18
         },
         {
           "source_vertices": 18,
-          "chaikin_iterations": 0,
-          "vector_vertices": 8
+          "pre_simplify_tolerance_px": 0.25,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
         },
         {
           "source_vertices": 76,
-          "chaikin_iterations": 0,
-          "vector_vertices": 37
+          "pre_simplify_tolerance_px": 0.25,
+          "chaikin_iterations": 1,
+          "vector_vertices": 70
         },
         {
           "source_vertices": 80,
-          "chaikin_iterations": 0,
-          "vector_vertices": 32
+          "pre_simplify_tolerance_px": 0.25,
+          "chaikin_iterations": 1,
+          "vector_vertices": 56
         },
         {
           "source_vertices": 18,
-          "chaikin_iterations": 0,
-          "vector_vertices": 7
+          "pre_simplify_tolerance_px": 0.25,
+          "chaikin_iterations": 1,
+          "vector_vertices": 14
         },
         {
           "source_vertices": 38,
-          "chaikin_iterations": 0,
-          "vector_vertices": 17
+          "pre_simplify_tolerance_px": 0.25,
+          "chaikin_iterations": 1,
+          "vector_vertices": 34
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
-          "vector_vertices": 8
+          "pre_simplify_tolerance_px": 0.25,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
         },
         {
           "source_vertices": 790,
-          "chaikin_iterations": 0,
-          "vector_vertices": 326
+          "pre_simplify_tolerance_px": 0.25,
+          "chaikin_iterations": 1,
+          "vector_vertices": 632
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         },
         {
           "source_vertices": 24,
-          "chaikin_iterations": 0,
-          "vector_vertices": 12
+          "pre_simplify_tolerance_px": 0.25,
+          "chaikin_iterations": 1,
+          "vector_vertices": 24
         },
         {
           "source_vertices": 134,
-          "chaikin_iterations": 0,
-          "vector_vertices": 54
+          "pre_simplify_tolerance_px": 0.25,
+          "chaikin_iterations": 1,
+          "vector_vertices": 104
         },
         {
           "source_vertices": 36,
-          "chaikin_iterations": 0,
-          "vector_vertices": 15
+          "pre_simplify_tolerance_px": 0.25,
+          "chaikin_iterations": 1,
+          "vector_vertices": 30
         },
         {
           "source_vertices": 108,
-          "chaikin_iterations": 0,
-          "vector_vertices": 46
+          "pre_simplify_tolerance_px": 0.25,
+          "chaikin_iterations": 1,
+          "vector_vertices": 88
         },
         {
           "source_vertices": 96,
-          "chaikin_iterations": 0,
-          "vector_vertices": 41
+          "pre_simplify_tolerance_px": 0.25,
+          "chaikin_iterations": 1,
+          "vector_vertices": 82
         },
         {
           "source_vertices": 34,
-          "chaikin_iterations": 0,
-          "vector_vertices": 19
+          "pre_simplify_tolerance_px": 0.25,
+          "chaikin_iterations": 1,
+          "vector_vertices": 34
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
-          "vector_vertices": 8
+          "pre_simplify_tolerance_px": 0.25,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
         }
       ]
     },
@@ -4267,50 +5107,59 @@
       "source_rings": 9,
       "emitted_rings": 9,
       "vertices_source_half_pixel": 1336,
-      "vertices_vector": 558,
+      "vertices_vector": 1084,
       "ring_stats": [
         {
           "source_vertices": 226,
-          "chaikin_iterations": 0,
-          "vector_vertices": 84
+          "pre_simplify_tolerance_px": 0.25,
+          "chaikin_iterations": 1,
+          "vector_vertices": 164
         },
         {
           "source_vertices": 474,
-          "chaikin_iterations": 0,
-          "vector_vertices": 196
+          "pre_simplify_tolerance_px": 0.25,
+          "chaikin_iterations": 1,
+          "vector_vertices": 380
         },
         {
           "source_vertices": 108,
-          "chaikin_iterations": 0,
-          "vector_vertices": 49
+          "pre_simplify_tolerance_px": 0.25,
+          "chaikin_iterations": 1,
+          "vector_vertices": 94
         },
         {
           "source_vertices": 54,
-          "chaikin_iterations": 0,
-          "vector_vertices": 26
+          "pre_simplify_tolerance_px": 0.25,
+          "chaikin_iterations": 1,
+          "vector_vertices": 52
         },
         {
           "source_vertices": 12,
-          "chaikin_iterations": 0,
-          "vector_vertices": 8
+          "pre_simplify_tolerance_px": 0.25,
+          "chaikin_iterations": 1,
+          "vector_vertices": 16
         },
         {
           "source_vertices": 60,
-          "chaikin_iterations": 0,
-          "vector_vertices": 25
+          "pre_simplify_tolerance_px": 0.25,
+          "chaikin_iterations": 1,
+          "vector_vertices": 50
         },
         {
           "source_vertices": 150,
-          "chaikin_iterations": 0,
-          "vector_vertices": 58
+          "pre_simplify_tolerance_px": 0.25,
+          "chaikin_iterations": 1,
+          "vector_vertices": 116
         },
         {
           "source_vertices": 248,
-          "chaikin_iterations": 0,
-          "vector_vertices": 108
+          "pre_simplify_tolerance_px": 0.25,
+          "chaikin_iterations": 1,
+          "vector_vertices": 208
         },
         {
           "source_vertices": 4,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
           "vector_vertices": 4
         }
@@ -4321,85 +5170,88 @@
       "source_rings": 3,
       "emitted_rings": 3,
       "vertices_source_half_pixel": 90,
-      "vertices_vector": 40,
+      "vertices_vector": 90,
       "ring_stats": [
         {
           "source_vertices": 30,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
-          "vector_vertices": 17
+          "vector_vertices": 30
         },
         {
           "source_vertices": 24,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
-          "vector_vertices": 9
+          "vector_vertices": 24
         },
         {
           "source_vertices": 36,
+          "pre_simplify_tolerance_px": 0.0,
           "chaikin_iterations": 0,
-          "vector_vertices": 14
+          "vector_vertices": 36
         }
       ]
     }
   ],
-  "svg_bytes": 1120590,
+  "svg_bytes": 487160,
   "qc": {
-    "water_mask_iou": 0.9999947459951348,
+    "water_mask_iou": 0.996971957848535,
     "stable_interior_exact_class_fraction": 1.0,
-    "all_overlap_exact_class_fraction": 0.9971820872519659,
-    "all_overlap_within_1m_fraction": 0.9997005201492145,
+    "all_overlap_exact_class_fraction": 0.9777368450569942,
+    "all_overlap_within_1m_fraction": 0.9992884483266268,
     "relative_area_error_by_class": [
-      -0.011754660077758803,
-      0.007760057442870036,
-      0.0008117776554760595,
-      -0.001961073429666765,
-      -1.8327102118613003e-05,
-      3.147128245476003e-05,
-      -0.00010551862403714256,
-      1.2616822429906542
+      -0.006994658624323244,
+      0.009182954223566069,
+      0.001829939460649422,
+      -0.000707755824240637,
+      -0.002895682134740855,
+      9.44138473642801e-05,
+      -0.00021103724807428512,
+      2.205607476635514
     ],
     "mean_depth_midpoint_original_m": 2.392721413685003,
-    "mean_depth_midpoint_vector_m": 2.396135329154648,
+    "mean_depth_midpoint_vector_m": 2.394578002521371,
     "threshold_qc": [
       {
         "threshold_m": 0,
-        "iou_1x_render": 0.9999947459951348,
-        "boundary_p95_px_1x_render": 0.0,
-        "boundary_p99_px_1x_render": 0.0,
-        "boundary_max_px_1x_render": 1.0,
+        "iou_1x_render": 0.996971957848535,
+        "boundary_p95_px_1x_render": 1.0,
+        "boundary_p99_px_1x_render": 1.0,
+        "boundary_max_px_1x_render": 3.0,
         "source_rings": 5,
         "emitted_rings": 5
       },
       {
         "threshold_m": 1,
-        "iou_1x_render": 0.9971938736875355,
+        "iou_1x_render": 0.9865961662152831,
         "boundary_p95_px_1x_render": 1.0,
-        "boundary_p99_px_1x_render": 4.242640687119285,
-        "boundary_max_px_1x_render": 17.029386365926403,
+        "boundary_p99_px_1x_render": 4.0,
+        "boundary_max_px_1x_render": 16.1245154965971,
         "source_rings": 277,
         "emitted_rings": 277
       },
       {
         "threshold_m": 2,
-        "iou_1x_render": 0.9994793738257616,
-        "boundary_p95_px_1x_render": 0.0,
-        "boundary_p99_px_1x_render": 1.0,
-        "boundary_max_px_1x_render": 52.354560450833695,
+        "iou_1x_render": 0.984219357032636,
+        "boundary_p95_px_1x_render": 1.4142135623730951,
+        "boundary_p99_px_1x_render": 16.57915312700238,
+        "boundary_max_px_1x_render": 98.59513172565875,
         "source_rings": 462,
         "emitted_rings": 462
       },
       {
         "threshold_m": 3,
-        "iou_1x_render": 0.9999938929059996,
-        "boundary_p95_px_1x_render": 0.0,
-        "boundary_p99_px_1x_render": 0.0,
-        "boundary_max_px_1x_render": 269.51994360343724,
+        "iou_1x_render": 0.9884463602695647,
+        "boundary_p95_px_1x_render": 1.0,
+        "boundary_p99_px_1x_render": 1.0,
+        "boundary_max_px_1x_render": 4.123105625617661,
         "source_rings": 33,
         "emitted_rings": 33
       },
       {
         "threshold_m": 4,
-        "iou_1x_render": 0.9982929469564493,
-        "boundary_p95_px_1x_render": 0.0,
+        "iou_1x_render": 0.9843362282878412,
+        "boundary_p95_px_1x_render": 1.0,
         "boundary_p99_px_1x_render": 1.0,
         "boundary_max_px_1x_render": 33.54101966249684,
         "source_rings": 42,
@@ -4407,32 +5259,32 @@
       },
       {
         "threshold_m": 5,
-        "iou_1x_render": 0.9960730461597764,
-        "boundary_p95_px_1x_render": 9.0,
-        "boundary_p99_px_1x_render": 29.587140836108368,
-        "boundary_max_px_1x_render": 63.63961030678928,
+        "iou_1x_render": 0.9934397077906474,
+        "boundary_p95_px_1x_render": 17.46424919657298,
+        "boundary_p99_px_1x_render": 42.199005519282125,
+        "boundary_max_px_1x_render": 78.91767862779544,
         "source_rings": 21,
         "emitted_rings": 21
       },
       {
         "threshold_m": 6,
-        "iou_1x_render": 0.9831501078804069,
-        "boundary_p95_px_1x_render": 60.75355384092334,
-        "boundary_p99_px_1x_render": 118.81625970578149,
-        "boundary_max_px_1x_render": 188.48076824970764,
+        "iou_1x_render": 0.9729509863738052,
+        "boundary_p95_px_1x_render": 80.55772190501666,
+        "boundary_p99_px_1x_render": 177.62401585343486,
+        "boundary_max_px_1x_render": 262.497619036821,
         "source_rings": 9,
         "emitted_rings": 9
       },
       {
         "threshold_m": 7,
-        "iou_1x_render": 0.36328125,
-        "boundary_p95_px_1x_render": 297.8027708953624,
-        "boundary_p99_px_1x_render": 362.3899731618022,
-        "boundary_max_px_1x_render": 366.2963281279243,
+        "iou_1x_render": 0.2605042016806723,
+        "boundary_p95_px_1x_render": 334.34671165893434,
+        "boundary_p99_px_1x_render": 367.0601417473125,
+        "boundary_max_px_1x_render": 445.3773680823937,
         "source_rings": 3,
         "emitted_rings": 3
       }
     ]
   },
-  "navigation_note": "GPS lookup remains exact corrected v4.1 class mask; v4.3 is visual geometry only."
+  "navigation_note": "GPS lookup remains exact corrected v4.1 class mask; v4.3 changes visual geometry only."
 }

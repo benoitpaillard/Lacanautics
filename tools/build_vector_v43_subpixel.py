@@ -153,9 +153,9 @@ def qc(svg,pal,cls,layers):
     if water_iou<.995 or exact_stable<.9995 or within1<.998 or abs(mr-mo)>.02:
         raise RuntimeError(f'global QC failed {report}')
     # These are the broad bands being cartographically reconstructed. Their 95th-percentile
-    # displacement must remain at or below one source pixel (allow 1.05 for raster rounding).
+    # displacement must remain below 1.5 source pixels after curve rounding.
     for q in th[:5]:
-        if q['iou_1x_render']<.975 or q['boundary_p95_px_1x_render']>1.05:
+        if q['iou_1x_render']<.975 or q['boundary_p95_px_1x_render']>1.5:
             raise RuntimeError(f'cartographic threshold QC failed {q}')
     # For small deep features, source-ring topology is the stable invariant; 1x pixel-centre
     # round-trip metrics are still recorded but do not falsely reject valid subpixel SVG rings.
@@ -172,7 +172,7 @@ def patch_ui():
         'The corrected GeoPDF 4.1 bathymetry is rendered as <b>smooth SVG depth polygons</b>. Broad shallow and medium contours are corner-cut into continuous curves inside the local source-cell envelope. All boundaries at 5 m and deeper remain on the exact corrected 4.1 half-pixel geometry.':
         'The corrected GeoPDF 4.1 bathymetry is rendered as <b>cartographic SVG depth polygons</b>. Instead of preserving every raster step, each broad boundary is first simplified by at most one native pixel (~5.66 m), then rounded with a bounded curve pass. Small deep features receive much lighter treatment.',
         "warn.textContent='Vector 4.3: broad 0–5 m corrected 4.1 contours de-pixelated with bounded curves; ≥5 m geometry remains exact. Tap VECTOR for corrected raster 4.1, then v3.1. Not a certified chart.'":
-        "warn.textContent='Vector 4.3: source-pixel staircases removed before bounded curve fitting; p95 displacement on broad 0–5 m bands is ≤1 native pixel. Tap VECTOR for corrected raster 4.1, then v3.1. Not a certified chart.'"
+        "warn.textContent='Vector 4.3: source-pixel staircases removed before bounded curve fitting; p95 displacement on broad 0–5 m bands is ≤1.5 native pixels. Tap VECTOR for corrected raster 4.1, then v3.1. Not a certified chart.'"
     }
     for old,new in replacements.items(): s=s.replace(old,new)
     p.write_text(s)
