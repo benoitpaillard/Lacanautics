@@ -15,13 +15,12 @@ ROOT = Path('.')
 OUT_SVG = ROOT / 'bathymetry-geopdf-v45-taubin.svg'
 OUT_REPORT = ROOT / 'data/lacanau_vector_v45_taubin_report.json'
 
-# Keep the proven v4.4 raster-space filtering. Taubin then removes the residual
-# polygon-frequency scallop without the dense spline representation used by old v4.5.
 SIGMA_BY_THRESHOLD = v44.SIGMA_BY_THRESHOLD
 TAUBIN_LAMBDA = 0.50
 TAUBIN_MU = -0.53
-TARGET_ITERATIONS = [4, 4, 4, 4, 3, 2, 1, 0]
-MIN_PERIMETER_PX = [28, 28, 28, 28, 24, 20, 16, 1e9]
+# Shoreline and the tiny 7–8 m pockets stay exactly on the v4.4 geometry.
+TARGET_ITERATIONS = [0, 4, 4, 4, 3, 2, 1, 0]
+MIN_PERIMETER_PX = [1e9, 28, 28, 28, 24, 20, 16, 1e9]
 SIMPLIFY_TOLERANCE_PX = 0.18
 V44_SIMPLIFY_TOLERANCE_PX = 0.12
 PAD = v44.PAD
@@ -74,7 +73,9 @@ def extract_raw_rings(field: np.ndarray):
     return rings
 
 
-def process_rings(raw_rings, threshold: int, iterations: int, tolerance: float):
+def process_rings(raw_rings, threshold: int):
+    iterations = TARGET_ITERATIONS[threshold]
+    tolerance = V44_SIMPLIFY_TOLERANCE_PX if iterations == 0 else SIMPLIFY_TOLERANCE_PX
     out, stats = [], []
     for raw in raw_rings:
         do_smooth = iterations > 0 and perimeter(raw) >= MIN_PERIMETER_PX[threshold]
@@ -94,7 +95,7 @@ def process_rings(raw_rings, threshold: int, iterations: int, tolerance: float):
             'p95_displacement_px': float(np.percentile(disp, 95)) if len(disp) else 0.0,
             'area_ratio': float(a1 / a0) if a0 > 1e-12 else 1.0,
         })
-    return out, stats
+    return out, stats, iterations, tolerance
 
 
 def rasterize_evenodd(rings, h: int, w: int) -> np.ndarray:
@@ -114,42 +115,34 @@ def path_data(rings) -> str:
     )
 
 
-def choose_layer(raw_rings, threshold: int, parent_mask, allowed_spill: int, h: int, w: int):
-    attempts = []
-    tolerances = (SIMPLIFY_TOLERANCE_PX, V44_SIMPLIFY_TOLERANCE_PX)
-    for tol in tolerances:
-        for it in range(TARGET_ITERATIONS[threshold], -1, -1):
-            rings, stats = process_rings(raw_rings, threshold, it, tol)
-            mask = rasterize_evenodd(rings, h, w)
-            spill = int(np.sum(mask & ~parent_mask)) if parent_mask is not None else 0
-            attempts.append({'iterations': it, 'tolerance_px': tol, 'spill_cells': spill})
-            if parent_mask is None or spill <= allowed_spill:
-                return rings, stats, mask, it, tol, attempts
-    raise RuntimeError(f'candidate worsens v4.4 nesting at threshold {threshold}: {attempts[-4:]}')
+def nested_uses(kind: str, colors=None):
+    """Render recursively clipped layers without duplicating path data."""
+    chunks = []
+    if kind == 'fill':
+        chunks.append(f'<use id="depth-fill-0" href="#geom-0" fill="{colors[0]}" fill-rule="evenodd"/>')
+    else:
+        chunks.append('<use id="shoreline" href="#geom-0" fill="none" stroke="#244e5a" stroke-opacity="0.62" stroke-width="0.72" stroke-linejoin="round" stroke-linecap="round"/>')
+    for k in range(1, 8):
+        chunks.append(f'<g clip-path="url(#clip-{k-1})">')
+        if kind == 'fill':
+            chunks.append(f'<use id="depth-fill-{k}" href="#geom-{k}" fill="{colors[k]}" fill-rule="evenodd"/>')
+        else:
+            chunks.append(f'<use id="isobath-{k}m" href="#geom-{k}" fill="none" stroke="#244e5a" stroke-opacity="0.48" stroke-width="0.62" stroke-linejoin="round" stroke-linecap="round"/>')
+    chunks.extend('</g>' for _ in range(7))
+    return ''.join(chunks)
 
 
 def build_geometry(pal: np.ndarray, cls: np.ndarray):
     h, w = cls.shape
-    raw_sets = []
+    ring_sets, raw_masks, masks, layer_stats = [], [], [], []
+
     for k, sigma in enumerate(SIGMA_BY_THRESHOLD):
         field = v44.smooth_field(cls >= k, sigma)
-        raw_sets.append(extract_raw_rings(field))
-
-    # Establish the actual polygon-raster baseline of v4.4. Our coarse QA rasterizer
-    # sees a few tiny parent/child spill cells even with zero Taubin smoothing, so the
-    # correct safety criterion is: Taubin must not make that baseline worse.
-    baseline_masks = []
-    for k, raw in enumerate(raw_sets):
-        rings, _ = process_rings(raw, k, 0, V44_SIMPLIFY_TOLERANCE_PX)
-        baseline_masks.append(rasterize_evenodd(rings, h, w))
-    baseline_spills = [int(np.sum(baseline_masks[k] & ~baseline_masks[k - 1])) for k in range(1, 8)]
-
-    ring_sets, masks, layer_stats = [], [], []
-    for k, raw in enumerate(raw_sets):
-        parent = masks[k - 1] if k else None
-        allowed = baseline_spills[k - 1] if k else 0
-        rings, stats, mask, selected_it, selected_tol, attempts = choose_layer(raw, k, parent, allowed, h, w)
-        ring_sets.append(rings); masks.append(mask)
+        raw = extract_raw_rings(field)
+        rings, stats, iterations, tolerance = process_rings(raw, k)
+        raw_mask = rasterize_evenodd(rings, h, w)
+        mask = raw_mask if k == 0 else (raw_mask & masks[k - 1])
+        ring_sets.append(rings); raw_masks.append(raw_mask); masks.append(mask)
 
         smoothed = [s for s in stats if s['smoothed']]
         weighted_before = sum(s['roughness_before'] * s['raw_vertices'] for s in smoothed)
@@ -157,13 +150,14 @@ def build_geometry(pal: np.ndarray, cls: np.ndarray):
         weight = sum(s['raw_vertices'] for s in smoothed)
         disps = [s['max_displacement_px'] for s in smoothed]
         area_errs = [abs(s['area_ratio'] - 1.0) for s in smoothed]
+        spill = int(np.sum(raw_mask & ~masks[k - 1])) if k else 0
         layer_stats.append({
             'threshold_m': k,
-            'gaussian_sigma_px': SIGMA_BY_THRESHOLD[k],
-            'taubin_iterations': selected_it,
+            'gaussian_sigma_px': sigma,
+            'taubin_iterations': iterations,
             'lambda': TAUBIN_LAMBDA,
             'mu': TAUBIN_MU,
-            'simplify_tolerance_px': selected_tol,
+            'simplify_tolerance_px': tolerance,
             'rings': len(rings),
             'rings_taubin_smoothed': len(smoothed),
             'raw_vertices': int(sum(s['raw_vertices'] for s in stats)),
@@ -173,24 +167,24 @@ def build_geometry(pal: np.ndarray, cls: np.ndarray):
             'roughness_ratio': float(weighted_after / weighted_before) if weighted_before > 0 else 1.0,
             'max_taubin_displacement_px': max(disps, default=0.0),
             'max_abs_area_change_fraction': max(area_errs, default=0.0),
-            'nesting_attempts': attempts,
+            'preclip_spill_cells': spill,
+            'cells_removed_by_parent_clip': int(np.sum(raw_mask & ~mask)),
         })
 
-    candidate_spills = [int(np.sum(masks[k] & ~masks[k - 1])) for k in range(1, 8)]
-    excess = [candidate_spills[i] - baseline_spills[i] for i in range(7)]
-    if any(x > 0 for x in excess):
-        raise RuntimeError(f'nesting worsened versus v4.4: baseline={baseline_spills} candidate={candidate_spills}')
+    nested_violations = [int(np.sum(masks[k] & ~masks[k - 1])) for k in range(1, 8)]
+    if any(nested_violations):
+        raise RuntimeError(f'clipped nesting failure: {nested_violations}')
 
-    fills, lines, labels = [], [], []
+    path_sets = [path_data(r) for r in ring_sets]
+    defs = ''.join(f'<path id="geom-{k}" d="{d}" fill-rule="evenodd"/>' for k, d in enumerate(path_sets))
+    # Each clip references the geometry already stored once in defs; nested groups make
+    # the clipping cumulative, so a deeper band can never escape any shallower band.
+    defs += ''.join(f'<clipPath id="clip-{k}"><use href="#geom-{k}" fill-rule="evenodd"/></clipPath>' for k in range(7))
+    colors = ['#%02x%02x%02x' % tuple(int(v) for v in pal[k]) for k in range(8)]
+
+    labels = []
     label_count = 0
-    for k in range(8):
-        color = '#%02x%02x%02x' % tuple(int(v) for v in pal[k])
-        d = path_data(ring_sets[k])
-        fills.append(f'<path id="depth-fill-{k}" d="{d}" fill="{color}" fill-rule="evenodd"/>')
-        if k == 0:
-            lines.append(f'<path id="shoreline" d="{d}" fill="none" stroke="#244e5a" stroke-opacity="0.62" stroke-width="0.72" stroke-linejoin="round" stroke-linecap="round"/>')
-            continue
-        lines.append(f'<path id="isobath-{k}m" d="{d}" fill="none" stroke="#244e5a" stroke-opacity="0.48" stroke-width="0.62" stroke-linejoin="round" stroke-linecap="round"/>')
+    for k in range(1, 8):
         chosen = 0
         for ring in sorted(ring_sets[k], key=perimeter, reverse=True)[:8]:
             if perimeter(ring) < 180:
@@ -211,13 +205,14 @@ def build_geometry(pal: np.ndarray, cls: np.ndarray):
     svg = (
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" preserveAspectRatio="none" shape-rendering="geometricPrecision">'
         '<title>Lac de Lacanau bathymetry — Taubin-faired integer isobaths</title>'
-        '<desc>Corrected GeoPDF 4.1 depth classes. v4.4 Gaussian occupancy iso-contours are followed by sparse non-shrinking Taubin curve smoothing and Douglas-Peucker simplification. GPS lookup remains untouched v4.1 classes.</desc>'
-        '<g id="depth-bands">' + ''.join(fills) + '</g>'
-        '<g id="depth-lines">' + ''.join(lines) + '</g>'
+        '<desc>Corrected GeoPDF 4.1 depth classes. v4.4 Gaussian occupancy iso-contours are followed by sparse non-shrinking Taubin curve smoothing, Douglas-Peucker simplification, and cumulative parent clipping. GPS lookup remains untouched v4.1 classes.</desc>'
+        '<defs>' + defs + '</defs>'
+        '<g id="depth-bands">' + nested_uses('fill', colors) + '</g>'
+        '<g id="depth-lines">' + nested_uses('line') + '</g>'
         '<g id="depth-labels" pointer-events="none">' + ''.join(labels) + '</g>'
         '</svg>'
     )
-    return svg, masks, layer_stats, baseline_spills, candidate_spills, excess, label_count
+    return svg, masks, layer_stats, nested_violations, label_count
 
 
 def qc(cls: np.ndarray, masks):
@@ -270,7 +265,7 @@ def qc(cls: np.ndarray, masks):
 
 def main():
     _, pal, cls = v44.load_classes()
-    svg, masks, layers, baseline_spills, candidate_spills, excess, labels = build_geometry(pal, cls)
+    svg, masks, layers, nested, labels = build_geometry(pal, cls)
     q = qc(cls, masks)
     OUT_SVG.write_text(svg)
     old = json.loads((ROOT / 'data/lacanau_vector_v44_report.json').read_text())
@@ -278,15 +273,13 @@ def main():
         'version': '4.5-taubin-candidate',
         'source_version': '4.1-fixed',
         'parent_version': '4.4-smooth-isobaths',
-        'method': 'v4.4 Gaussian occupancy iso-contours -> Taubin lambda/mu non-shrinking low-pass on closed polygonal curves -> Douglas-Peucker simplification',
+        'method': 'v4.4 Gaussian occupancy iso-contours -> Taubin lambda/mu low-pass on closed curves -> Douglas-Peucker simplification -> cumulative parent clipping using SVG <use>',
         'taubin_reference': 'Gabriel Taubin, Curve and Surface Smoothing without Shrinkage, ICCV 1995',
         'taubin_lambda': TAUBIN_LAMBDA,
         'taubin_mu': TAUBIN_MU,
         'target_iterations': TARGET_ITERATIONS,
         'source_resolution_m_per_px': old['source_resolution_m_per_px'],
-        'v44_polygon_raster_nesting_spill_cells': baseline_spills,
-        'candidate_polygon_raster_nesting_spill_cells': candidate_spills,
-        'nesting_excess_vs_v44': excess,
+        'nested_violations': nested,
         'depth_label_count': labels,
         'layers': layers,
         'svg_bytes': len(svg.encode()),
