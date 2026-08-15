@@ -1,0 +1,38 @@
+name: Restore live app to Survey v3.1
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/revert-live-to-v31.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Restore last complete Survey v3.1 frontend
+        run: |
+          SOURCE=2cf53143d9ac6f6a47b4c1fb52cf703a6de6b912
+          git show "$SOURCE:hires.html" > hires.html
+          git show "$SOURCE:index.html" > index.html
+          git show "$SOURCE:sw.js" > sw.js
+          git show "$SOURCE:manifest.webmanifest" > manifest.webmanifest
+          grep -q 'Lacanautics Survey v3.1' hires.html
+          grep -q "lacanautics-v3.1" sw.js
+          grep -q 'bathymetry-2012-v3.webp' hires.html
+          grep -q 'lacanau_2012_bands_v3.json' hires.html
+      - name: Commit exact v3.1 restoration
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add hires.html index.html sw.js manifest.webmanifest
+          git diff --cached --quiet && exit 0
+          git commit -m "Restore latest Survey v3.1 frontend"
+          git push
