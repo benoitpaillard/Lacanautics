@@ -1,0 +1,164 @@
+{
+  "view_bbox": {
+    "west": -1.18496,
+    "south": 44.93178,
+    "east": -1.04651,
+    "north": 45.00437
+  },
+  "pdf_bbox": [
+    247.0,
+    714.0,
+    1171.0,
+    29.0
+  ],
+  "actual_native_image_bbox": {
+    "west": -1.1848184160296948,
+    "east": -1.0464264296534154,
+    "north": 45.00437403599738,
+    "south": 44.93177983830139
+  },
+  "strip_order_topdown": [
+    29,
+    30,
+    31,
+    24,
+    25,
+    26
+  ],
+  "placements": [
+    {
+      "xref": 29,
+      "x0": 247.94491577148438,
+      "x1": 1171.5577392578125,
+      "y0": 127.454833984375,
+      "y1": 258.51007080078125
+    },
+    {
+      "xref": 30,
+      "x0": 247.94491577148438,
+      "x1": 1171.5577392578125,
+      "y0": 258.030029296875,
+      "y1": 389.08526611328125
+    },
+    {
+      "xref": 31,
+      "x0": 247.94491577148438,
+      "x1": 1171.5577392578125,
+      "y0": 388.60516357421875,
+      "y1": 519.660400390625
+    },
+    {
+      "xref": 24,
+      "x0": 247.94491577148438,
+      "x1": 1171.5577392578125,
+      "y0": 519.1803588867188,
+      "y1": 650.235595703125
+    },
+    {
+      "xref": 25,
+      "x0": 247.94491577148438,
+      "x1": 1171.5577392578125,
+      "y0": 649.7555541992188,
+      "y1": 780.810791015625
+    },
+    {
+      "xref": 26,
+      "x0": 247.94491577148438,
+      "x1": 1171.5577392578125,
+      "y0": 780.3306884765625,
+      "y1": 812.4944458007812
+    }
+  ],
+  "results": [
+    {
+      "n": 45565,
+      "exact": 0.6775595303412707,
+      "within1": 0.9526171403489521,
+      "mae_class": 0.37107428947657195,
+      "bias_class": -0.044858992647865685,
+      "reverse_strip_order": false,
+      "flip_each_strip_y": true,
+      "flip_each_strip_x": false
+    },
+    {
+      "n": 41198,
+      "exact": 0.312563716685276,
+      "within1": 0.6734550220884509,
+      "mae_class": 1.2228991698626146,
+      "bias_class": -0.05560949560658284,
+      "reverse_strip_order": false,
+      "flip_each_strip_y": false,
+      "flip_each_strip_x": false
+    },
+    {
+      "n": 39086,
+      "exact": 0.25382489894079724,
+      "within1": 0.7004298214194341,
+      "mae_class": 1.2078237732180321,
+      "bias_class": -0.05564652305173208,
+      "reverse_strip_order": true,
+      "flip_each_strip_y": false,
+      "flip_each_strip_x": false
+    },
+    {
+      "n": 38088,
+      "exact": 0.24677063642091998,
+      "within1": 0.6413043478260869,
+      "mae_class": 1.3560438983406848,
+      "bias_class": -0.06692396555345516,
+      "reverse_strip_order": true,
+      "flip_each_strip_y": true,
+      "flip_each_strip_x": false
+    },
+    {
+      "n": 33075,
+      "exact": 0.22249433106575964,
+      "within1": 0.5334542705971277,
+      "mae_class": 1.728133030990174,
+      "bias_class": -0.0012698412698412698,
+      "reverse_strip_order": false,
+      "flip_each_strip_y": true,
+      "flip_each_strip_x": true
+    },
+    {
+      "n": 31494,
+      "exact": 0.1536483139645647,
+      "within1": 0.4496412014986982,
+      "mae_class": 1.9756144027433797,
+      "bias_class": 0.0423572744014733,
+      "reverse_strip_order": true,
+      "flip_each_strip_y": false,
+      "flip_each_strip_x": true
+    },
+    {
+      "n": 30928,
+      "exact": 0.1506078634247284,
+      "within1": 0.3947232281427832,
+      "mae_class": 2.1069580962234866,
+      "bias_class": -0.07397827211588205,
+      "reverse_strip_order": true,
+      "flip_each_strip_y": true,
+      "flip_each_strip_x": true
+    },
+    {
+      "n": 31496,
+      "exact": 0.144748539497079,
+      "within1": 0.4247840995681991,
+      "mae_class": 2.0400685801371603,
+      "bias_class": 0.009588519177038355,
+      "reverse_strip_order": false,
+      "flip_each_strip_y": false,
+      "flip_each_strip_x": true
+    }
+  ],
+  "winner": {
+    "n": 45565,
+    "exact": 0.6775595303412707,
+    "within1": 0.9526171403489521,
+    "mae_class": 0.37107428947657195,
+    "bias_class": -0.044858992647865685,
+    "reverse_strip_order": false,
+    "flip_each_strip_y": true,
+    "flip_each_strip_x": false
+  }
+}
