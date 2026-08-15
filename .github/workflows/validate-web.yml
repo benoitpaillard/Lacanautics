@@ -10,8 +10,10 @@ on:
       - 'gps-max.js'
       - 'manifest.webmanifest'
       - 'bathymetry-geopdf-v45-taubin.svg'
+      - 'bathymetry-geopdf-v45-mobile.webp'
       - 'data/lacanau_vector_v45_taubin_report.json'
       - 'bathymetry-2012-v31.svg'
+      - 'bathymetry-2012-v31-mobile.webp'
       - 'data/lacanau_v31_visual_report.json'
       - 'bathymetry-geopdf-v41-classes.webp'
       - 'data/lacanau_geopdf_v41.json'
@@ -27,8 +29,10 @@ jobs:
           test -s index.html
           test ! -e hires.html
           test -s bathymetry-geopdf-v45-taubin.svg
+          test -s bathymetry-geopdf-v45-mobile.webp
           test -s data/lacanau_vector_v45_taubin_report.json
           test -s bathymetry-2012-v31.svg
+          test -s bathymetry-2012-v31-mobile.webp
           test ! -e bathymetry-2012-v3.webp
           test -s data/lacanau_v31_visual_report.json
           test -s bathymetry-geopdf-v41-classes.webp
@@ -50,11 +54,16 @@ jobs:
           assert inline, 'No inline application script found'
           pathlib.Path('/tmp/lacanautics-app.js').write_text(inline,encoding='utf-8')
           assert 'src="./gps-max.js?v=2"' in html
-          assert "register('./sw.js?v=singlepage2-v31lines')" in html
+          assert "register('./sw.js?v=singlepage3-mobilefast')" in html
           assert 'location.replace(' not in html
           assert 'hires.html' not in html
           assert 'bathymetry-geopdf-v45-taubin.svg' in html
+          assert 'bathymetry-geopdf-v45-mobile.webp?v=m1' in html
           assert 'bathymetry-2012-v31.svg?v=31v1' in html
+          assert 'bathymetry-2012-v31-mobile.webp?v=m1' in html
+          assert 'const FAST_RASTER=' in html
+          assert 'requestAnimationFrame' in html
+          assert 'translate3d' in html
           assert 'VECTOR 4.5' in html
           assert 'SURVEY v3.1 · harmonized' in html
           assert 'matched vector lines' in html
@@ -84,7 +93,7 @@ jobs:
           node --check sw.js
           grep -q 'enableHighAccuracy:true' gps-max.js
           grep -q 'maximumAge:0' gps-max.js
-      - name: Check matching SVG line style and service worker
+      - name: Check matching line style and mobile fast path
         run: |
           grep -q 'geom-1' bathymetry-geopdf-v45-taubin.svg
           grep -q 'clip-0' bathymetry-geopdf-v45-taubin.svg
@@ -94,11 +103,13 @@ jobs:
           grep -q 'stroke-opacity="0.62"' bathymetry-2012-v31.svg
           grep -q 'stroke-linejoin="round"' bathymetry-2012-v31.svg
           grep -q 'stroke-linecap="round"' bathymetry-2012-v31.svg
-          grep -q "lacanautics-v4.5-singlepage2-v31lines" sw.js
+          grep -q "lacanautics-v4.5-singlepage3-mobilefast" sw.js
           grep -q "'./index.html'" sw.js
           grep -q 'gps-max.js' sw.js
           grep -q 'bathymetry-geopdf-v41-classes.webp' sw.js
+          grep -q 'bathymetry-geopdf-v45-mobile.webp' sw.js
           grep -q 'bathymetry-2012-v31.svg' sw.js
+          grep -q 'bathymetry-2012-v31-mobile.webp' sw.js
           ! grep -q 'bathymetry-2012-v3.webp' sw.js
           ! grep -q 'hires.html' sw.js
           ! grep -q 'injectGpsLayer' sw.js
