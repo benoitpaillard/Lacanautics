@@ -21,7 +21,16 @@ jobs:
       - name: Build authoritative open-water shoreline
         run: python tools/build_open_water_mask.py
       - name: Activate shared shoreline mask
-        run: python tools/activate_permanent_shoreline.py
+        run: |
+          python tools/activate_permanent_shoreline.py
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('tools/build_v31_harmonized.py')
+          s=p.read_text(encoding='utf-8')
+          s=s.replace("bbox = {k: float(src[k]) for k in ('west','south','east','north')}", "bbox = {k: float(src['bbox'][k]) for k in ('west','south','east','north')}")
+          p.write_text(s,encoding='utf-8')
+          assert "src['bbox'][k]" in s
+          PY
       - name: Rebuild Vector 4.5 and Survey v3.1
         run: |
           python tools/build_vector_v45_taubin.py
