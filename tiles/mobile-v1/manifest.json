@@ -1,0 +1,81 @@
+{
+  "version": "mobile-v1",
+  "tile_px": 1024,
+  "levels": [
+    2,
+    4,
+    8
+  ],
+  "maps": {
+    "vector": {
+      "base_size": [
+        971,
+        1427
+      ],
+      "levels": {
+        "2": {
+          "pixel_size": [
+            1942,
+            2854
+          ],
+          "cols": 2,
+          "rows": 3,
+          "bytes": 879954
+        },
+        "4": {
+          "pixel_size": [
+            3884,
+            5708
+          ],
+          "cols": 4,
+          "rows": 6,
+          "bytes": 2278162
+        },
+        "8": {
+          "pixel_size": [
+            7768,
+            11416
+          ],
+          "cols": 8,
+          "rows": 12,
+          "bytes": 5569447
+        }
+      }
+    },
+    "v31": {
+      "base_size": [
+        1000,
+        1675
+      ],
+      "levels": {
+        "2": {
+          "pixel_size": [
+            2000,
+            3350
+          ],
+          "cols": 2,
+          "rows": 4,
+          "bytes": 887901
+        },
+        "4": {
+          "pixel_size": [
+            4000,
+            6700
+          ],
+          "cols": 4,
+          "rows": 7,
+          "bytes": 1786481
+        },
+        "8": {
+          "pixel_size": [
+            8000,
+            13400
+          ],
+          "cols": 8,
+          "rows": 14,
+          "bytes": 3338757
+        }
+      }
+    }
+  }
+}
