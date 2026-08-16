@@ -1,0 +1,51 @@
+name: Build mobile PNG tiles
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/build_mobile_tiles.py'
+      - 'bathymetry-geopdf-v45-taubin.svg'
+      - 'bathymetry-2012-v31.svg'
+      - 'data/lacanau_geopdf_v41.json'
+      - 'data/lacanau_2012_bands_v3.json'
+      - '.github/workflows/build-mobile-tiles.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install renderer
+        run: pip install cairosvg pillow
+      - name: Build PNG tile pyramid
+        run: python tools/build_mobile_tiles.py
+      - name: Validate tile pyramid
+        run: |
+          python - <<'PY'
+          import json, pathlib
+          root=pathlib.Path('tiles/mobile-v1')
+          m=json.loads((root/'manifest.json').read_text())
+          assert m['tile_px']==1024
+          assert m['levels']==[2,4,8]
+          for mode in ('vector','v31'):
+              for level in ('2','4','8'):
+                  info=m['maps'][mode]['levels'][level]
+                  expected=info['cols']*info['rows']
+                  files=list((root/mode/level).glob('*.png'))
+                  assert len(files)==expected, (mode,level,len(files),expected)
+                  assert all(p.stat().st_size>0 for p in files)
+          print('tile pyramid valid')
+          PY
+      - name: Commit tiles
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tiles/mobile-v1
+          git diff --cached --quiet && exit 0
+          git commit -m "Add sharp multiresolution mobile map tiles"
+          git push
