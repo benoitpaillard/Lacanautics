@@ -7,6 +7,8 @@ from pathlib import Path
 import numpy as np
 from skimage.measure import approximate_polygon, find_contours
 
+import shoreline_mask
+
 ROOT = Path('.')
 SRC = ROOT / 'data/lacanau_2012_bands_v3.json'
 V41 = ROOT / 'data/lacanau_geopdf_v41.json'
@@ -101,6 +103,8 @@ def main() -> None:
     src = json.loads(SRC.read_text())
     v41 = json.loads(V41.read_text())
     cls = load_classes(src)
+    bbox = {k: float(src['bbox'][k]) for k in ('west','south','east','north')}
+    cls, shoreline_stats = shoreline_mask.mask_classes(cls, bbox)
     ny, nx = cls.shape
 
     palette = np.asarray(v41['palette_rgb'][:8], dtype=np.uint8)
@@ -122,7 +126,7 @@ def main() -> None:
     svg = (
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {nx} {ny}" preserveAspectRatio="none" shape-rendering="geometricPrecision">'
         '<title>Lac de Lacanau Survey v3.1 bathymetry</title>'
-        '<desc>Original 10 m Survey v3.1 depth classes rendered with the same palette and line styling as Vector 4.5. Geometry is not smoothed.</desc>'
+        '<desc>Original 10 m Survey v3.1 depth classes clipped to the IGN permanent-water shoreline and rendered with the same palette and line styling as Vector 4.5. Geometry is not smoothed.</desc>'
         '<defs>' + defs + '</defs>'
         '<g id="depth-bands">' + nested_uses('fill', colors) + '</g>'
         '<g id="depth-lines">' + nested_uses('line') + '</g>'
@@ -133,7 +137,7 @@ def main() -> None:
     report = {
         'version': '3.1-harmonized-vector-lines',
         'source_version': src.get('version'),
-        'geometry_note': 'Original 10 m v3.1 class grid unchanged; boundaries are vectorized at cell edges with no smoothing.',
+        'geometry_note': 'Original 10 m v3.1 depth classes are unchanged inside confirmed water; present-day land/water extent is clipped to the committed IGN permanent-water shoreline. Boundaries are vectorized at cell edges with no smoothing.',
         'asset': OUT.name,
         'palette_rgb': palette.tolist(),
         'palette_hex': colors,
@@ -148,6 +152,7 @@ def main() -> None:
         'vector_effect': 'non-scaling-stroke',
         'survey_step_m': src.get('step_m'),
         'source_grid_size': [nx, ny],
+        'shoreline_mask': shoreline_stats,
         'rings_by_threshold': [len(r) for r in ring_sets],
         'svg_bytes': OUT.stat().st_size,
     }

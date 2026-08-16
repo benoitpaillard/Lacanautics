@@ -10,6 +10,7 @@ from skimage.draw import polygon
 from skimage.measure import approximate_polygon, find_contours
 
 import build_vector_v44 as v44
+import shoreline_mask
 
 ROOT = Path('.')
 OUT_SVG = ROOT / 'bathymetry-geopdf-v45-taubin.svg'
@@ -206,7 +207,7 @@ def build_geometry(pal: np.ndarray, cls: np.ndarray):
     svg = (
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" preserveAspectRatio="none" shape-rendering="geometricPrecision">'
         '<title>Lac de Lacanau bathymetry — Taubin-faired integer isobaths</title>'
-        '<desc>Corrected GeoPDF 4.1 depth classes. v4.4 Gaussian occupancy iso-contours are followed by sparse non-shrinking Taubin curve smoothing, Douglas-Peucker simplification, and cumulative parent clipping. GPS lookup remains untouched v4.1 classes.</desc>'
+        '<desc>Corrected GeoPDF 4.1 depth classes. v4.4 Gaussian occupancy iso-contours are followed by sparse non-shrinking Taubin curve smoothing, Douglas-Peucker simplification, and cumulative parent clipping. Depth classes come from corrected v4.1 and are clipped to the IGN permanent-water shoreline.</desc>'
         '<defs>' + defs + '</defs>'
         '<g id="depth-bands">' + nested_uses('fill', colors) + '</g>'
         '<g id="depth-lines">' + nested_uses('line') + '</g>'
@@ -265,6 +266,8 @@ def qc(cls: np.ndarray, masks):
 
 def main():
     _, pal, cls = v44.load_classes()
+    v41_meta = json.loads((ROOT / 'data/lacanau_geopdf_v41.json').read_text())
+    cls, shoreline_stats = shoreline_mask.mask_classes(cls, v41_meta['bbox'])
     svg, masks, layers, nested, labels = build_geometry(pal, cls)
     q = qc(cls, masks)
     OUT_SVG.write_text(svg)
@@ -281,12 +284,13 @@ def main():
         'source_resolution_m_per_px': old['source_resolution_m_per_px'],
         'nested_violations': nested,
         'depth_label_count': labels,
+        'shoreline_mask': shoreline_stats,
         'layers': layers,
         'svg_bytes': len(svg.encode()),
         'v44_svg_bytes': old['svg_bytes'],
         'size_ratio_vs_v44': len(svg.encode()) / old['svg_bytes'],
         'qc': q,
-        'navigation_note': 'GPS lookup remains exact corrected v4.1 classes; Taubin smoothing is visual/cartographic only.',
+        'navigation_note': 'Depth classes remain the corrected v4.1 source inside water, but both display and navigation lookup are clipped to the committed IGN permanent-water shoreline. Taubin smoothing remains visual/cartographic only.',
     }
     OUT_REPORT.write_text(json.dumps(report, indent=2))
     print(json.dumps(report, indent=2))

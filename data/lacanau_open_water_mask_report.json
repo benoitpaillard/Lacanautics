@@ -1,0 +1,86 @@
+{
+  "version": "1.0-permanent-water-shoreline",
+  "generated_utc": "2026-08-16T14:00:14.122632+00:00",
+  "authority": "IGN BD TOPO V3 surface_hydrographique",
+  "source_wfs_url": "https://data.geopf.fr/wfs/ows?SERVICE=WFS&REQUEST=GetFeature&VERSION=2.0.0&TYPENAMES=BDTOPO_V3%3Asurface_hydrographique&SRSNAME=urn%3Aogc%3Adef%3Acrs%3AOGC%3A1.3%3ACRS84&BBOX=-1.155%2C44.925%2C-1.075%2C45.01%2Curn%3Aogc%3Adef%3Acrs%3AOGC%3A1.3%3ACRS84&OUTPUTFORMAT=application%2Fjson&COUNT=1000",
+  "source_bbox_wgs84": [
+    -1.155,
+    44.925,
+    -1.075,
+    45.01
+  ],
+  "selection_rule": "Keep permanent non-marsh hydrography and the connected component containing the main lake seed; reject intermittent lake fringes and marshes.",
+  "seed_lon_lat": [
+    -1.116,
+    44.982
+  ],
+  "source_feature_count": 98,
+  "nature_persistence_counts": [
+    {
+      "nature": "Canal",
+      "persistance": "Permanent",
+      "count": 1
+    },
+    {
+      "nature": "Ecoulement naturel",
+      "persistance": "Permanent",
+      "count": 4
+    },
+    {
+      "nature": "Lac",
+      "persistance": "Intermittent",
+      "count": 16
+    },
+    {
+      "nature": "Lac",
+      "persistance": "Permanent",
+      "count": 12
+    },
+    {
+      "nature": "Marais",
+      "persistance": "Intermittent",
+      "count": 10
+    },
+    {
+      "nature": "Mare",
+      "persistance": "Intermittent",
+      "count": 5
+    },
+    {
+      "nature": "Mare",
+      "persistance": "Permanent",
+      "count": 2
+    },
+    {
+      "nature": "Retenue",
+      "persistance": "Intermittent",
+      "count": 19
+    },
+    {
+      "nature": "Retenue",
+      "persistance": "Permanent",
+      "count": 16
+    },
+    {
+      "nature": "Réservoir-bassin",
+      "persistance": "Intermittent",
+      "count": 12
+    },
+    {
+      "nature": "Réservoir-bassin d'orage",
+      "persistance": "Permanent",
+      "count": 1
+    }
+  ],
+  "main_open_water_area_m2": 18573247.300089173,
+  "main_open_water_area_km2": 18.57324730008917,
+  "intermittent_lacanau_fringe_area_in_query_m2": 1478655.0524561373,
+  "marsh_area_in_query_m2": 429255.7082697606,
+  "simplification_m": 1.5,
+  "simplified_area_change_fraction": -8.478564329134114e-05,
+  "cross_checks": [
+    "IGN BD TOPO distinguishes permanent water from intermittent lake fringe and Marais.",
+    "SIAEBVELG/GestEau wetland studies describe extensive wetland mosaics on the east side of the Médoc lakes.",
+    "The 2012 Aquabio bathymetry remains the depth source only; it no longer defines the present-day shoreline."
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "version": "3.1-harmonized-vector-lines",
   "source_version": "3.0",
-  "geometry_note": "Original 10 m v3.1 class grid unchanged; boundaries are vectorized at cell edges with no smoothing.",
+  "geometry_note": "Original 10 m v3.1 depth classes are unchanged inside confirmed water; present-day land/water extent is clipped to the committed IGN permanent-water shoreline. Boundaries are vectorized at cell edges with no smoothing.",
   "asset": "bathymetry-2012-v31.svg",
   "palette_rgb": [
     [
@@ -69,15 +69,24 @@
     491,
     821
   ],
+  "shoreline_mask": {
+    "authority": "IGN BD TOPO V3 permanent non-marsh hydrography",
+    "mask_asset": "data/lacanau_open_water_mask.geojson",
+    "water_cells_before": 202436,
+    "water_cells_after": 179820,
+    "water_cells_removed": 22616,
+    "removed_fraction_of_original_water": 0.11171925942026122,
+    "adds_water": false
+  },
   "rings_by_threshold": [
-    7,
-    151,
-    99,
-    32,
+    52,
+    142,
+    103,
+    33,
     25,
     16,
     7,
     3
   ],
-  "svg_bytes": 277109
+  "svg_bytes": 282660
 }

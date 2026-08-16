@@ -30,6 +30,15 @@
     0
   ],
   "depth_label_count": 0,
+  "shoreline_mask": {
+    "authority": "IGN BD TOPO V3 permanent non-marsh hydrography",
+    "mask_asset": "data/lacanau_open_water_mask.geojson",
+    "water_cells_before": 570990,
+    "water_cells_after": 553628,
+    "water_cells_removed": 17362,
+    "removed_fraction_of_original_water": 0.030406837247587522,
+    "adds_water": false
+  },
   "layers": [
     {
       "threshold_m": 0,
@@ -38,10 +47,10 @@
       "lambda": 0.5,
       "mu": -0.53,
       "simplify_tolerance_px": 0.12,
-      "rings": 5,
+      "rings": 24,
       "rings_taubin_smoothed": 0,
-      "raw_vertices": 7024,
-      "svg_vertices": 2150,
+      "raw_vertices": 8024,
+      "svg_vertices": 2566,
       "roughness_rms_before": 0.0,
       "roughness_rms_after": 0.0,
       "roughness_ratio": 1.0,
@@ -57,17 +66,17 @@
       "lambda": 0.5,
       "mu": -0.53,
       "simplify_tolerance_px": 0.18,
-      "rings": 80,
+      "rings": 94,
       "rings_taubin_smoothed": 31,
-      "raw_vertices": 17982,
-      "svg_vertices": 4958,
-      "roughness_rms_before": 0.25049258899390336,
-      "roughness_rms_after": 0.08542510123454539,
-      "roughness_ratio": 0.3410284574791333,
-      "max_taubin_displacement_px": 0.408647018266901,
-      "max_abs_area_change_fraction": 0.004149720051495054,
-      "preclip_spill_cells": 48,
-      "cells_removed_by_parent_clip": 48
+      "raw_vertices": 17704,
+      "svg_vertices": 5085,
+      "roughness_rms_before": 0.25132524348669916,
+      "roughness_rms_after": 0.08824852200540337,
+      "roughness_ratio": 0.35113274250174453,
+      "max_taubin_displacement_px": 0.4021367266898938,
+      "max_abs_area_change_fraction": 0.004102425275770427,
+      "preclip_spill_cells": 60,
+      "cells_removed_by_parent_clip": 60
     },
     {
       "threshold_m": 2,
@@ -76,17 +85,17 @@
       "lambda": 0.5,
       "mu": -0.53,
       "simplify_tolerance_px": 0.18,
-      "rings": 74,
-      "rings_taubin_smoothed": 27,
-      "raw_vertices": 14184,
-      "svg_vertices": 3755,
-      "roughness_rms_before": 0.2518486630988973,
-      "roughness_rms_after": 0.0807431211374395,
-      "roughness_ratio": 0.3206017460800769,
-      "max_taubin_displacement_px": 0.42523505563587854,
-      "max_abs_area_change_fraction": 0.00277431897223801,
-      "preclip_spill_cells": 3,
-      "cells_removed_by_parent_clip": 3
+      "rings": 72,
+      "rings_taubin_smoothed": 29,
+      "raw_vertices": 13884,
+      "svg_vertices": 3872,
+      "roughness_rms_before": 0.2522144706573562,
+      "roughness_rms_after": 0.0854676462060124,
+      "roughness_ratio": 0.33886892367140875,
+      "max_taubin_displacement_px": 0.45055157178397004,
+      "max_abs_area_change_fraction": 0.0028370653532323598,
+      "preclip_spill_cells": 29,
+      "cells_removed_by_parent_clip": 29
     },
     {
       "threshold_m": 3,
@@ -184,43 +193,43 @@
       "cells_removed_by_parent_clip": 0
     }
   ],
-  "svg_bytes": 294187,
+  "svg_bytes": 302822,
   "v44_svg_bytes": 761984,
-  "size_ratio_vs_v44": 0.38608028515034437,
+  "size_ratio_vs_v44": 0.3974125440954141,
   "qc": {
-    "water_mask_iou": 0.9986540790680416,
-    "all_overlap_exact_class_fraction": 0.9789515008228369,
-    "all_overlap_within_1m_fraction": 0.9998632986731208,
-    "mean_depth_midpoint_source_m": 2.392721413685003,
-    "mean_depth_midpoint_vector_m": 2.390871928162213,
-    "mean_depth_shift_m": -0.001849485522789962,
+    "water_mask_iou": 0.9981759133964817,
+    "all_overlap_exact_class_fraction": 0.9795477180748284,
+    "all_overlap_within_1m_fraction": 0.9997360995880623,
+    "mean_depth_midpoint_source_m": 2.4205639888155948,
+    "mean_depth_midpoint_vector_m": 2.4185282950054257,
+    "mean_depth_shift_m": -0.0020356938101691036,
     "threshold_qc": [
       {
         "threshold_m": 0,
-        "iou": 0.9986540790680416,
-        "area_ratio": 0.9999352002662043,
+        "iou": 0.9981759133964817,
+        "area_ratio": 1.0004208602166076,
         "boundary_p95_px": 1.0,
-        "boundary_p99_px": 1.0,
-        "source_components": 1,
-        "vector_components": 1
+        "boundary_p99_px": 5.0,
+        "source_components": 12,
+        "vector_components": 6
       },
       {
         "threshold_m": 1,
-        "iou": 0.9897999546088253,
-        "area_ratio": 0.9973074770126663,
-        "boundary_p95_px": 1.4142135623730951,
-        "boundary_p99_px": 7.0710678118654755,
-        "source_components": 320,
-        "vector_components": 70
+        "iou": 0.9899573977101269,
+        "area_ratio": 0.9983555636762288,
+        "boundary_p95_px": 1.0,
+        "boundary_p99_px": 6.0,
+        "source_components": 225,
+        "vector_components": 76
       },
       {
         "threshold_m": 2,
-        "iou": 0.985874436582641,
-        "area_ratio": 1.0012228933397604,
+        "iou": 0.9852803814624906,
+        "area_ratio": 1.0010566996734436,
         "boundary_p95_px": 2.0,
         "boundary_p99_px": 6.4031242374328485,
-        "source_components": 118,
-        "vector_components": 42
+        "source_components": 130,
+        "vector_components": 43
       },
       {
         "threshold_m": 3,
@@ -269,5 +278,5 @@
       }
     ]
   },
-  "navigation_note": "GPS and tap/click depth lookup remain exact corrected v4.1 classes; rendered isobath numbers are intentionally omitted."
+  "navigation_note": "Depth classes remain the corrected v4.1 source inside water, but both display and navigation lookup are clipped to the committed IGN permanent-water shoreline. Taubin smoothing remains visual/cartographic only."
 }

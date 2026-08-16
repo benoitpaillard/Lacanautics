@@ -1,5 +1,5 @@
-const CACHE='lacanautics-v4.5-singlepage8-panclamp';
-const CORE=['./','./index.html','./manifest.webmanifest','./gps-max.js','./bathymetry-geopdf-v45-taubin.svg','./bathymetry-geopdf-v45-mobile.webp','./bathymetry-geopdf-v41-classes.webp','./data/lacanau_geopdf_v41.json','./bathymetry-2012-v31.svg','./bathymetry-2012-v31-mobile.webp','./data/lacanau_2012_bands_v3.json','./data/lacanau_lake_level.json'];
+const CACHE='lacanautics-v4.5-singlepage9-shoreline';
+const CORE=['./','./index.html','./manifest.webmanifest','./gps-max.js','./bathymetry-geopdf-v45-taubin.svg','./bathymetry-geopdf-v45-mobile.webp','./bathymetry-geopdf-v41-classes.webp','./data/lacanau_geopdf_v41.json','./bathymetry-2012-v31.svg','./bathymetry-2012-v31-mobile.webp','./data/lacanau_2012_bands_v3.json','./data/lacanau_lake_level.json','./data/lacanau_open_water_mask.geojson'];
 
 self.addEventListener('install',event=>{
   self.skipWaiting();
@@ -45,7 +45,7 @@ self.addEventListener('fetch',event=>{
     return;
   }
 
-  const fresh=/\.(?:json|svg|webp|js)$/.test(url.pathname);
+  const fresh=/\.(?:json|geojson|svg|webp|js)$/.test(url.pathname);
   if(fresh){
     event.respondWith(networkFirst(event.request));
     return;
