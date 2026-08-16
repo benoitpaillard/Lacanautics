@@ -55,7 +55,7 @@ def render_and_tile(src: Path, key: str, base_w: int, base_h: int) -> dict:
                 bottom = min(height, top + TILE)
                 tile = image.crop((left, top, right, bottom))
                 out = level_dir / f'{x}_{y}.png'
-                tile.save(out, 'PNG', optimize=True, compress_level=9)
+                tile.save(out, 'PNG', compress_level=6)
                 total_bytes += out.stat().st_size
         result['levels'][str(level)] = {
             'pixel_size': [width, height],
@@ -64,6 +64,7 @@ def render_and_tile(src: Path, key: str, base_w: int, base_h: int) -> dict:
             'bytes': total_bytes,
         }
         print(f'{key} level {level}: {width}x{height}, {cols}x{rows} tiles, {total_bytes} bytes')
+        image.close()
     return result
 
 
