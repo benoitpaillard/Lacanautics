@@ -70,8 +70,9 @@ jobs:
 
           # Current app shell / mobile renderer.
           assert 'src="./gps-max.js?v=2"' in html
-          assert "register('./sw.js?v=singlepage9-shoreline')" in html
+          assert "register('./sw.js?v=singlepage10-sourcenames')" in html
           assert '<meta name="theme-color" content="#000000">' in html
+          assert '<title>Lacanautics · Lacanau Bathymetry</title>' in html
           assert '--land:#000000' in html
           assert 'bathymetry-geopdf-v45-taubin.svg?v=45s1' in html
           assert 'bathymetry-geopdf-v45-mobile.webp?v=m2' in html
@@ -84,7 +85,7 @@ jobs:
           assert 'function updateTiles(){' in html
           assert 'requestAnimationFrame' in html and 'translate3d' in html
 
-          # Navigation UX retained.
+          # Navigation UX retained, now source-named.
           assert 'id="probe"' in html
           assert 'function showProbe(lat,lon)' in html
           assert 'function probeAtScreen(sx,sy)' in html
@@ -92,6 +93,14 @@ jobs:
           assert "$('#fit').onclick=()=>{clearProbe();fit()}" in html
           assert 'function clampView(){' in html
           assert 'Math.max(vw-mw,tx)' in html and 'Math.max(vh-mh,ty)' in html
+          assert 'Adour-Garonne GeoPDF' in html
+          assert 'Aquabio 2012 survey' in html
+          assert 'id="sourceOverlay"' in html
+          assert 'const SOURCE_INFO=' in html
+          assert 'function updateSourceInfo()' in html
+          assert 'FRFL49_Bathym.pdf' in html
+          assert 'bathymetrie-plans-deau-gironde-2022' in html
+          assert 'IGN shoreline documentation' in html
 
           # Same authoritative open-water gate controls both lookup engines.
           assert "shorelineURL='data/lacanau_open_water_mask.geojson?v=1'" in html
@@ -149,7 +158,7 @@ jobs:
                   assert len(files)==info['cols']*info['rows']
                   assert all(f.stat().st_size>0 for f in files)
 
-          assert "lacanautics-v4.5-singlepage9-shoreline" in sw
+          assert "lacanautics-v4.5-singlepage10-sourcenames" in sw
           assert "'./data/lacanau_open_water_mask.geojson'" in sw
           assert 'geojson|svg|webp|js' in sw
           assert 'location.replace(' not in html
