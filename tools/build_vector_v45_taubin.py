@@ -202,6 +202,7 @@ def build_geometry(pal: np.ndarray, cls: np.ndarray):
             if chosen >= 2:
                 break
 
+    label_count = 0
     svg = (
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" preserveAspectRatio="none" shape-rendering="geometricPrecision">'
         '<title>Lac de Lacanau bathymetry — Taubin-faired integer isobaths</title>'
@@ -209,7 +210,6 @@ def build_geometry(pal: np.ndarray, cls: np.ndarray):
         '<defs>' + defs + '</defs>'
         '<g id="depth-bands">' + nested_uses('fill', colors) + '</g>'
         '<g id="depth-lines">' + nested_uses('line') + '</g>'
-        '<g id="depth-labels" pointer-events="none">' + ''.join(labels) + '</g>'
         '</svg>'
     )
     return svg, masks, layer_stats, nested_violations, label_count

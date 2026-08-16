@@ -29,7 +29,7 @@
     0,
     0
   ],
-  "depth_label_count": 11,
+  "depth_label_count": 0,
   "layers": [
     {
       "threshold_m": 0,
@@ -269,5 +269,5 @@
       }
     ]
   },
-  "navigation_note": "GPS lookup remains exact corrected v4.1 classes; Taubin smoothing is visual/cartographic only."
+  "navigation_note": "GPS and tap/click depth lookup remain exact corrected v4.1 classes; rendered isobath numbers are intentionally omitted."
 }
