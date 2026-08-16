@@ -1,0 +1,55 @@
+name: Activate map depth probe
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/add_depth_probe_remove_labels.py'
+      - '.github/workflows/activate-depth-probe.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  activate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install map renderer
+        run: pip install cairosvg pillow
+      - name: Remove labels and add depth probe
+        run: python tools/add_depth_probe_remove_labels.py
+      - name: Rebuild phone display assets without figures
+        run: |
+          python tools/build_mobile_rasters.py
+          python tools/build_mobile_tiles.py
+      - name: Validate probe and label-free artwork
+        run: |
+          ! grep -q '<text ' bathymetry-geopdf-v45-taubin.svg
+          ! grep -q 'id="depth-labels"' bathymetry-geopdf-v45-taubin.svg
+          grep -q 'function showProbe(lat,lon)' index.html
+          grep -q 'function probeAtScreen(sx,sy)' index.html
+          grep -q 'Tap ≈' index.html
+          grep -q 'sw.js?v=singlepage6-depthprobe' index.html
+          grep -q 'lacanautics-v4.5-singlepage6-depthprobe' sw.js
+          python - <<'PY'
+          import json,re,pathlib
+          report=json.loads(pathlib.Path('data/lacanau_vector_v45_taubin_report.json').read_text())
+          assert report['depth_label_count']==0
+          html=pathlib.Path('index.html').read_text()
+          scripts=re.findall(r'<script(?: [^>]*)?>(.*?)</script>',html,re.S)
+          pathlib.Path('/tmp/app.js').write_text('\n'.join(x for x in scripts if x.strip()))
+          manifest=json.loads(pathlib.Path('tiles/mobile-v1/manifest.json').read_text())
+          assert manifest['levels']==[2,4,8]
+          PY
+          node --check /tmp/app.js
+          node --check sw.js
+      - name: Commit production update
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html sw.js bathymetry-geopdf-v45-taubin.svg data/lacanau_vector_v45_taubin_report.json tools/build_vector_v45_taubin.py bathymetry-geopdf-v45-mobile.webp bathymetry-2012-v31-mobile.webp tiles/mobile-v1
+          git diff --cached --quiet && exit 0
+          git commit -m "Remove map figures and add tap depth probe"
+          git push
