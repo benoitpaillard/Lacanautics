@@ -57,7 +57,7 @@ jobs:
           assert inline, 'No inline application script found'
           pathlib.Path('/tmp/lacanautics-app.js').write_text(inline,encoding='utf-8')
           assert 'src="./gps-max.js?v=2"' in html
-          assert "register('./sw.js?v=singlepage6-depthprobe')" in html
+          assert "register('./sw.js?v=singlepage7-homedepth')" in html
           assert '<meta name="theme-color" content="#000000">' in html
           assert '--land:#000000' in html
           assert '--ink:#e7f3f6' in html
@@ -88,6 +88,7 @@ jobs:
           assert 'function clearProbe()' in html
           assert 'Tap ≈' in html
           assert 'tapState' in html
+          assert "$('#fit').onclick=()=>{clearProbe();fit()}" in html
           v45=json.loads(pathlib.Path('data/lacanau_vector_v45_taubin_report.json').read_text())
           v31=json.loads(pathlib.Path('data/lacanau_v31_visual_report.json').read_text())
           v41=json.loads(pathlib.Path('data/lacanau_geopdf_v41.json').read_text())
@@ -121,7 +122,7 @@ jobs:
           node --check sw.js
           grep -q 'enableHighAccuracy:true' gps-max.js
           grep -q 'maximumAge:0' gps-max.js
-      - name: Check line style, OLED theme, label-free map and probe
+      - name: Check line style, OLED theme, label-free map, probe and Home reset
         run: |
           grep -q 'geom-1' bathymetry-geopdf-v45-taubin.svg
           grep -q 'clip-0' bathymetry-geopdf-v45-taubin.svg
@@ -133,10 +134,11 @@ jobs:
           grep -q 'stroke-opacity="0.62"' bathymetry-2012-v31.svg
           grep -q 'stroke-linejoin="round"' bathymetry-2012-v31.svg
           grep -q 'stroke-linecap="round"' bathymetry-2012-v31.svg
-          grep -q "lacanautics-v4.5-singlepage6-depthprobe" sw.js
+          grep -q "lacanautics-v4.5-singlepage7-homedepth" sw.js
           grep -q -- '--land:#000000' index.html
           grep -q 'theme-color" content="#000000"' index.html
           grep -q 'function probeAtScreen' index.html
+          grep -q "fit').onclick=()=>{clearProbe();fit()}" index.html
           grep -q "'./index.html'" sw.js
           grep -q 'gps-max.js' sw.js
           grep -q 'bathymetry-geopdf-v41-classes.webp' sw.js
