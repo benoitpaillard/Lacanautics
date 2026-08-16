@@ -1,0 +1,24 @@
+name: Diagnose shoreline sources
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/diagnose_shoreline_sources.py'
+      - '.github/workflows/diagnose-shoreline-sources.yml'
+  workflow_dispatch:
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install GIS helpers
+        run: pip install requests shapely
+      - name: Cross-check shoreline sources
+        run: python tools/diagnose_shoreline_sources.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: shoreline-diagnostic
+          path: data/shoreline_diagnostic
