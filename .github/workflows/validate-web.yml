@@ -17,6 +17,7 @@ on:
       - 'data/lacanau_v31_visual_report.json'
       - 'bathymetry-geopdf-v41-classes.webp'
       - 'data/lacanau_geopdf_v41.json'
+      - 'tiles/mobile-v1/**'
       - '.github/workflows/validate-web.yml'
 
 jobs:
@@ -39,11 +40,13 @@ jobs:
           test -s data/lacanau_geopdf_v41.json
           test -s data/lacanau_lake_level.json
           test -s gps-max.js
+          test -s tiles/mobile-v1/manifest.json
           test ! -e bathymetry-geopdf-v41-native.webp
           python -m json.tool data/lacanau_vector_v45_taubin_report.json >/dev/null
           python -m json.tool data/lacanau_v31_visual_report.json >/dev/null
           python -m json.tool data/lacanau_geopdf_v41.json >/dev/null
           python -m json.tool data/lacanau_lake_level.json >/dev/null
+          python -m json.tool tiles/mobile-v1/manifest.json >/dev/null
       - name: Check application JavaScript and layers
         run: |
           python - <<'PY'
@@ -54,7 +57,7 @@ jobs:
           assert inline, 'No inline application script found'
           pathlib.Path('/tmp/lacanautics-app.js').write_text(inline,encoding='utf-8')
           assert 'src="./gps-max.js?v=2"' in html
-          assert "register('./sw.js?v=singlepage3-mobilefast')" in html
+          assert "register('./sw.js?v=singlepage4-mobiletiles')" in html
           assert 'location.replace(' not in html
           assert 'hires.html' not in html
           assert 'bathymetry-geopdf-v45-taubin.svg' in html
@@ -62,6 +65,11 @@ jobs:
           assert 'bathymetry-2012-v31.svg?v=31v1' in html
           assert 'bathymetry-2012-v31-mobile.webp?v=m1' in html
           assert 'const FAST_RASTER=' in html
+          assert "const TILE_ROOT='tiles/mobile-v1'" in html
+          assert 'TILE_LEVELS=[2,4,8]' in html
+          assert '<div id="tiles"></div>' in html
+          assert 'function updateTiles(){' in html
+          assert 'Adaptive PNG tiles' in html
           assert 'requestAnimationFrame' in html
           assert 'translate3d' in html
           assert 'VECTOR 4.5' in html
@@ -87,13 +95,22 @@ jobs:
           assert v45['nested_violations'] == [0]*7
           assert v45['size_ratio_vs_v44'] < 0.5
           assert v45['qc']['all_overlap_within_1m_fraction'] > 0.999
+          tiles=json.loads(pathlib.Path('tiles/mobile-v1/manifest.json').read_text())
+          assert tiles['tile_px'] == 1024
+          assert tiles['levels'] == [2,4,8]
+          for mode in ('vector','v31'):
+              for level in ('2','4','8'):
+                  info=tiles['maps'][mode]['levels'][level]
+                  files=list((pathlib.Path('tiles/mobile-v1')/mode/level).glob('*.png'))
+                  assert len(files)==info['cols']*info['rows']
+                  assert all(f.stat().st_size>0 for f in files)
           PY
           node --check /tmp/lacanautics-app.js
           node --check gps-max.js
           node --check sw.js
           grep -q 'enableHighAccuracy:true' gps-max.js
           grep -q 'maximumAge:0' gps-max.js
-      - name: Check matching line style and mobile fast path
+      - name: Check matching line style and adaptive mobile path
         run: |
           grep -q 'geom-1' bathymetry-geopdf-v45-taubin.svg
           grep -q 'clip-0' bathymetry-geopdf-v45-taubin.svg
@@ -103,7 +120,7 @@ jobs:
           grep -q 'stroke-opacity="0.62"' bathymetry-2012-v31.svg
           grep -q 'stroke-linejoin="round"' bathymetry-2012-v31.svg
           grep -q 'stroke-linecap="round"' bathymetry-2012-v31.svg
-          grep -q "lacanautics-v4.5-singlepage3-mobilefast" sw.js
+          grep -q "lacanautics-v4.5-singlepage4-mobiletiles" sw.js
           grep -q "'./index.html'" sw.js
           grep -q 'gps-max.js' sw.js
           grep -q 'bathymetry-geopdf-v41-classes.webp' sw.js
