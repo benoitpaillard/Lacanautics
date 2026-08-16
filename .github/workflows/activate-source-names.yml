@@ -1,0 +1,43 @@
+name: Activate bathymetry source names
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/use_source_names.py'
+      - '.github/workflows/activate-source-names.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  activate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply source names and info links
+        run: python tools/use_source_names.py
+      - name: Validate app syntax and source UI
+        run: |
+          grep -q 'Adour-Garonne GeoPDF' index.html
+          grep -q 'Aquabio 2012 survey' index.html
+          grep -q 'id="sourceOverlay"' index.html
+          grep -q 'function updateSourceInfo()' index.html
+          grep -q 'FRFL49_Bathym.pdf' index.html
+          grep -q 'bathymetrie-plans-deau-gironde-2022' index.html
+          grep -q 'singlepage10-sourcenames' index.html
+          grep -q 'lacanautics-v4.5-singlepage10-sourcenames' sw.js
+          python - <<'PY'
+          import re,pathlib
+          html=pathlib.Path('index.html').read_text(encoding='utf-8')
+          scripts=re.findall(r'<script(?: [^>]*)?>(.*?)</script>',html,re.S)
+          pathlib.Path('/tmp/app.js').write_text('\n'.join(x for x in scripts if x.strip()),encoding='utf-8')
+          PY
+          node --check /tmp/app.js
+          node --check sw.js
+      - name: Commit source-name UI
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html sw.js .github/workflows/validate-web.yml
+          git diff --cached --quiet && exit 0
+          git commit -m "Name bathymetry layers by their data source"
+          git push
