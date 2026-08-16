@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 from pathlib import Path
-import re
 
 ROOT = Path('.')
 
@@ -86,7 +85,8 @@ s = s.replace(
     1,
 )
 # Ensure source label/sheet refreshes on every configure.
-s = s.replace("resetTiles();world.style.width=W+'px';", "updateSourceInfo();resetTiles();world.style.width=W+'px';", 1)
+if "updateSourceInfo();resetTiles();world.style.width=W+'px';" not in s:
+    s = s.replace("resetTiles();world.style.width=W+'px';", "updateSourceInfo();resetTiles();world.style.width=W+'px';", 1)
 
 # Human-readable depth provenance.
 s = s.replace("${mode==='vector'?'4.5 Taubin vector':'3.1 survey'}:", "${mode==='vector'?'Adour-Garonne GeoPDF':'Aquabio 2012'}:")
@@ -117,25 +117,23 @@ p = ROOT / '.github/workflows/validate-web.yml'
 v = p.read_text(encoding='utf-8')
 v = v.replace("register('./sw.js?v=singlepage9-shoreline')", "register('./sw.js?v=singlepage10-sourcenames')")
 v = v.replace('lacanautics-v4.5-singlepage9-shoreline', 'lacanautics-v4.5-singlepage10-sourcenames')
-v = v.replace("bathymetry-geopdf-v45-mobile.webp?v=m2' in html", "bathymetry-geopdf-v45-mobile.webp?v=m2' in html")
-# Remove old user-facing version-string requirements if present.
-v = v.replace("          assert 'VECTOR 4.5' in html\n", '')
-v = v.replace("          assert 'SURVEY v3.1 · harmonized' in html\n", '')
-v = v.replace("          assert 'matched vector lines' in html\n", '')
-# Add source-name/info requirements near existing probe checks.
-probe_check = "          assert 'tapState' in html\n"
-source_checks = "          assert 'tapState' in html\n          assert 'Adour-Garonne GeoPDF' in html\n          assert 'Aquabio 2012 survey' in html\n          assert 'id=\"sourceOverlay\"' in html\n          assert 'const SOURCE_INFO=' in html\n          assert 'function updateSourceInfo()' in html\n          assert 'FRFL49_Bathym.pdf' in html\n          assert 'bathymetrie-plans-deau-gironde-2022' in html\n"
+
+# Add source-name/info requirements in the current Navigation UX block.
+nav_anchor = "          assert 'function clearProbe()' in html\n"
+nav_checks = nav_anchor + "          assert 'Adour-Garonne GeoPDF' in html\n          assert 'Aquabio 2012 survey' in html\n          assert 'id=\"sourceOverlay\"' in html\n          assert 'const SOURCE_INFO=' in html\n          assert 'function updateSourceInfo()' in html\n          assert 'FRFL49_Bathym.pdf' in html\n          assert 'bathymetrie-plans-deau-gironde-2022' in html\n"
 if "assert 'const SOURCE_INFO=' in html" not in v:
-    if probe_check not in v:
-        raise RuntimeError('validator probe anchor not found')
-    v = v.replace(probe_check, source_checks, 1)
-# Add simple grep requirements near source-independent controls.
-line = "          grep -q 'function probeAtScreen' index.html\n"
-more = line + "          grep -q 'Adour-Garonne GeoPDF' index.html\n          grep -q 'Aquabio 2012 survey' index.html\n          grep -q 'id=\"sourceOverlay\"' index.html\n          grep -q 'function updateSourceInfo()' index.html\n"
-if "grep -q 'id=\"sourceOverlay\"' index.html" not in v:
-    if line not in v:
-        raise RuntimeError('validator grep anchor not found')
-    v = v.replace(line, more, 1)
+    if nav_anchor not in v:
+        raise RuntimeError('validator navigation anchor not found')
+    v = v.replace(nav_anchor, nav_checks, 1)
+
+# Keep links/source UI protected by the same permanent validator.
+shore_anchor = "          assert 'intermittent lake fringes and marshes are land' in html\n"
+shore_checks = shore_anchor + "          assert 'IGN shoreline documentation' in html\n          assert '<title>Lacanautics · Lacanau Bathymetry</title>' in html\n"
+if "assert 'IGN shoreline documentation' in html" not in v:
+    if shore_anchor not in v:
+        raise RuntimeError('validator shoreline anchor not found')
+    v = v.replace(shore_anchor, shore_checks, 1)
+
 p.write_text(v, encoding='utf-8')
 
 # ---------------- sanity ----------------
@@ -149,4 +147,5 @@ assert 'FRFL49_Bathym.pdf' in html
 assert 'bathymetrie-plans-deau-gironde-2022' in html
 assert 'singlepage10-sourcenames' in html and 'singlepage10-sourcenames' in sw
 assert 'singlepage10-sourcenames' in val
+assert "assert 'const SOURCE_INFO=' in html" in val
 print('Source names and tappable provenance sheet activated.')
